@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>De Tussenstap – Zorgnavigatie & Wachttijdbegeleiding | Noord-Holland</title>
+
   <meta name="description" content="De Tussenstap helpt mensen die vastlopen vóór behandeling: zorgnavigatie (keuze & aanmelding) en wachttijdbegeleiding in heel Noord-Holland. Reactie binnen 2 werkdagen." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#fbf3df" />
@@ -215,8 +215,7 @@
     <section class="hero" id="top">
       <div class="hero-grid">
         <figure class="hero-figure">
-          <!-- RELATIEF PAD: werkt op GitHub Pages project-repo -->
-          <img src="assets/hero-windmill.jpg" alt="Illustratie van een landschap met windmolen en opkomende zon." />
+          <img data-asset="hero-windmill.jpg" src="assets/hero-windmill.jpg" alt="Illustratie van een landschap met windmolen en opkomende zon." />
         </figure>
 
         <div>
@@ -267,7 +266,7 @@
           <div class="sep"></div>
 
           <div class="callout">
-            <b>Ik ben Maarten de Haan.</b> Ik ben 10 jaar in herstel en weet uit eigen ervaring hoe zwaar
+            <b>Oprichter:</b> ik ben Maarten de Haan. Ik ben 10 jaar in herstel en weet uit eigen ervaring hoe zwaar
             de periode vóór behandeling en tijdens wachten kan zijn. Ik krijg energie van mensen die vastgelopen zijn
             weer in beweging krijgen — praktisch, nuchter en menselijk.
           </div>
@@ -278,7 +277,7 @@
         </div>
 
         <figure class="figure">
-          <img src="assets/bridge.png" alt="Illustratie van een brug als symbool voor overbrugging." />
+          <img data-asset="bridge.png" src="assets/bridge.png" alt="Illustratie van een brug als symbool voor overbrugging." />
         </figure>
       </div>
     </section>
@@ -294,7 +293,7 @@
       <div class="two" style="margin-top:14px;">
         <div class="card">
           <figure class="figure">
-            <img src="assets/zorgnavigatie.jpg" alt="Illustratie van zorgnavigatie: iemand die een route uitstippelt." />
+            <img data-asset="zorgnavigatie.jpg" src="assets/zorgnavigatie.jpg" alt="Illustratie van zorgnavigatie: iemand die een route uitstippelt." />
           </figure>
           <div class="sep"></div>
           <h3>Zorgnavigatie</h3>
@@ -312,7 +311,7 @@
 
         <div class="card">
           <figure class="figure">
-            <img src="assets/wachttijd.jpg" alt="Illustratie van wachttijdbegeleiding: stap voor stap richting behandeling." />
+            <img data-asset="wachttijd.jpg" src="assets/wachttijd.jpg" alt="Illustratie van wachttijdbegeleiding: stap voor stap richting behandeling." />
           </figure>
           <div class="sep"></div>
           <h3>Wachttijdbegeleiding</h3>
@@ -431,11 +430,11 @@
         </div>
 
         <div class="card">
-          <h3>Tip</h3>
+          <h3>Werkgebied</h3>
           <p class="sub" style="margin-top:10px;">
-            Noem kort: (1) waar je nu vastloopt, (2) of je al aangemeld bent, en (3) wat je nu nodig hebt.
+            Heel Noord-Holland. Online of op locatie waar passend.
           </p>
-          <span class="pill">Werkgebied: heel Noord-Holland</span>
+          <span class="pill">Reactie binnen 2 werkdagen</span>
         </div>
       </div>
     </section>
@@ -447,7 +446,29 @@
   </main>
 
   <script>
+    // Jaar in footer
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Hardening: als iemand ooit per ongeluk absolute paden gebruikt (/assets/...)
+    // dan herstellen we die dynamisch naar een relatief pad dat wél werkt op GitHub Pages project sites.
+    (function fixAssetPaths(){
+      const imgs = document.querySelectorAll("img[data-asset]");
+      imgs.forEach(img => {
+        const fname = img.getAttribute("data-asset");
+        const good = "assets/" + fname;
+
+        // Als src leeg is of met /assets begint: fixen
+        const src = img.getAttribute("src") || "";
+        if (!src || src.startsWith("/assets/") || src.includes("githubusercontent.com")) {
+          img.setAttribute("src", good);
+        }
+
+        // Fallback bij load-error: nogmaals forceren
+        img.addEventListener("error", () => {
+          img.setAttribute("src", good + "?v=" + Date.now());
+        });
+      });
+    })();
   </script>
 </body>
 </html>
