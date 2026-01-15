@@ -3,99 +3,177 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>De Tussenstap – Zorgnavigatie & Wachttijdbegeleiding | Noord-Holland</title>
 <meta name="description" content="De Tussenstap helpt mensen die vastlopen vóór behandeling: zorgnavigatie (keuze & aanmelding) en wachttijdbegeleiding in heel Noord-Holland. Reactie binnen 2 werkdagen.">
 <meta name="robots" content="index,follow">
+
 <meta property="og:title" content="De Tussenstap – Zorgnavigatie & Wachttijdbegeleiding">
 <meta property="og:description" content="Voor wie vastloopt vóór de behandeling begint. Heel Noord-Holland. Reactie binnen 2 werkdagen.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/hero-windmill.jpg">
+<meta property="og:image" content="assets/hero-windmill.jpg?v=3">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
 <meta name="theme-color" content="#fbf3df">
 
 <style>
-:root{--bg:#fbf3df;--fg:#4a2e1f;--muted:#7a5a44;--card:#fff6e5;--line:#e6d5b8;--accent:#6b3f2b;--accent2:#b86b2a;--max:1180px;--r:22px;--shadow:0 14px 30px rgba(74,46,31,.06)}
-*{box-sizing:border-box}html,body{margin:0;padding:0}
-body{font-family:'Source Sans 3',system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.65}
-a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+:root{
+  --bg:#fbf3df; --fg:#4a2e1f; --muted:#7a5a44; --card:#fff6e5; --line:#e6d5b8;
+  --accent:#6b3f2b; --accent2:#b86b2a; --max:1180px; --r:22px;
+  --shadow:0 14px 30px rgba(74,46,31,.06);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Source Sans 3',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--fg);
+  line-height:1.65;
+}
+a{color:var(--accent2);text-decoration:none}
+a:hover{text-decoration:underline}
 .wrap{max-width:var(--max);margin:0 auto;padding:24px}
-header{position:sticky;top:0;z-index:30;background:rgba(251,243,223,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+
+header{
+  position:sticky; top:0; z-index:30;
+  background:rgba(251,243,223,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
 .nav{display:flex;justify-content:space-between;align-items:center;gap:16px}
-.brand{font-family:'Libre Baskerville',serif;font-weight:700;letter-spacing:-.3px;white-space:nowrap;font-size:20px}
-.brand small{display:block;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:12px;color:var(--muted);margin-top:2px}
-nav{display:flex;gap:14px;flex-wrap:wrap;font-size:14px}nav a{color:var(--muted)}nav a:hover{color:var(--fg);text-decoration:none}
-.btn{padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:transparent;font-weight:800;color:var(--fg);display:inline-flex;align-items:center;justify-content:center;gap:8px}
-.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}.btn.primary:hover{background:#5a3324;text-decoration:none}.btn:hover{border-color:#d9c3a0;text-decoration:none}
+.brand{
+  font-family:'Libre Baskerville',serif;
+  font-weight:700; letter-spacing:-.3px; white-space:nowrap; font-size:20px;
+}
+.brand small{
+  display:block; font-family:'Source Sans 3',sans-serif; font-weight:700;
+  font-size:12px; color:var(--muted); margin-top:2px;
+}
+nav{display:flex;gap:14px;flex-wrap:wrap;font-size:14px}
+nav a{color:var(--muted)}
+nav a:hover{color:var(--fg);text-decoration:none}
+
+.btn{
+  padding:10px 16px;border-radius:999px;border:1px solid var(--line);
+  background:transparent;font-weight:800;color:var(--fg);
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.primary:hover{background:#5a3324;text-decoration:none}
+.btn:hover{border-color:#d9c3a0;text-decoration:none}
+
 h1,h2,h3{font-family:'Libre Baskerville',serif;font-weight:700;margin:0}
 h1{font-size:56px;line-height:1.05;letter-spacing:-.9px}
 h2{font-size:30px;letter-spacing:-.4px}
 .sub{margin:6px 0 0;color:var(--muted);max-width:98ch}
+
 section{padding:36px 0}
+.section-title{margin-bottom:14px}
+
 .hero{padding:78px 0 56px}
 .hero-grid{display:grid;grid-template-columns:1fr 1.12fr;gap:32px;align-items:center}
-.hero-figure{border-radius:999px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);aspect-ratio:1/1;background:rgba(255,246,229,.9)}
+.hero-figure{
+  border-radius:999px; overflow:hidden; border:1px solid var(--line);
+  box-shadow:var(--shadow); aspect-ratio:1/1; background:rgba(255,246,229,.9);
+}
 .hero-figure img{width:100%;height:100%;object-fit:cover;display:block}
-.hero-kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.35);color:var(--muted);font-weight:800;font-size:12px}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;
+  border:1px solid var(--line);background:rgba(255,255,255,.35);
+  color:var(--muted);font-weight:800;font-size:12px;
+}
 .hero-sub{margin:12px 0 0;font-size:18px;color:var(--muted)}
 .lead{margin:14px 0 0;color:var(--muted);max-width:90ch;font-size:16.5px}
 .stack{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
 .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.chip{font-size:13px;padding:8px 12px;border-radius:999px;background:rgba(255,246,229,.72);border:1px solid var(--line);color:var(--muted)}
+.chip{
+  font-size:13px;padding:8px 12px;border-radius:999px;
+  background:rgba(255,246,229,.72);border:1px solid var(--line);color:var(--muted);
+}
+
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
 @media(max-width:1000px){.three{grid-template-columns:1fr}}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr}h1{font-size:44px}.two{grid-template-columns:1fr}}
 .sep{height:1px;background:var(--line);margin:14px 0}
+
 .media{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center}
 @media(max-width:900px){.media{grid-template-columns:1fr}}
 .figure{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:rgba(255,255,255,.35)}
 .figure img{width:100%;height:auto;display:block}
-.callout{border-left:4px solid var(--accent2);padding:16px;background:rgba(255,246,229,.62);border:1px solid var(--line);border-radius:16px;color:var(--muted)}
-ul{padding-left:18px;margin:10px 0 0}li{margin:6px 0;color:var(--muted)}
-.pill{display:inline-block;margin-top:12px;font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.35);color:var(--muted)}
-.danger{margin-top:16px;background:#fff0f0;border:1px solid #f3c2c2;border-radius:18px;padding:16px;color:#7a1f1f}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:12px;border:1px solid var(--line);background:rgba(255,246,229,.72);color:var(--muted);font-weight:900;font-size:12px}
-</style>
 
-<script>
-function fallbackImg(img, candidates){
-  let i = 0;
-  function tryNext(){
-    if(i >= candidates.length) return;
-    img.src = candidates[i++];
-  }
-  img.onerror = () => tryNext();
-  tryNext();
+.callout{
+  border-left:4px solid var(--accent2);
+  padding:16px;background:rgba(255,246,229,.62);
+  border:1px solid var(--line);border-radius:16px;color:var(--muted);
 }
-window.addEventListener('DOMContentLoaded', () => {
-  const hero = document.getElementById('heroImg');
-  const wait = document.getElementById('waitImg');
-  // probeert .jpg → .JPG → .jpeg
-  fallbackImg(hero, ['assets/hero-windmill.jpg','assets/hero-windmill.JPG','assets/hero-windmill.jpeg','assets/hero-windmill.JPEG']);
-  fallbackImg(wait, ['assets/wachttijd.jpg','assets/wachttijd.JPG','assets/wachttijd.jpeg','assets/wachttijd.JPEG']);
-});
-</script>
+ul{padding-left:18px;margin:10px 0 0}
+li{margin:6px 0;color:var(--muted)}
+
+.pill{
+  display:inline-block;margin-top:12px;font-size:12px;padding:6px 10px;border-radius:999px;
+  border:1px solid var(--line);background:rgba(255,255,255,.35);color:var(--muted);
+}
+.danger{
+  margin-top:16px;background:#fff0f0;border:1px solid #f3c2c2;border-radius:18px;padding:16px;color:#7a1f1f;
+}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:12px;
+  border:1px solid var(--line);background:rgba(255,246,229,.72);color:var(--muted);
+  font-weight:900;font-size:12px;
+}
+.faq details{
+  background:rgba(255,255,255,.42);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:14px;
+  margin-bottom:10px;
+}
+.faq summary{font-weight:900;cursor:pointer}
+.faq p{margin:10px 0 0;color:var(--muted)}
+label{display:block;font-size:13px;font-weight:900;margin-bottom:6px}
+input,textarea,select{
+  width:100%;padding:10px 12px;border-radius:14px;border:1px solid var(--line);
+  background:rgba(255,255,255,.45);color:var(--fg);font:inherit;
+}
+textarea{min-height:120px;resize:vertical}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:700px){.formgrid{grid-template-columns:1fr}}
+.small{font-size:12px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--muted)}
+</style>
 </head>
 
 <body>
 <header>
   <div class="wrap nav">
-    <div class="brand">De Tussenstap<small>zorgnavigatie & wachttijdbegeleiding</small></div>
+    <div class="brand">
+      De Tussenstap
+      <small>zorgnavigatie & wachttijdbegeleiding</small>
+    </div>
     <nav aria-label="Navigatie">
-      <a href="#waarom">Waarom</a><a href="#diensten">Diensten</a><a href="#werkwijze">Werkwijze</a><a href="#contact">Contact</a>
+      <a href="#waarom">Waarom</a>
+      <a href="#diensten">Diensten</a>
+      <a href="#werkwijze">Werkwijze</a>
+      <a href="#verwijzers">Verwijzers</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
     </nav>
     <a class="btn primary" href="#contact">Kennismaking</a>
   </div>
 </header>
 
 <main class="wrap">
+
 <section class="hero" id="top">
   <div class="hero-grid">
     <figure class="hero-figure">
-      <img id="heroImg" alt="Illustratie van een pad door het landschap met een windmolen en opkomende zon.">
+      <!-- cache-buster voor hardnekkige CDN/404 cache -->
+      <img src="assets/hero-windmill.jpg?v=3" alt="Illustratie van een pad door het landschap met een windmolen en opkomende zon.">
     </figure>
 
     <div>
@@ -115,7 +193,7 @@ window.addEventListener('DOMContentLoaded', () => {
         <a class="btn" href="#diensten">Bekijk de 2 trajecten</a>
       </div>
 
-      <div class="chips">
+      <div class="chips" aria-label="Kernpunten">
         <span class="chip">Reactie binnen 2 werkdagen</span>
         <span class="chip">Cliënten + naasten</span>
         <span class="chip">Heldere afbakening</span>
@@ -125,91 +203,180 @@ window.addEventListener('DOMContentLoaded', () => {
 </section>
 
 <section id="waarom">
-  <h2>Waarom De Tussenstap bestaat</h2>
-  <p class="sub">
-    In de praktijk is er vaak wél een behandelroute, maar weinig begeleiding in de tussenfase:
-    keuzestress, papierwerk, wachten, onzekerheid — en ondertussen moet het leven door.
-    De Tussenstap is er om die periode minder eenzaam en meer overzichtelijk te maken.
-  </p>
+  <div class="section-title">
+    <h2>Waarom De Tussenstap bestaat</h2>
+    <p class="sub">
+      In de praktijk is er vaak wél een behandelroute, maar weinig begeleiding in de tussenfase:
+      keuzestress, papierwerk, wachten, onzekerheid — en ondertussen moet het leven door.
+      De Tussenstap is er om die periode minder eenzaam en meer overzichtelijk te maken.
+    </p>
+  </div>
 
-  <div class="card media" style="margin-top:14px">
+  <div class="card media">
     <div>
       <h3>De kern</h3>
       <p class="sub" style="margin-top:10px">
         De Tussenstap levert geen therapie of diagnostiek. Wél procesbegeleiding:
-        helder krijgen wat past, ondersteunen bij aanmelding en structuur/motivatie vasthouden tijdens de wachttijd.
+        helder krijgen wat past, ondersteunen bij aanmelding en het vasthouden van structuur en motivatie tijdens de wachttijd.
+        Zodat mensen stabieler instromen wanneer de behandeling start.
       </p>
       <div class="sep"></div>
-      <div class="callout"><b>Een brug, geen behandeling.</b> Praktisch, menselijk en nuchter — met duidelijke grenzen.</div>
+      <div class="callout">
+        <b>Een brug, geen behandeling.</b> Praktisch, menselijk en nuchter — met duidelijke grenzen en focus op de volgende stap.
+      </div>
+
       <div class="sep"></div>
-      <p class="sub">
+      <h3>Oprichting (kort en eerlijk)</h3>
+      <p class="sub" style="margin-top:10px">
         De Tussenstap is opgericht vanuit ervaringsdeskundigheid. Maarten de Haan is 10 jaar in herstel en weet uit eigen ervaring
-        hoe zwaar de periode vóór behandeling en tijdens wachten kan zijn.
+        hoe zwaar de periode vóór behandeling en tijdens wachten kan zijn. Die ervaring vormt de visie, niet het product:
+        het gaat om overzicht en voortgang in een kwetsbare fase.
       </p>
-      <div class="danger"><b>Let op:</b> geen crisisdienst. Bij direct gevaar: 112 / huisartsenpost.</div>
+      <span class="pill">Merk eerst, oprichter als fundament</span>
     </div>
-    <figure class="figure"><img src="assets/bridge.png" alt="Illustratie van een brug als symbool voor overbrugging."></figure>
+
+    <figure class="figure">
+      <img src="assets/bridge.png" alt="Illustratie van een brug als symbool voor overbrugging.">
+    </figure>
+  </div>
+
+  <div class="danger">
+    <b>Belangrijk:</b> De Tussenstap is geen crisisdienst. Bij direct gevaar: bel 112 of de huisartsenpost.
   </div>
 </section>
 
 <section id="diensten">
-  <span class="badge">DIENSTEN</span>
-  <h2 style="margin-top:10px;">Twee concrete ondersteuningstrajecten</h2>
-  <p class="sub">Los of gecombineerd. Altijd met heldere afbakening: geen behandeling, wél begeleiding en organisatie vóór behandeling.</p>
+  <div class="section-title">
+    <span class="badge">DIENSTEN</span>
+    <h2 style="margin-top:10px;">Twee concrete ondersteuningstrajecten</h2>
+    <p class="sub">
+      Twee diensten die los of gecombineerd kunnen worden ingezet. Altijd met heldere afbakening: geen behandeling,
+      wél begeleiding en organisatie vóór behandeling.
+    </p>
+  </div>
 
-  <div class="two" style="margin-top:14px">
+  <div class="two">
     <div class="card">
-      <figure class="figure"><img src="assets/zorgnavigatie.jpg" alt="Zorgnavigatie: route uitstippelen."></figure>
+      <figure class="figure">
+        <img src="assets/zorgnavigatie.jpg" alt="Illustratie van zorgnavigatie: iemand die een route uitstippelt op een kaart.">
+      </figure>
       <div class="sep"></div>
       <h3>Zorgnavigatie</h3>
       <ul>
-        <li>Hulpvraag helder krijgen</li>
-        <li>Zorgopties inventariseren</li>
-        <li>Aanmeldingen begeleiden</li>
-        <li>Opvolging van vervolgstappen waar passend</li>
+        <li>Intakegesprek en verhelderen van de hulpvraag</li>
+        <li>Inventariseren van zorgopties (ambulant/klinisch, regio/landelijk)</li>
+        <li>Begeleiden bij aanmeldingen</li>
+        <li>Actief opvolgen van vervolgstappen waar passend</li>
+        <li>Met toestemming: afstemming met huisarts/POH-GGZ</li>
       </ul>
+      <span class="pill"><b>Niet:</b> therapie, diagnostiek, crisiszorg</span>
     </div>
+
     <div class="card">
-      <figure class="figure"><img id="waitImg" alt="Wachttijdbegeleiding: stap voor stap richting behandeling."></figure>
+      <figure class="figure">
+        <!-- cache-buster voor hardnekkige CDN/404 cache -->
+        <img src="assets/wachttijd.jpg?v=3" alt="Illustratie van wachttijdbegeleiding: iemand die een pad bewandelt richting een bestemming.">
+      </figure>
       <div class="sep"></div>
       <h3>Wachttijdbegeleiding</h3>
       <ul>
-        <li>Wekelijks coachgesprek (45–60 min)</li>
-        <li>Structuur en dagindeling</li>
-        <li>Motivatie vasthouden, kleine stappen</li>
-        <li>Praktische voorbereiding op intake/kliniek</li>
+        <li>Wekelijks coachgesprek (45–60 minuten)</li>
+        <li>Ondersteuning bij structuur en dagindeling</li>
+        <li>Motivatie vasthouden en kleine haalbare stappen</li>
+        <li>Signaleren van risico’s (zonder behandelinterventies)</li>
+        <li>Praktische voorbereiding op intake/kliniek en overdracht</li>
       </ul>
+      <span class="pill"><b>Niet:</b> crisiszorg of behandeling</span>
     </div>
   </div>
 </section>
 
 <section id="werkwijze">
-  <h2>Werkwijze</h2>
-  <div class="three" style="margin-top:14px">
-    <div class="card"><h3>1) Kennismaking</h3><p class="sub" style="margin-top:10px">Kort gesprek. Reactie binnen 2 werkdagen.</p></div>
-    <div class="card"><h3>2) Plan</h3><p class="sub" style="margin-top:10px">Concreet voorstel: wat wel/niet, en de eerstvolgende stap.</p></div>
-    <div class="card"><h3>3) Uitvoering</h3><p class="sub" style="margin-top:10px">Naar aanmelding en/of door de wachttijd heen richting start behandeling.</p></div>
+  <div class="section-title">
+    <h2>Werkwijze</h2>
+    <p class="sub">Eenvoudig en concreet. Doel: rust + voortgang, zonder gedoe.</p>
+  </div>
+
+  <div class="three">
+    <div class="card"><h3>1) Kennismaking</h3><p class="sub" style="margin-top:10px">Kort gesprek om te begrijpen waar je nu staat. Reactie binnen 2 werkdagen.</p></div>
+    <div class="card"><h3>2) Plan</h3><p class="sub" style="margin-top:10px">Concreet voorstel: wat we doen, hoe vaak, en wat de eerstvolgende stap is.</p></div>
+    <div class="card"><h3>3) Uitvoering</h3><p class="sub" style="margin-top:10px">Naar aanmelding en/of door de wachttijd richting start behandeling.</p></div>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p class="sub">Mail of bel/WhatsApp. Reactie binnen 2 werkdagen.</p>
-  <div class="two" style="margin-top:14px">
+<section id="verwijzers">
+  <div class="section-title">
+    <h2>Voor verwijzers (huisarts / POH-GGZ)</h2>
+    <p class="sub">Praktische ondersteuning vóór start behandeling, met heldere afbakening.</p>
+  </div>
+
+  <div class="two">
     <div class="card">
-      <p class="sub"><b>E-mail:</b> <a href="mailto:info@detussenstap.net">info@detussenstap.net</a><br>
-      <b>Telefoon/WhatsApp:</b> <a href="tel:+31645845985">06-45845985</a></p>
-      <div class="stack">
-        <a class="btn primary" href="mailto:info@detussenstap.net?subject=Kennismaking%20De%20Tussenstap">Mail</a>
-        <a class="btn" href="tel:+31645845985">Bel</a>
-      </div>
+      <h3>Wat De Tussenstap kan betekenen</h3>
+      <ul>
+        <li>Regie op zorgkeuze en aanmelding (met toestemming cliënt)</li>
+        <li>Wachttijdbegeleiding gericht op structuur en uitvalpreventie</li>
+        <li>Praktische voorbereiding op intake/kliniek</li>
+        <li>Terugkoppeling mogelijk (met toestemming)</li>
+      </ul>
     </div>
     <div class="card">
-      <p class="sub">Als je wil: noem kort waar je nu staat (aangemeld ja/nee, en waar je op vastloopt).</p>
+      <h3>Afbakening</h3>
+      <ul>
+        <li>Geen behandelinterventies of diagnostiek</li>
+        <li>Geen medicatieadvies</li>
+        <li>Geen crisiszorg of spoedopvang</li>
+        <li>AVG-bewust: delen alleen met toestemming</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="section-title">
+    <h2>FAQ</h2>
+    <p class="sub">Veelgestelde vragen, kort en duidelijk.</p>
+  </div>
+
+  <details><summary>Is De Tussenstap behandeling of therapie?</summary><p>Nee. De Tussenstap biedt geen therapie, diagnostiek of behandeling. Het is begeleiding vóór behandeling: overzicht, aanmelding en wachttijdsteun.</p></details>
+  <details><summary>Voor wie is dit bedoeld?</summary><p>Voor mensen die hulp willen maar vastlopen in keuzes/aanmelding, én voor mensen die op een wachtlijst staan. Ook naasten kunnen contact opnemen.</p></details>
+  <details><summary>Wat als er acute crisis of gevaar is?</summary><p>Dan is dit niet geschikt. Bel 112 of de huisartsenpost. De Tussenstap is geen crisisdienst.</p></details>
+  <details><summary>Hoe snel krijg ik reactie?</summary><p>Binnen 2 werkdagen.</p></details>
+</section>
+
+<section id="contact">
+  <div class="section-title">
+    <h2>Contact</h2>
+    <p class="sub">Laagdrempelig kennismaken. Beschrijf kort waar je nu staat; je krijgt reactie binnen 2 werkdagen.</p>
+  </div>
+
+  <div class="two">
+    <div class="card">
+      <h3>Direct contact</h3>
+      <p class="sub" style="margin-top:10px">
+        <b>E-mail:</b> <a href="mailto:info@detussenstap.net">info@detussenstap.net</a><br>
+        <b>Telefoon/WhatsApp:</b> <a href="tel:+31645845985">06-45845985</a>
+      </p>
+    </div>
+    <div class="card">
+      <h3>Tip</h3>
+      <p class="sub" style="margin-top:10px">Noem kort: (1) waar je vastloopt, (2) of je al aangemeld bent, en (3) wat je nu nodig hebt.</p>
       <span class="pill">Geen crisiszorg</span>
     </div>
   </div>
 </section>
+
 </main>
+
+<footer>
+  <div class="wrap">
+    © <span id="y"></span> De Tussenstap • Noord-Holland • <a href="mailto:info@detussenstap.net">info@detussenstap.net</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
