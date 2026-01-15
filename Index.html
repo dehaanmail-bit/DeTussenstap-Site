@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Maarten de Haan – zorgnavigatie & wachttijdbegeleiding | Noord-Holland</title>
+  <meta name="description" content="Coach/begeleider (ervaringsdeskundig) in Noord-Holland-Noord. Zorgnavigatie en wachttijdbegeleiding vóór behandeling in de verslavingszorg. Plan een kennismaking." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://example.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Maarten de Haan – zorgnavigatie & wachttijdbegeleiding" />
+  <meta property="og:description" content="Praktische begeleiding vóór behandeling: zorgnavigatie en steun tijdens wachttijd. Noord-Holland-Noord." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="nl_NL" />
+
+  <!-- Basic favicon (optional) -->
+  <meta name="theme-color" content="#0b1f33" />
+
+  <!-- Local Business structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Maarten de Haan – begeleiding",
+    "areaServed": ["Noord-Holland", "Noord-Holland-Noord", "Alkmaar", "Hoorn", "Den Helder", "Schagen", "Heerhugowaard"],
+    "description": "Coach/begeleider (ervaringsdeskundig) voor zorgnavigatie en wachttijdbegeleiding vóór behandeling in de verslavingszorg.",
+    "url": "https://example.com",
+    "telephone": "+31-6-00000000",
+    "email": "mail@example.com"
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --fg: #0b1f33;
+      --muted: #526173;
+      --card: #f6f8fb;
+      --line: #e6ebf2;
+      --accent: #0b1f33;
+      --accent2:#1f5f8b;
+      --ok:#0a7a3b;
+      --max: 1080px;
+      --r: 16px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial; color:var(--fg); background:var(--bg); line-height:1.5}
+    a{color:var(--accent2); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    header{position:sticky; top:0; background:rgba(255,255,255,.9); backdrop-filter:saturate(180%) blur(10px); border-bottom:1px solid var(--line); z-index:20}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{font-weight:700; letter-spacing:.2px}
+    .navlinks{display:flex; gap:14px; flex-wrap:wrap; font-size:14px}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:10px 14px; border-radius:999px; border:1px solid var(--line); background:#fff; color:var(--fg); font-weight:600; font-size:14px}
+    .btn.primary{background:var(--accent); color:#fff; border-color:var(--accent)}
+    .btn.primary:hover{opacity:.92; text-decoration:none}
+    .btn:hover{text-decoration:none; border-color:#cbd5e1}
+
+    .hero{padding:54px 0 24px}
+    .grid{display:grid; grid-template-columns:1.2fr .8fr; gap:24px}
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} header{position:relative}}
+    h1{font-size:42px; line-height:1.1; margin:0 0 12px}
+    .lead{font-size:18px; color:var(--muted); margin:0 0 18px}
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 0}
+    .badge{font-size:13px; padding:8px 10px; background:var(--card); border:1px solid var(--line); border-radius:999px; color:var(--muted)}
+    .card{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:18px}
+    .card h2{margin:0 0 10px; font-size:18px}
+    .card p{margin:0 0 10px; color:var(--muted)}
+    .kpis{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px}
+    .kpi{background:#fff; border:1px solid var(--line); border-radius:14px; padding:12px}
+    .kpi b{display:block; font-size:14px}
+    .kpi span{color:var(--muted); font-size:13px}
+
+    section{padding:30px 0}
+    .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:12px}
+    h2{margin:0; font-size:26px}
+    .sub{color:var(--muted); margin:0; max-width:70ch}
+
+    .two{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    @media (max-width: 900px){ .two{grid-template-columns:1fr}}
+    .service h3{margin:0 0 8px; font-size:18px}
+    .service ul{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+    .pill{display:inline-block; font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:#fff; color:var(--muted); margin-top:10px}
+    .note{font-size:13px; color:var(--muted)}
+    .ok{color:var(--ok); font-weight:700}
+
+    .faq details{background:#fff; border:1px solid var(--line); border-radius:14px; padding:12px 14px; margin-bottom:10px}
+    .faq summary{cursor:pointer; font-weight:700}
+    .faq p{margin:10px 0 0; color:var(--muted)}
+
+    footer{border-top:1px solid var(--line); padding:22px 0; color:var(--muted); font-size:13px}
+    .small{font-size:12px; color:var(--muted)}
+    .formgrid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    @media (max-width: 700px){ .formgrid{grid-template-columns:1fr}}
+    label{display:block; font-size:13px; font-weight:700; margin-bottom:6px}
+    input, textarea, select{
+      width:100%; padding:10px 12px; border-radius:12px; border:1px solid var(--line); background:#fff; font:inherit
+    }
+    textarea{min-height:120px; resize:vertical}
+    .stack{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .danger{background:#fff3f3; border:1px solid #ffd1d1; color:#7a0a0a; border-radius:14px; padding:12px 14px}
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">Maarten de Haan</div>
+    <nav class="navlinks" aria-label="Navigatie">
+      <a href="#diensten">Diensten</a>
+      <a href="#werkwijze">Werkwijze</a>
+      <a href="#regio">Regio</a>
+      <a href="#verwijzers">Voor verwijzers</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn primary" href="#contact">Plan kennismaking</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" id="top">
+    <div class="grid">
+      <div>
+        <h1>Zorgnavigatie en wachttijdbegeleiding in Noord-Holland</h1>
+        <p class="lead">
+          Ik help mensen die vóór behandeling vastlopen: kiezen voor passende zorg, aanmelden, en overeind blijven tijdens de wachttijd.
+          <br><b>Coach/begeleider (ervaringsdeskundig)</b> — geen therapie of behandeling.
+        </p>
+
+        <div class="stack">
+          <a class="btn primary" href="#contact">Kennismaking plannen</a>
+          <a class="btn" href="#diensten">Bekijk diensten</a>
+        </div>
+
+        <div class="badges" aria-label="Kernpunten">
+          <span class="badge">Noord-Holland-Noord</span>
+          <span class="badge">Zorgkeuze + aanmelding</span>
+          <span class="badge">Wekelijkse begeleiding wachttijd</span>
+          <span class="badge">Ik-vorm, nuchter, helder</span>
+        </div>
+      </div>
+
+      <aside class="card" aria-label="Snelle samenvatting">
+        <h2>Waar ik bij help</h2>
+        <p>Praktisch, menselijk en to-the-point. Gericht op actie en rust.</p>
+        <div class="kpis">
+          <div class="kpi">
+            <b>Zorgnavigatie</b>
+            <span>Keuze + aanmelding + opvolging</span>
+          </div>
+          <div class="kpi">
+            <b>Wachttijdbegeleiding</b>
+            <span>Structuur, motivatie, voorbereiding</span>
+          </div>
+          <div class="kpi">
+            <b>Afbakening</b>
+            <span>Geen therapie/diagnostiek</span>
+          </div>
+          <div class="kpi">
+            <b>Regio</b>
+            <span>Alkmaar, Hoorn, Den Helder e.o.</span>
+          </div>
+        </div>
+
+        <p class="pill">Eerst even sparren? Dat kan laagdrempelig.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="diensten">
+    <div class="section-title">
+      <h2>Diensten</h2>
+      <p class="sub">Twee losse diensten, ook te combineren. Altijd met heldere grenzen.</p>
+    </div>
+
+    <div class="two">
+      <div class="card service">
+        <h3>1) Zorgnavigatie</h3>
+        <p>Voor als je (nog) niet weet welke zorg past, of als het aanmeldproces vastloopt.</p>
+        <ul>
+          <li>Hulpvraag verhelderen en opties ordenen</li>
+          <li>Passende verslavingszorg zoeken (ambulant/klinisch)</li>
+          <li>Aanmelden en actief opvolgen (met jouw toestemming)</li>
+          <li>Afstemming met huisarts/POH-GGZ indien gewenst</li>
+        </ul>
+        <p class="note"><b>Wel:</b> overzicht, regie, actie. <b>Niet:</b> therapie of behandeling.</p>
+      </div>
+
+      <div class="card service">
+        <h3>2) Wachttijdbegeleiding</h3>
+        <p>Voor als je al aangemeld bent maar moet wachten — en je steun en structuur nodig hebt.</p>
+        <ul>
+          <li>Wekelijks gesprek (45–60 min) + korte check-ins</li>
+          <li>Structuur, dagindeling en voorbereiding op behandeling</li>
+          <li>Motivatie vasthouden, risico’s op tijd signaleren</li>
+          <li>Overdracht wanneer je behandeling start</li>
+        </ul>
+        <p class="note"><b>Wel:</b> begeleiding & stabiliteit. <b>Niet:</b> crisiszorg of diagnostiek.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="werkwijze">
+    <div class="section-title">
+      <h2>Werkwijze</h2>
+      <p class="sub">Eenvoudig, snel en duidelijk. Geen lange trajecten als het niet nodig is.</p>
+    </div>
+    <div class="two">
+      <div class="card">
+        <h3>Stap 1 – Kennismaking (15–30 min)</h3>
+        <p class="note">We bespreken waar je vastloopt en wat je nú nodig hebt. Daarna stel ik een korte aanpak voor.</p>
+        <span class="pill">Doel: helder plan</span>
+      </div>
+      <div class="card">
+        <h3>Stap 2 – Actie en opvolging</h3>
+        <p class="note">Bij zorgnavigatie: regelen en opvolgen. Bij wachttijd: wekelijks contact + structuur.</p>
+        <span class="pill">Doel: voortgang</span>
+      </div>
+    </div>
+    <div class="danger" style="margin-top:14px">
+      <b>Belangrijk:</b> ik bied <b>geen</b> behandeling, diagnostiek of crisiszorg. Bij direct gevaar: bel <b>112</b> of de <b>huisartsenpost</b>.
+    </div>
+  </section>
+
+  <section id="regio">
+    <div class="section-title">
+      <h2>Regio Noord-Holland-Noord</h2>
+      <p class="sub">Ik start in Noord-Holland-Noord en werk ook online/telefonisch als dat beter past.</p>
+    </div>
+    <div class="card">
+      <p class="note">
+        Werkgebied o.a.: <b>Alkmaar</b>, <b>Hoorn</b>, <b>Den Helder</b>, <b>Schagen</b>, <b>Heerhugowaard</b> en omliggende gemeenten.
+        Zoek je “wachttijdbegeleiding ggz Noordkop” of “zorgnavigatie verslavingszorg Noord-Holland”? Dan zit je goed.
+      </p>
+      <p class="small">Tip: vertel bij contact je woonplaats en waar je al bent aangemeld (als dat zo is).</p>
+    </div>
+  </section>
+
+  <section id="verwijzers">
+    <div class="section-title">
+      <h2>Voor verwijzers</h2>
+      <p class="sub">Voor huisartsen en POH-GGZ: praktische ondersteuning vóór start behandeling, met duidelijke afbakening.</p>
+    </div>
+    <div class="card">
+      <ul class="note" style="margin:0; padding-left:18px">
+        <li>Ik neem regie op zorgkeuze/aanmelding (met toestemming cliënt)</li>
+        <li>Ik bied wachttijdbegeleiding gericht op structuur en uitvalpreventie</li>
+        <li>Geen behandelinterventies, geen diagnostiek</li>
+        <li>Heldere terugkoppeling mogelijk (met toestemming cliënt)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="section-title">
+      <h2>FAQ</h2>
+      <p class="sub">Kort en duidelijk. Als je vraag er niet bij staat: neem contact op.</p>
+    </div>
+
+    <details>
+      <summary>Ben jij een behandelaar of therapeut?</summary>
+      <p>Nee. Ik ben coach/begeleider (ervaringsdeskundig). Ik bied geen therapie, diagnostiek of behandeling.</p>
+    </details>
+
+    <details>
+      <summary>Kun je helpen als iemand nog niet is aangemeld?</summary>
+      <p>Ja. Met zorgnavigatie help ik de route bepalen, aanmelden en opvolgen — zodat iemand op de juiste plek in het proces komt.</p>
+    </details>
+
+    <details>
+      <summary>Kun je contact opnemen met huisarts/POH of instelling?</summary>
+      <p>Ja, maar alleen met expliciete toestemming van de cliënt.</p>
+    </details>
+
+    <details>
+      <summary>Wat als er acute crisis of gevaar is?</summary>
+      <p>Dan is dit niet geschikt. Bel 112 of de huisartsenpost. Ik bied geen crisiszorg.</p>
+    </details>
+  </section>
+
+  <section id="contact">
+    <div class="section-title">
+      <h2>Contact</h2>
+      <p class="sub">Laagdrempelig. Beschrijf kort waar je nu staat; ik reageer zo snel mogelijk.</p>
+    </div>
+
+    <div class="two">
+      <div class="card">
+        <p class="note"><b>Bel / WhatsApp:</b> +31 6 00000000<br>
+        <b>E-mail:</b> mail@example.com</p>
+        <p class="small">Vervang deze gegevens door je echte nummer/e-mail.</p>
+        <div class="stack">
+          <a class="btn primary" href="mailto:mail@example.com?subject=Kennismaking%20De%20Tussenstap">Mail voor kennismaking</a>
+          <a class="btn" href="#top">Terug naar boven</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <!-- Simple form: works as mailto by default. For Netlify form, see below. -->
+        <form id="leadForm">
+          <div class="formgrid">
+            <div>
+              <label for="naam">Naam</label>
+              <input id="naam" name="naam" autocomplete="name" required />
+            </div>
+            <div>
+              <label for="woonplaats">Woonplaats</label>
+              <input id="woonplaats" name="woonplaats" required />
+            </div>
+          </div>
+
+          <div class="formgrid" style="margin-top:12px">
+            <div>
+              <label for="voorkeur">Contactvoorkeur</label>
+              <select id="voorkeur" name="voorkeur">
+                <option>Telefoon</option>
+                <option>WhatsApp</option>
+                <option>E-mail</option>
+              </select>
+            </div>
+            <div>
+              <label for="dienst">Waar gaat het om?</label>
+              <select id="dienst" name="dienst">
+                <option>Zorgnavigatie</option>
+                <option>Wachttijdbegeleiding</option>
+                <option>Even sparren</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <label for="bericht">Korte toelichting</label>
+            <textarea id="bericht" name="bericht" placeholder="Waar loop je nu op vast? Ben je al aangemeld?"></textarea>
+          </div>
+
+          <div style="margin-top:12px">
+            <label>
+              <input type="checkbox" required />
+              Ik begrijp dat dit geen crisiszorg is (bij gevaar: 112 / huisartsenpost).
+            </label>
+          </div>
+
+          <div class="stack" style="margin-top:12px">
+            <button class="btn primary" type="submit">Verstuur</button>
+            <span class="small" id="formHint">Dit formulier stuurt standaard via e-mail (mailto). Voor echte web-inzendingen: gebruik Netlify (route B).</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="y"></span> Maarten de Haan • Noord-Holland • Zorgnavigatie & wachttijdbegeleiding</div>
+    <div class="small">Disclaimer: geen behandeling, diagnostiek of crisiszorg. Bij direct gevaar: 112 of huisartsenpost.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+
+  // Simple "mailto" submit so it works without backend.
+  document.getElementById("leadForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const naam = document.getElementById("naam").value.trim();
+    const woonplaats = document.getElementById("woonplaats").value.trim();
+    const voorkeur = document.getElementById("voorkeur").value;
+    const dienst = document.getElementById("dienst").value;
+    const bericht = document.getElementById("bericht").value.trim();
+
+    const subject = encodeURIComponent("Kennismaking – De Tussenstap");
+    const body = encodeURIComponent(
+      `Naam: ${naam}\nWoonplaats: ${woonplaats}\nContactvoorkeur: ${voorkeur}\nOnderwerp: ${dienst}\n\nToelichting:\n${bericht}\n`
+    );
+    window.location.href = `mailto:mail@example.com?subject=${subject}&body=${body}`;
+  });
+</script>
+</body>
+</html>
