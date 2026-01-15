@@ -644,7 +644,46 @@ footer{
 
         <div style="margin-top:12px">
           <label style="font-weight:700;color:var(--muted);font-family:'Source Sans 3',sans-serif">
-            <inpu
+            <input type="checkbox" required> Ik begrijp dat dit geen crisiszorg is (bij gevaar: 112 / huisartsenpost).
+          </label>
+        </div>
 
+        <div class="stack" style="margin-top:12px">
+          <button class="btn primary" type="submit">Verstuur</button>
+          <span class="small">Dit stuurt via e-mail (mailto). Later kunnen we een echt webformulier toevoegen.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 
-  <!-- force rebuild -->
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="y"></span> De Tussenstap • Noord-Holland • <a href="mailto:info@detussenstap.net">info@detussenstap.net</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById("y").textContent = new Date().getFullYear();
+
+document.getElementById("leadForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const naam = document.getElementById("naam").value.trim();
+  const woonplaats = document.getElementById("woonplaats").value.trim();
+  const voorkeur = document.getElementById("voorkeur").value;
+  const onderwerp = document.getElementById("onderwerp").value;
+  const bericht = document.getElementById("bericht").value.trim();
+
+  const subject = encodeURIComponent("Kennismaking – De Tussenstap");
+  const body = encodeURIComponent(
+    `Naam: ${naam}\nWoonplaats: ${woonplaats}\nContactvoorkeur: ${voorkeur}\nOnderwerp: ${onderwerp}\n\nToelichting:\n${bericht}\n`
+  );
+
+  window.location.href = `mailto:info@detussenstap.net?subject=${subject}&body=${body}`;
+});
+</script>
+
+</body>
+</html>
