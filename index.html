@@ -187,6 +187,12 @@
       font-size:13px;
       color:var(--muted);
     }
+    /* UX-fix: geen sticky header op mobiel */
+@media (max-width: 768px) {
+  header {
+    position: relative;
+  }
+}
   </style>
 
   <script type="application/ld+json">
@@ -516,3 +522,4 @@
   </script>
 </body>
 </html>
+
