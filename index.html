@@ -193,6 +193,14 @@
     position: relative;
   }
 }
+    .brand{
+  color:var(--fg);
+  text-decoration:none;
+  display:block;
+}
+.brand:hover{
+  text-decoration:none;
+}
   </style>
 
   <script type="application/ld+json">
@@ -232,10 +240,10 @@
 <body>
   <header>
     <div class="wrap nav">
-      <div class="brand">
-        De Tussenstap
-        <small>aanmelding & wachttijdbegeleiding</small>
-      </div>
+      <a class="brand" href="index.html" aria-label="Naar de homepage">
+  De Tussenstap
+  <small>aanmelding & wachttijdbegeleiding</small>
+      </a>
 
       <nav aria-label="Navigatie">
         <a href="#diensten">Diensten</a>
@@ -529,5 +537,6 @@
   </script>
 </body>
 </html>
+
 
 
