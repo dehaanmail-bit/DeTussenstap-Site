@@ -52,14 +52,18 @@
       font-family:'Libre Baskerville',serif;
       font-weight:700; font-size:18px;
       color:var(--fg); text-decoration:none;
+      white-space:nowrap;
     }
     .btn{
       padding:10px 16px; border-radius:999px;
       border:1px solid var(--line);
       background:transparent;
       font-weight:800; color:var(--fg);
+      display:inline-flex;align-items:center;justify-content:center;
+      white-space:nowrap;
     }
     .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+    .btn.primary:hover{background:#5a3324}
 
     h1,h2,h3{font-family:'Libre Baskerville',serif;font-weight:700;margin:0}
     h1{font-size:44px;line-height:1.1}
@@ -99,6 +103,18 @@
       border:1px solid #f3c2c2;border-radius:18px;
       padding:16px;color:#7a1f1f;
     }
+
+    /* Afbeeldingblok (1 beeld, functioneel, netjes) */
+    .media{
+      display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:center;
+    }
+    @media(max-width:900px){.media{grid-template-columns:1fr}}
+    .figure{
+      border-radius:18px; overflow:hidden;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.35);
+    }
+    .figure img{width:100%;height:auto;display:block}
   </style>
 </head>
 
@@ -125,6 +141,23 @@
       <a class="btn primary" href="#contact">Plan een kennismaking</a>
     </div>
     <span class="pill">Vrijblijvend • Geen oordeel • Geen verplichting</span>
+  </section>
+
+  <!-- Beeld (na de vouw, als ademruimte) -->
+  <section aria-label="Ademruimte">
+    <div class="card media">
+      <div>
+        <h2>De eerste stap hoeft niet groot te zijn</h2>
+        <p class="sub">
+          Vaak is het genoeg om samen overzicht te maken: wat speelt er,
+          wat past, en wat is de eerstvolgende haalbare actie.
+        </p>
+      </div>
+
+      <figure class="figure">
+        <img data-asset="bridge.png" src="assets/bridge.png" alt="Illustratie van een brug als symbool voor overbrugging." />
+      </figure>
+    </div>
   </section>
 
   <!-- Herkenning -->
@@ -184,7 +217,7 @@
   <section>
     <div class="danger">
       <b>Belangrijk:</b> De Tussenstap is geen crisisdienst.
-      Bij direct gevaar: bel 112 of neem contact op met de huisartsenpost.
+      Bij direct gevaar: bel 112 of neem contact op met de huisartsenpost/crisisdienst.
     </div>
   </section>
 
@@ -192,21 +225,3 @@
   <section id="contact">
     <span class="badge">KENNISMAKING</span>
     <h2 style="margin-top:10px;">Je hoeft dit niet alleen te doen</h2>
-    <p class="sub">
-      Wil je samen kijken wat nu een logische eerste stap is?
-      Neem gerust contact op.
-    </p>
-
-    <div class="stack">
-      <a class="btn primary" href="mailto:info@detussenstap.net?subject=Kennismaking">Mail</a>
-      <a class="btn" href="tel:+31645845985">Bel of WhatsApp</a>
-    </div>
-  </section>
-
-</main>
-
-<script>
-  // nothing fancy, intentionally calm
-</script>
-</body>
-</html>
