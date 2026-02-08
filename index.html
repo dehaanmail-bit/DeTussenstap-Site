@@ -210,6 +210,45 @@
 .hero-text .hero-sub{
   max-width:60ch;
 }
+    /* Mobile header: sticky + shrink on scroll */
+@media (max-width: 768px){
+  header{
+    position: sticky;
+    top: 0;
+  }
+
+  /* Kleine animatie, voelt “gelukt” */
+  header .nav{
+    transition: padding .18s ease, gap .18s ease;
+  }
+  header{
+    transition: box-shadow .18s ease, background .18s ease;
+  }
+
+  /* Ingeklapte state */
+  header.shrink{
+    box-shadow: 0 8px 20px rgba(74,46,31,.10);
+    background: rgba(251,243,223,.96);
+  }
+  header.shrink .nav{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 10px;
+  }
+
+  /* Verberg menu-links in shrink-mode (brand + primary button blijven) */
+  header.shrink nav{
+    display: none;
+  }
+
+  /* Maak merk iets compacter */
+  header.shrink .brand{
+    font-size: 18px;
+  }
+  header.shrink .brand small{
+    display: none;
+  }
+}
     
   </style>
 
@@ -561,9 +600,37 @@
         });
       });
     })();
+    <script>
+  // Jaar in footer
+  document.getElementById("y").textContent = new Date().getFullYear();
+
+  // Mobile header shrink on scroll
+  (function mobileHeaderShrink(){
+    const header = document.querySelector("header");
+    if (!header) return;
+
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+
+      window.requestAnimationFrame(() => {
+        const y = window.scrollY || 0;
+        if (y > 40) header.classList.add("shrink");
+        else header.classList.remove("shrink");
+        ticking = false;
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
+  
   </script>
 </body>
 </html>
+
 
 
 
