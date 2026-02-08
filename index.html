@@ -44,8 +44,7 @@
 
     header{
       position:sticky; top:0; z-index:30;
-      background:rgba(251,243,223,.92);
-      backdrop-filter:blur(8px);
+      background:rgba(251,243,223,.96);
       border-bottom:1px solid var(--line);
     }
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -199,12 +198,11 @@
       color:var(--muted);
     }
 
-    /* Scherm 1: tekst boven de vouw (altijd vóór beeld) */
     .top-message{padding:22px 0 10px}
     .top-message h1{max-width:18ch}
     .top-message .hero-sub{max-width:60ch}
 
-    /* Mobile: header compacter (zoals je nu prettig vindt) */
+    /* Mobile: header compact, geen menu (zoals afgesproken) */
     @media (max-width: 768px){
       .brand{font-size:18px}
       .brand small{display:none}
@@ -234,7 +232,7 @@
   </header>
 
   <main class="wrap">
-    <!-- SCHERM 1: Emotionele landing -->
+    <!-- SCHERM 1 -->
     <section class="top-message" id="top" aria-label="Eerste indruk">
       <span class="hero-kicker">Je bent niet alleen</span>
       <h1 style="margin-top:10px;">Je hoeft het niet alleen te doen.</h1>
@@ -251,7 +249,7 @@
       <span class="pill">Vrijblijvend. Geen oordeel. Geen verplichting.</span>
     </section>
 
-    <!-- SCHERM 2: Ademruimte (beeld + rust) -->
+    <!-- SCHERM 2 -->
     <section class="hero" aria-label="Ademruimte">
       <div class="hero-grid">
         <figure class="hero-figure">
@@ -278,7 +276,7 @@
       </div>
     </section>
 
-    <!-- SCHERM 3: Waarom (eerst betekenis) -->
+    <!-- Waarom -->
     <section id="waarom">
       <div class="badge">WAAROM</div>
       <h2 style="margin-top:10px;">Waarom De Tussenstap bestaat</h2>
@@ -301,6 +299,12 @@
           <div class="callout">
             <b>Oprichters:</b> Maarten de Haan & Lucas Bok. Beiden ervaringsdeskundig en gedreven om de tussenfase menselijker en overzichtelijker te maken.
           </div>
+
+          <!-- NEW: Wie wij zijn link (rustig, logisch, niet bovenaan) -->
+          <div class="stack" style="margin-top:14px;">
+            <a class="btn" href="wie-wij-zijn.html">Wie wij zijn</a>
+            <a class="btn primary" href="#contact">Kennismaking</a>
+          </div>
         </div>
 
         <figure class="figure">
@@ -309,7 +313,7 @@
       </div>
     </section>
 
-    <!-- SCHERM 4: Wat wij doen (zorgnavigatie uitgelegd + term terug) -->
+    <!-- Wat wij doen -->
     <section id="wat">
       <div class="badge">WAT WIJ DOEN</div>
       <h2 style="margin-top:10px;">Naast je staan, zodat jij weer kunt bewegen</h2>
@@ -336,7 +340,7 @@
       </div>
     </section>
 
-    <!-- Hulpmiddelen (verdiepingspagina’s met links) -->
+    <!-- Hulpmiddelen -->
     <section id="hulpmiddelen">
       <div class="badge">HULPMIDDELEN</div>
       <h2 style="margin-top:10px;">Twee veelvoorkomende situaties</h2>
@@ -394,7 +398,7 @@
       </div>
     </section>
 
-    <!-- Voor verwijzers (blijft, maar later in de flow) -->
+    <!-- Verwijzers -->
     <section id="verwijzers">
       <div class="badge">VOOR VERWIJZERS</div>
       <h2 style="margin-top:10px;">Voor huisartsen & POH-GGZ</h2>
@@ -407,104 +411,4 @@
           <h3>Wat wij kunnen betekenen</h3>
           <ul>
             <li>Regie op zorgkeuze en aanmelding (met toestemming cliënt)</li>
-            <li>Wachttijdsteun gericht op structuur en uitvalpreventie</li>
-            <li>Praktische voorbereiding op intake/kliniek</li>
-            <li>Discreet en AVG-bewust werken</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Afbakening</h3>
-          <ul>
-            <li>Geen behandelinterventies of diagnostiek</li>
-            <li>Geen medicatieadvies</li>
-            <li>Geen crisiszorg of spoedopvang</li>
-            <li>Geen vervanging van huisarts/POH-GGZ/instelling</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="faq">
-      <div class="badge">FAQ</div>
-      <h2 style="margin-top:10px;">Veelgestelde vragen</h2>
-      <p class="sub">Kort en duidelijk.</p>
-
-      <div style="margin-top:14px;">
-        <details>
-          <summary>Is De Tussenstap behandeling of therapie?</summary>
-          <p>Nee. De Tussenstap biedt geen therapie, diagnostiek of behandeling. Het is ondersteuning vóór behandeling: overzicht, aanmelding en steun in de wachttijd.</p>
-        </details>
-
-        <details>
-          <summary>Voor wie is dit bedoeld?</summary>
-          <p>Voor mensen die hulp zoeken bij gebruik/verslaving en vastlopen in de eerste stap, én voor mensen die op een wachtlijst staan. Ook naasten kunnen contact opnemen.</p>
-        </details>
-
-        <details>
-          <summary>Hoe snel krijg ik reactie?</summary>
-          <p>Binnen 2 werkdagen.</p>
-        </details>
-
-        <details>
-          <summary>Wat als er acute crisis of gevaar is?</summary>
-          <p>Dan is dit niet geschikt. Bel 112 of de huisartsenpost/crisisdienst. De Tussenstap is geen crisisdienst.</p>
-        </details>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <div class="badge">CONTACT</div>
-      <h2 style="margin-top:10px;">Kennismaken</h2>
-      <p class="sub">Mail of bel/WhatsApp. Je krijgt reactie binnen 2 werkdagen.</p>
-
-      <div class="two" style="margin-top:14px;">
-        <div class="card">
-          <h3>Direct contact</h3>
-          <p class="sub" style="margin-top:10px;">
-            <b>E-mail:</b> <a href="mailto:info@detussenstap.net">info@detussenstap.net</a><br />
-            <b>Telefoon/WhatsApp:</b> <a href="tel:+31645845985">06-45845985</a>
-          </p>
-          <div class="stack">
-            <a class="btn primary" href="mailto:info@detussenstap.net?subject=Kennismaking%20De%20Tussenstap">Mail</a>
-            <a class="btn" href="tel:+31645845985">Bel</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Werkgebied</h3>
-          <p class="sub" style="margin-top:10px;">
-            Heel Noord-Holland. Online of op locatie waar passend.
-          </p>
-          <span class="pill">Reactie binnen 2 werkdagen</span>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="y"></span> De Tussenstap • Noord-Holland •
-      <a href="mailto:info@detussenstap.net">info@detussenstap.net</a>
-    </footer>
-  </main>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-
-    (function fixAssetPaths(){
-      const imgs = document.querySelectorAll("img[data-asset]");
-      imgs.forEach(img => {
-        const fname = img.getAttribute("data-asset");
-        const good = "assets/" + fname;
-        const src = img.getAttribute("src") || "";
-        if (!src || src.startsWith("/assets/") || src.includes("githubusercontent.com")) {
-          img.setAttribute("src", good);
-        }
-        img.addEventListener("error", () => {
-          img.setAttribute("src", good + "?v=" + Date.now());
-        });
-      });
-    })();
-  </script>
-</body>
-</html>
+            <li>Wachttijdsteun gericht op structuur en uitvalprevent
