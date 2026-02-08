@@ -54,6 +54,22 @@
       color:var(--fg); text-decoration:none;
       white-space:nowrap;
     }
+    .navlink{
+      color:var(--muted);
+      font-weight:800;
+      font-size:14px;
+      text-decoration:none;
+      padding:10px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+      white-space:nowrap;
+    }
+    .navlink:hover{
+      color:var(--fg);
+      border-color:var(--line);
+      text-decoration:none;
+    }
+
     .btn{
       padding:10px 16px; border-radius:999px;
       border:1px solid var(--line);
@@ -114,6 +130,10 @@
       background:rgba(255,255,255,.35);
     }
     .figure img{width:100%;height:auto;display:block}
+
+    @media(max-width:768px){
+      .navlink{display:none;}
+    }
   </style>
 </head>
 
@@ -121,13 +141,13 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html">De Tussenstap</a>
+    <a class="navlink" href="wie-wij-zijn.html">Wie wij zijn</a>
     <a class="btn primary" href="index.html#contact">Kennismaking</a>
   </div>
 </header>
 
 <main class="wrap">
 
-  <!-- Oriëntatie -->
   <section>
     <span class="badge">WACHTTIJD</span>
     <h1 style="margin-top:10px;">Ondersteuning tijdens de wachttijd voor verslavingszorg</h1>
@@ -142,7 +162,6 @@
     <span class="pill">Vrijblijvend • Geen oordeel • Geen verplichting</span>
   </section>
 
-  <!-- Beeld -->
   <section aria-label="Ademruimte">
     <div class="card media">
       <div>
@@ -159,7 +178,6 @@
     </div>
   </section>
 
-  <!-- Herkenning -->
   <section>
     <div class="two">
       <div class="card">
@@ -179,7 +197,6 @@
     </div>
   </section>
 
-  <!-- Wat wij doen -->
   <section>
     <span class="badge">WAT WIJ DOEN</span>
     <h2 style="margin-top:10px;">Naast je blijven staan tot de behandeling start</h2>
@@ -191,7 +208,6 @@
     </p>
   </section>
 
-  <!-- Samenwerking -->
   <section>
     <span class="badge">SAMENWERKEN</span>
     <div class="two" style="margin-top:14px;">
@@ -212,7 +228,6 @@
     </div>
   </section>
 
-  <!-- Afbakening -->
   <section>
     <div class="danger">
       <b>Belangrijk:</b> De Tussenstap is geen crisisdienst.
@@ -220,7 +235,6 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section id="contact">
     <span class="badge">KENNISMAKING</span>
     <h2 style="margin-top:10px;">Je hoeft deze periode niet alleen door te komen</h2>
