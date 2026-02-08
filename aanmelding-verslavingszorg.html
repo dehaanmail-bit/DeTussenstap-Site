@@ -3,23 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hulp bij aanmelden voor verslavingszorg | De Tussenstap</title>
 
-  <title>Aanmelden voor verslavingszorg: waar begin je? | De Tussenstap</title>
-  <meta name="description" content="Wil je hulp bij verslaving maar loop je vast bij aanmelding? De Tussenstap helpt je om de eerste stappen overzichtelijk en haalbaar te maken — zonder het voor je over te nemen. Noord-Holland." />
+  <meta name="description" content="Hulp nodig bij aanmelden voor verslavingszorg? De Tussenstap helpt je overzicht te krijgen en de eerste stap haalbaar te maken. Noord-Holland. Reactie binnen 2 werkdagen." />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://dehaanmail-bit.github.io/DeTussenstap-Site/aanmelding-verslavingszorg.html" />
   <meta name="theme-color" content="#fbf3df" />
+  <link rel="canonical" href="https://dehaanmail-bit.github.io/DeTussenstap-Site/aanmelding-verslavingszorg.html" />
 
-  <meta property="og:title" content="Aanmelden voor verslavingszorg – De Tussenstap" />
-  <meta property="og:description" content="Praktische begeleiding bij de eerste stap: keuze, overzicht en aanmelding — vóór behandeling. Noord-Holland." />
+  <meta property="og:title" content="Hulp bij aanmelden voor verslavingszorg" />
+  <meta property="og:description" content="Loop je vast bij de eerste stap richting hulp? Wij staan naast je en helpen overzicht en rust te brengen." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/zorgnavigatie.jpg" />
+  <meta property="og:image" content="assets/hero-windmill.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Zelfde styling als homepage / wachttijdpagina -->
   <style>
     :root{
       --bg:#fbf3df;
@@ -45,69 +44,30 @@
 
     header{
       position:sticky; top:0; z-index:30;
-      background:rgba(251,243,223,.92);
-      backdrop-filter:blur(8px);
+      background:rgba(251,243,223,.96);
       border-bottom:1px solid var(--line);
     }
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{
       font-family:'Libre Baskerville',serif;
-      font-weight:700; letter-spacing:-.3px; font-size:20px; white-space:nowrap;
+      font-weight:700; font-size:18px;
+      color:var(--fg); text-decoration:none;
     }
-    .brand small{
-      display:block; font-family:'Source Sans 3',sans-serif; font-weight:800;
-      font-size:12px; color:var(--muted); margin-top:2px;
-    }
-    nav{display:flex;gap:14px;flex-wrap:wrap;font-size:14px}
-    nav a{color:var(--muted)}
-    nav a:hover{color:var(--fg);text-decoration:none}
-
     .btn{
       padding:10px 16px; border-radius:999px;
       border:1px solid var(--line);
       background:transparent;
       font-weight:800; color:var(--fg);
-      display:inline-flex; align-items:center; justify-content:center; gap:8px;
     }
-    .btn:hover{border-color:#d9c3a0;text-decoration:none}
     .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-    .btn.primary:hover{background:#5a3324}
 
     h1,h2,h3{font-family:'Libre Baskerville',serif;font-weight:700;margin:0}
-    h1{font-size:52px;line-height:1.05;letter-spacing:-.9px}
-    h2{font-size:30px;letter-spacing:-.4px}
-    h3{font-size:20px;letter-spacing:-.2px}
-    .sub{margin:8px 0 0; color:var(--muted); max-width:100ch}
+    h1{font-size:44px;line-height:1.1}
+    h2{font-size:28px}
+    h3{font-size:18px}
 
     section{padding:36px 0}
-    .hero{padding:74px 0 52px}
-    .hero-grid{display:grid;grid-template-columns:1fr 1.12fr;gap:32px;align-items:center}
-    .hero-kicker{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:7px 12px;border-radius:999px;border:1px solid var(--line);
-      background:rgba(255,255,255,.35);
-      color:var(--muted);font-weight:900;font-size:12px;
-    }
-    .hero-sub{margin:12px 0 0;font-size:18px;color:var(--muted)}
-    .lead{margin:14px 0 0;color:var(--muted);max-width:90ch;font-size:16.5px}
-    .stack{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-    .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-    .chip{
-      font-size:13px; padding:8px 12px; border-radius:999px;
-      background:rgba(255,246,229,.72);
-      border:1px solid var(--line);
-      color:var(--muted);
-    }
-
-    .hero-figure{
-      border-radius:999px; overflow:hidden;
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      aspect-ratio:1/1;
-      background:rgba(255,246,229,.9);
-    }
-    .hero-figure img{width:100%;height:100%;object-fit:cover;display:block}
-
+    .sub{margin-top:10px;color:var(--muted);max-width:70ch}
     .card{
       background:var(--card);
       border:1px solid var(--line);
@@ -116,309 +76,137 @@
       box-shadow:var(--shadow);
     }
     .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
-    @media(max-width:1000px){.three{grid-template-columns:1fr}}
     @media(max-width:900px){
-      .hero-grid{grid-template-columns:1fr}
-      h1{font-size:42px}
       .two{grid-template-columns:1fr}
+      h1{font-size:36px}
     }
-
-    .media{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center}
-    @media(max-width:900px){.media{grid-template-columns:1fr}}
-    .figure{
-      border-radius:18px; overflow:hidden;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.35);
-    }
-    .figure img{width:100%;height:auto;display:block}
-
-    .sep{height:1px;background:var(--line);margin:14px 0}
-    ul{padding-left:18px;margin:10px 0 0}
-    li{margin:6px 0;color:var(--muted)}
-
-    .callout{
-      border-left:4px solid var(--accent2);
-      padding:16px;
-      background:rgba(255,246,229,.62);
-      border:1px solid var(--line);
-      border-radius:16px;
-      color:var(--muted);
-    }
-    .danger{
-      margin-top:16px;
-      background:#fff0f0;
-      border:1px solid #f3c2c2;
-      border-radius:18px;
-      padding:16px;
-      color:#7a1f1f;
+    .stack{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .pill{
+      display:inline-block;margin-top:12px;
+      font-size:12px;padding:6px 10px;
+      border-radius:999px;border:1px solid var(--line);
+      background:rgba(255,255,255,.35);color:var(--muted);
     }
     .badge{
-      display:inline-flex;align-items:center;gap:8px;
+      display:inline-flex;align-items:center;
       padding:8px 12px;border-radius:12px;
       border:1px solid var(--line);
       background:rgba(255,246,229,.72);
-      color:var(--muted);
-      font-weight:900;
-      font-size:12px;
+      color:var(--muted);font-weight:900;font-size:12px;
     }
-    footer{
-      border-top:1px solid var(--line);
-      padding:24px 0;
-      font-size:13px;
-      color:var(--muted);
-    }
-
-    /* UX: geen sticky header op mobiel */
-    @media (max-width: 768px) {
-      header { position: relative; }
+    .danger{
+      margin-top:16px;background:#fff0f0;
+      border:1px solid #f3c2c2;border-radius:18px;
+      padding:16px;color:#7a1f1f;
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="wrap nav">
-      <div class="brand">
-        De Tussenstap
-        <small>aanmelding & zorgnavigatie vóór behandeling</small>
-      </div>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">De Tussenstap</a>
+    <a class="btn primary" href="index.html#contact">Kennismaking</a>
+  </div>
+</header>
 
-      <nav aria-label="Navigatie">
-        <a href="index.html#diensten">Diensten</a>
-        <a href="#waarom">Waarom stokt het</a>
-        <a href="#wat-doen">Wat wij doen</a>
-        <a href="#grenzen">Afbakening</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
+<main class="wrap">
 
-      <a class="btn primary" href="index.html#contact">Kennismaking</a>
+  <!-- Oriëntatie -->
+  <section>
+    <span class="badge">AANMELDEN</span>
+    <h1 style="margin-top:10px;">Hulp bij aanmelden voor verslavingszorg</h1>
+    <p class="sub">
+      Je zit hier waarschijnlijk omdat je wél weet dat je hulp nodig hebt,
+      maar vastloopt bij waar je moet beginnen. Dat is heel normaal.
+    </p>
+
+    <div class="stack">
+      <a class="btn primary" href="#contact">Plan een kennismaking</a>
     </div>
-  </header>
+    <span class="pill">Vrijblijvend • Geen oordeel • Geen verplichting</span>
+  </section>
 
-  <main class="wrap">
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <div class="hero-grid">
-        <figure class="hero-figure">
-          <img data-asset="zorgnavigatie.jpg" src="assets/zorgnavigatie.jpg" alt="Aanmelden voor verslavingszorg: overzicht en route." />
-        </figure>
-
-        <div>
-          <span class="hero-kicker">Aanmelden verslavingszorg</span>
-          <h1 style="margin-top:10px;">Waar begin je als je hulp wil?</h1>
-          <p class="hero-sub">Praktische begeleiding bij de eerste stap — zonder het over te nemen</p>
-
-          <p class="lead">
-            Veel mensen willen zich wél aanmelden voor hulp, maar blijven hangen in twijfel, uitstel of het gevoel dat ze het “verkeerd” doen.
-            Soms speelt ook onzekerheid mee over of hulp nu al nodig is — niet omdat iemand niet wil, maar omdat het lastig is om te bepalen wat “genoeg reden” is om hulp te vragen.
-            De Tussenstap helpt om die eerste stappen weer overzichtelijk en haalbaar te maken.
-          </p>
-
-          <div class="stack">
-            <a class="btn primary" href="index.html#contact">Plan een kennismaking</a>
-            <a class="btn" href="#wat-doen">Wat we concreet doen</a>
-            <a class="btn" href="wachttijd-verslavingszorg.html">Ook: wachttijd</a>
-          </div>
-
-          <div class="chips" aria-label="Kernpunten">
-            <span class="chip">Rust & overzicht</span>
-            <span class="chip">Cliënt centraal</span>
-            <span class="chip">Noord-Holland</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="danger">
-        <b>Belangrijk:</b> De Tussenstap is geen crisisdienst. Bij direct gevaar: bel 112 of de huisartsenpost/crisisdienst.
-      </div>
-    </section>
-
-    <!-- WAAROM STOKT HET -->
-    <section id="waarom">
-      <div class="badge">HERKENNING</div>
-      <h2 style="margin-top:10px;">Waarom aanmelden vaak stokt</h2>
-
-      <div class="card" style="margin-top:14px;">
+  <!-- Herkenning -->
+  <section>
+    <div class="two">
+      <div class="card">
+        <h3>Misschien herken je dit</h3>
         <p class="sub">
-          Aanmelden voor verslavingszorg klinkt als “even regelen”, maar het voelt voor veel mensen als een berg.
-          Niet omdat het onmogelijk is — maar omdat er emotie, schaamte, twijfel en veel losse eindjes doorheen lopen.
+          Je schuift het voor je uit. Of je ziet door de opties het overzicht niet meer.
+          Of je loopt vast op formulieren, verwijzingen of wachttijden.
         </p>
-
-        <div class="sep"></div>
-
-        <div class="two">
-          <div class="card" style="box-shadow:none;">
-            <h3>Wat we vaak zien</h3>
-            <ul>
-              <li>Uitstellen tot het “een beter moment” is</li>
-              <li>Alles tegelijk willen (waardoor je niks doet)</li>
-              <li>Bang om de verkeerde keuze te maken</li>
-              <li>Het idee: “ik doe dit vast verkeerd”</li>
-            </ul>
-          </div>
-
-          <div class="card" style="box-shadow:none;">
-            <h3>Wat helpt</h3>
-            <ul>
-              <li>De situatie ordenen (zonder drama)</li>
-              <li>Stappen kleiner maken dan je hoofd ervan maakt</li>
-              <li>Tempo en opvolging vasthouden</li>
-              <li>Duidelijke afbakening: wat is nu wél en niet aan de orde</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="callout" style="margin-top:14px;">
-          <b>Belangrijk:</b> we nemen het niet van je over, maar we zorgen dat je niet blijft hangen.
-          Jij blijft eigenaar van de keuzes, wij helpen met overzicht en beweging.
-        </div>
       </div>
-    </section>
-
-    <!-- WAT DOEN WE -->
-    <section id="wat-doen">
-      <div class="badge">WAT WIJ DOEN</div>
-      <h2 style="margin-top:10px;">Zorgnavigatie: de eerste stap haalbaar maken</h2>
-      <p class="sub">Concreet, tijdelijk en doelgericht. Geen therapie — wel praktische begeleiding.</p>
-
-      <div class="two" style="margin-top:14px;">
-        <div class="card">
-          <h3>1) Ordenen van de hulpvraag</h3>
-          <p class="sub" style="margin-top:10px;">
-            We brengen rustig in kaart waar je nu staat, wat je doel is, en wat de eerstvolgende realistische stap is.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>2) Keuze overzichtelijk maken</h3>
-          <p class="sub" style="margin-top:10px;">
-            Ambulant of klinisch? In de regio of landelijk? We leggen opties naast elkaar, zonder druk of verkooppraat.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>3) Aanmelding begeleiden</h3>
-          <p class="sub" style="margin-top:10px;">
-            Samen zorgen we dat aanmeldingen gebeuren, dat je weet wat je kunt verwachten, en dat vervolgstappen niet “verdwijnen”.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>4) Opvolging en tempo</h3>
-          <p class="sub" style="margin-top:10px;">
-            De grootste winst zit vaak in: afspraken vasthouden, opvolgen, en terug naar overzicht als het hoofd vol raakt.
-          </p>
-        </div>
+      <div class="card">
+        <h3>En ondertussen…</h3>
+        <p class="sub">
+          Moet het leven door. Werk, gezin, spanning.  
+          De stap naar hulp voelt groter dan hij zou moeten zijn.
+        </p>
       </div>
+    </div>
+  </section>
 
-      <div class="card media" style="margin-top:18px;">
-        <div>
-          <h3>De kern: een brug, geen behandeling</h3>
-          <p class="sub" style="margin-top:10px;">
-            Wij gaan niet “de diepte in” en we sturen je niet een richting in.
-            We helpen om het proces van hulp zoeken weer werkbaar te maken — stap voor stap.
-          </p>
+  <!-- Wat wij doen -->
+  <section>
+    <span class="badge">WAT WIJ DOEN</span>
+    <h2 style="margin-top:10px;">Samen de eerste stap overzichtelijk maken</h2>
+    <p class="sub">
+      Wij behandelen niet en stellen geen diagnoses.
+      Wat we wél doen is samen ordenen: wat speelt er, welke zorg past,
+      en hoe maak je de aanmelding haalbaar.
+      Dit noemen we ook wel <b>zorgnavigatie</b>.
+    </p>
+  </section>
 
-          <div class="stack">
-            <a class="btn primary" href="index.html#contact">Plan een kennismaking</a>
-            <a class="btn" href="wachttijd-verslavingszorg.html">Lees over wachttijd</a>
-          </div>
-        </div>
-
-        <figure class="figure">
-          <img data-asset="bridge.png" src="assets/bridge.png" alt="Brug als symbool voor de tussenfase." />
-        </figure>
+  <!-- Hoe samenwerken -->
+  <section>
+    <span class="badge">SAMENWERKEN</span>
+    <div class="two" style="margin-top:14px;">
+      <div class="card">
+        <h3>Hoe ziet dat eruit?</h3>
+        <p class="sub">
+          We beginnen met een gesprek. Daarna helpen we met keuzes,
+          aanmelding en opvolging. Jij houdt regie; wij bieden structuur.
+        </p>
       </div>
-    </section>
-
-    <!-- AFBAKENING -->
-    <section id="grenzen">
-      <div class="badge">AFBAKENING</div>
-      <h2 style="margin-top:10px;">Wat we wél doen, en wat niet</h2>
-
-      <div class="two" style="margin-top:14px;">
-        <div class="card">
-          <h3>Wél</h3>
-          <ul>
-            <li>Overzicht en structuur aanbrengen</li>
-            <li>Keuzes en stappen praktisch maken</li>
-            <li>Begeleiden bij aanmelding en opvolging</li>
-            <li>Voorbereiden op intake/instroom</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Niet</h3>
-          <ul>
-            <li>Geen therapie of behandeling</li>
-            <li>Geen diagnostiek</li>
-            <li>Geen medisch advies of medicatieadvies</li>
-            <li>Geen crisiszorg of spoedopvang</li>
-          </ul>
-        </div>
+      <div class="card">
+        <h3>Praktisch</h3>
+        <p class="sub">
+          Online of op locatie in Noord-Holland.  
+          Afgestemd op wat jij aankunt.
+        </p>
       </div>
+    </div>
+  </section>
 
-      <div class="danger">
-        <b>Bij acute crisis:</b> bel 112 of neem contact op met de huisartsenpost/crisisdienst.
-      </div>
-    </section>
+  <!-- Afbakening -->
+  <section>
+    <div class="danger">
+      <b>Belangrijk:</b> De Tussenstap is geen crisisdienst.
+      Bij direct gevaar: bel 112 of neem contact op met de huisartsenpost.
+    </div>
+  </section>
 
-    <!-- SLOT CTA -->
-    <section>
-      <div class="badge">VOLGENDE STAP</div>
-      <h2 style="margin-top:10px;">Wil je dat we even meekijken?</h2>
-      <p class="sub">
-        Een kennismaking is kort en vrijblijvend. We kijken samen of je vastzit in uitstel/zelftwijfel,
-        en wat een haalbare eerste stap is.
-      </p>
+  <!-- CTA -->
+  <section id="contact">
+    <span class="badge">KENNISMAKING</span>
+    <h2 style="margin-top:10px;">Je hoeft dit niet alleen te doen</h2>
+    <p class="sub">
+      Wil je samen kijken wat nu een logische eerste stap is?
+      Neem gerust contact op.
+    </p>
 
-      <div class="two" style="margin-top:14px;">
-        <div class="card">
-          <h3>Plan een kennismaking</h3>
-          <p class="sub" style="margin-top:10px;">
-            Mail of bel/WhatsApp via de contactsectie op de homepage. Reactie binnen 2 werkdagen.
-          </p>
-          <div class="stack">
-            <a class="btn primary" href="index.html#contact">Naar contact</a>
-            <a class="btn" href="#top">Terug omhoog</a>
-          </div>
-        </div>
+    <div class="stack">
+      <a class="btn primary" href="mailto:info@detussenstap.net?subject=Kennismaking">Mail</a>
+      <a class="btn" href="tel:+31645845985">Bel of WhatsApp</a>
+    </div>
+  </section>
 
-        <div class="card">
-          <h3>Tip voor nu</h3>
-          <ul>
-            <li>Schrijf in 3 regels op wat je wél wil (niet wat je fout doet)</li>
-            <li>Noteer 1 concrete stap voor deze week</li>
-            <li>Kies één moment om te bellen/mailen — en zet het vast in je agenda</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+</main>
 
-    <footer>
-      © <span id="y"></span> De Tussenstap • Noord-Holland •
-      <a href="index.html#contact">Contact</a>
-    </footer>
-  </main>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-
-    (function fixAssetPaths(){
-      const imgs = document.querySelectorAll("img[data-asset]");
-      imgs.forEach(img => {
-        const fname = img.getAttribute("data-asset");
-        const good = "assets/" + fname;
-        const src = img.getAttribute("src") || "";
-        if (!src || src.startsWith("/assets/") || src.includes("githubusercontent.com")) {
-          img.setAttribute("src", good);
-        }
-        img.addEventListener("error", () => {
-          img.setAttribute("src", good + "?v=" + Date.now());
-        });
-      });
-    })();
-  </script>
+<script>
+  // nothing fancy, intentionally calm
+</script>
 </body>
 </html>
