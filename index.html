@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>De Tussenstap – Hulp bij verslaving in Noord-Holland</title>
 
-  <meta name="description" content="Je hoeft het niet alleen te doen. De Tussenstap helpt bij de eerste stap richting hulp bij gebruik/verslaving: overzicht, zorgnavigatie, aanmelding en steun tijdens wachttijd. Noord-Holland. Reactie binnen 2 werkdagen." />
+  <meta name="description" content="Je hoeft het niet alleen te doen. De Tussenstap helpt mensen in Noord-Holland die hulp zoeken bij gebruik/verslaving: overzicht, zorgnavigatie, aanmelding en steun tijdens wachttijd. Reactie binnen 2 werkdagen." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#fbf3df" />
   <link rel="canonical" href="https://dehaanmail-bit.github.io/DeTussenstap-Site/" />
@@ -47,24 +47,20 @@
       background:rgba(251,243,223,.92);
       backdrop-filter:blur(8px);
       border-bottom:1px solid var(--line);
-      transition: box-shadow .18s ease, background .18s ease;
     }
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;gap:16px;
-      transition: padding .18s ease, gap .18s ease;
-    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+
     .brand{
       font-family:'Libre Baskerville',serif;
       font-weight:700; letter-spacing:-.3px; font-size:20px; white-space:nowrap;
       color:var(--fg); text-decoration:none; display:block;
-      transition: font-size .18s ease;
     }
     .brand:hover{text-decoration:none}
     .brand small{
       display:block; font-family:'Source Sans 3',sans-serif; font-weight:800;
       font-size:12px; color:var(--muted); margin-top:2px;
-      transition: opacity .18s ease, max-height .18s ease;
     }
+
     nav{display:flex;gap:14px;flex-wrap:wrap;font-size:14px}
     nav a{color:var(--muted)}
     nav a:hover{color:var(--fg);text-decoration:none}
@@ -88,8 +84,7 @@
     .sub{margin:8px 0 0; color:var(--muted); max-width:100ch}
 
     section{padding:36px 0}
-    .hero{padding:54px 0 42px}
-    .hero-grid{display:grid;grid-template-columns:1fr 1.12fr;gap:32px;align-items:center}
+
     .hero-kicker{
       display:inline-flex;align-items:center;gap:8px;
       padding:7px 12px;border-radius:999px;border:1px solid var(--line);
@@ -106,6 +101,9 @@
       border:1px solid var(--line);
       color:var(--muted);
     }
+
+    .hero{padding:38px 0 26px}
+    .hero-grid{display:grid;grid-template-columns:1fr 1.12fr;gap:32px;align-items:center}
 
     .hero-figure{
       border-radius:999px; overflow:hidden;
@@ -125,16 +123,18 @@
     }
     .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
     .three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+
     @media(max-width:1000px){.three{grid-template-columns:1fr}}
     @media(max-width:900px){
       .hero-grid{grid-template-columns:1fr}
       h1{font-size:44px}
       .two{grid-template-columns:1fr}
-      .hero{padding:34px 0 22px}
+      .hero{padding:22px 0 16px}
     }
 
     .media{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center}
     @media(max-width:900px){.media{grid-template-columns:1fr}}
+
     .figure{
       border-radius:18px; overflow:hidden;
       border:1px solid var(--line);
@@ -199,290 +199,20 @@
       color:var(--muted);
     }
 
-    /* NEW: Boven-de-vouw tekstblok (altijd vóór beeld) */
-    .top-message{
-      padding:22px 0 8px;
-    }
-    .top-message h1{
-      max-width:18ch;
-    }
-    .top-message .hero-sub{
-      max-width:60ch;
-    }
+    /* Scherm 1: tekst boven de vouw (altijd vóór beeld) */
+    .top-message{padding:22px 0 10px}
+    .top-message h1{max-width:18ch}
+    .top-message .hero-sub{max-width:60ch}
 
-    /* Mobile shrink header */
+    /* Mobile: header compacter (zoals je nu prettig vindt) */
     @media (max-width: 768px){
-      header.shrink{
-        box-shadow: 0 8px 20px rgba(74,46,31,.10);
-        background: rgba(251,243,223,.96);
-      }
-      header.shrink .nav{
-        gap:10px;
-        padding-top:10px;
-        padding-bottom:10px;
-      }
-      header.shrink nav{
-        display:none;
-      }
-      header.shrink .brand{
-        font-size:18px;
-      }
-      header.shrink .brand small{
-        display:none;
-      }
+      .brand{font-size:18px}
+      .brand small{display:none}
+      nav{display:none}
     }
   </style>
 </head>
 
 <body>
   <header>
-    <div class="wrap nav">
-      <a class="brand" href="#top" aria-label="Terug naar boven">
-        De Tussenstap
-        <small>hulp bij verslaving • Noord-Holland</small>
-      </a>
-
-      <nav aria-label="Navigatie">
-        <a href="#waarom">Waarom</a>
-        <a href="#wat">Wat wij doen</a>
-        <a href="#hulpmiddelen">Hulpmiddelen</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <a class="btn primary" href="#contact">Kennismaking</a>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <!-- SCHERM 1: Tekst eerst -->
-    <section class="top-message" id="top" aria-label="Eerste indruk">
-      <span class="hero-kicker">Je bent niet alleen</span>
-      <h1 style="margin-top:10px;">Je hoeft het niet alleen te doen.</h1>
-
-      <p class="hero-sub">
-        Zoek je hulp bij je gebruik of verslaving?
-        Wij staan naast je en helpen je de volgende stap overzichtelijk te maken.
-      </p>
-
-      <div class="stack">
-        <a class="btn primary" href="#contact">Plan een kennismaking</a>
-      </div>
-
-      <span class="pill">Vrijblijvend. Geen oordeel. Geen verplichting.</span>
-    </section>
-
-    <!-- SCHERM 2: Ademruimte (beeld) -->
-    <section class="hero" aria-label="Ademruimte">
-      <div class="hero-grid">
-        <figure class="hero-figure">
-          <img data-asset="hero-windmill.jpg" src="assets/hero-windmill.jpg" alt="Illustratie van een landschap met windmolen en opkomende zon." />
-        </figure>
-
-        <div>
-          <h2 style="margin-top:10px;">Rust en overzicht in de eerste stap</h2>
-          <p class="lead">
-            Hulp zoeken is vaak al een stap op zichzelf. Wij helpen je om te ordenen wat er speelt,
-            welke opties er zijn, en wat een haalbare volgende stap is — zonder het voor je over te nemen.
-          </p>
-
-          <div class="chips" aria-label="Kernpunten">
-            <span class="chip">Reactie binnen 2 werkdagen</span>
-            <span class="chip">Voor cliënten + naasten</span>
-            <span class="chip">Heldere afbakening</span>
-          </div>
-
-          <div class="danger">
-            <b>Belangrijk:</b> De Tussenstap is geen crisisdienst. Bij direct gevaar: bel 112 of de huisartsenpost/crisisdienst.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SCHERM 3: Wat wij doen (zorgnavigatie uitgelegd + term terug) -->
-    <section id="wat">
-      <div class="badge">WAT WIJ DOEN</div>
-      <h2 style="margin-top:10px;">Naast je staan, zodat jij weer kunt bewegen</h2>
-      <p class="sub">
-        We leveren <b>geen therapie, diagnostiek of medische behandeling</b>.
-        Wat we wél doen is het proces overzichtelijk maken: opties ordenen, aanmelding helpen regelen en tempo vasthouden.
-        Dit wordt ook wel <b>zorgnavigatie</b> genoemd.
-      </p>
-
-      <div class="two" style="margin-top:14px;">
-        <div class="card">
-          <h3>Rust & overzicht</h3>
-          <p class="sub" style="margin-top:10px;">
-            We brengen in kaart waar je nu staat, wat je nodig hebt en wat de eerstvolgende haalbare stap is.
-            Praktisch en nuchter.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Volgende stap haalbaar maken</h3>
-          <p class="sub" style="margin-top:10px;">
-            We helpen met keuzes, aanmelding en opvolging. Jij houdt regie; wij helpen met structuur en voortgang.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Waarom -->
-    <section id="waarom">
-      <div class="badge">WAAROM</div>
-      <h2 style="margin-top:10px;">Waarom De Tussenstap bestaat</h2>
-      <p class="sub">
-        De stap van “ik wil hulp” naar “ik start behandeling” is vaak groter dan mensen denken.
-        Keuzestress, papierwerk, wachten, onzekerheid — en ondertussen moet het leven door.
-        De Tussenstap is er om die tussenfase minder eenzaam en meer overzichtelijk te maken.
-      </p>
-
-      <div class="card media" style="margin-top:14px;">
-        <div>
-          <h3>Een brug, geen behandeling</h3>
-          <p class="sub" style="margin-top:10px;">
-            We zijn er vóór behandeling: om beweging te krijgen richting hulp en om steun te bieden als wachten zwaar is.
-            Altijd met duidelijke grenzen.
-          </p>
-
-          <div class="sep"></div>
-
-          <div class="callout">
-            <b>Oprichters:</b> Maarten de Haan & Lucas Bok. Beiden ervaringsdeskundig en gedreven om de tussenfase menselijker en overzichtelijker te maken.
-          </div>
-        </div>
-
-        <figure class="figure">
-          <img data-asset="bridge.png" src="assets/bridge.png" alt="Illustratie van een brug als symbool voor overbrugging." />
-        </figure>
-      </div>
-    </section>
-
-    <!-- Hulpmiddelen (SEO-pagina links op de juiste plek) -->
-    <section id="hulpmiddelen">
-      <div class="badge">HULPMIDDELEN</div>
-      <h2 style="margin-top:10px;">Twee veelvoorkomende situaties</h2>
-      <p class="sub">
-        Soms zit je vooral vast bij de eerste stap. Soms is de wachttijd het zwaarst. Daarom hebben we twee verdiepingspagina’s gemaakt:
-      </p>
-
-      <div class="two" style="margin-top:14px;">
-        <div class="card">
-          <h3>Als je vastloopt bij aanmelden</h3>
-          <p class="sub" style="margin-top:10px;">
-            Twijfel, uitstel, schaamte of geen overzicht. We helpen om de eerste stappen haalbaar te maken.
-          </p>
-          <div class="stack">
-            <a class="btn" href="aanmelding-verslavingszorg.html">Meer over aanmelden</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Als je op een wachtlijst staat</h3>
-          <p class="sub" style="margin-top:10px;">
-            Wachten kan onrustig maken. We helpen om stabiel te blijven en voorbereid door te kunnen naar behandeling.
-          </p>
-          <div class="stack">
-            <a class="btn" href="wachttijd-verslavingszorg.html">Meer over wachttijd</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="callout" style="margin-top:14px;">
-        <b>Let op:</b> dit zijn hulpmiddelen (verdieping). De ingang blijft simpel: je hoeft het niet alleen te doen.
-      </div>
-    </section>
-
-    <!-- Werkwijze -->
-    <section id="werkwijze">
-      <div class="badge">WERKWIJZE</div>
-      <h2 style="margin-top:10px;">Zo werken we samen</h2>
-      <p class="sub">Eenvoudig, discreet en concreet. Doel: rust + voortgang, zonder gedoe.</p>
-
-      <div class="three" style="margin-top:14px;">
-        <div class="card">
-          <h3>1) Kennismaking</h3>
-          <p class="sub" style="margin-top:10px;">Kort gesprek om te begrijpen waar je nu staat. Reactie binnen 2 werkdagen.</p>
-        </div>
-        <div class="card">
-          <h3>2) Plan</h3>
-          <p class="sub" style="margin-top:10px;">Concreet voorstel: wat we doen, hoe vaak, en wat de eerstvolgende stap is.</p>
-        </div>
-        <div class="card">
-          <h3>3) Uitvoering</h3>
-          <p class="sub" style="margin-top:10px;">Naar aanmelding en/of door de wachttijd richting start behandeling.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Verwijzers -->
-    <section id="verwijzers">
-      <div class="badge">VOOR VERWIJZERS</div>
-      <h2 style="margin-top:10px;">Voor huisartsen & POH-GGZ</h2>
-      <p class="sub">
-        Praktische ondersteuning in de tussenfase, met heldere afbakening. Terugkoppeling mogelijk met toestemming van de cliënt.
-      </p>
-
-      <div class="two" style="margin-top:14px;">
-        <div class="card">
-          <h3>Wat wij kunnen betekenen</h3>
-          <ul>
-            <li>Regie op zorgkeuze en aanmelding (met toestemming cliënt)</li>
-            <li>Wachttijdsteun gericht op structuur en uitvalpreventie</li>
-            <li>Praktische voorbereiding op intake/kliniek</li>
-            <li>Discreet en AVG-bewust werken</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Afbakening</h3>
-          <ul>
-            <li>Geen behandelinterventies of diagnostiek</li>
-            <li>Geen medicatieadvies</li>
-            <li>Geen crisiszorg of spoedopvang</li>
-            <li>Geen vervanging van huisarts/POH-GGZ/instelling</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="faq">
-      <div class="badge">FAQ</div>
-      <h2 style="margin-top:10px;">Veelgestelde vragen</h2>
-      <p class="sub">Kort en duidelijk.</p>
-
-      <div style="margin-top:14px;">
-        <details>
-          <summary>Is De Tussenstap behandeling of therapie?</summary>
-          <p>Nee. De Tussenstap biedt geen therapie, diagnostiek of behandeling. Het is ondersteuning vóór behandeling: overzicht, aanmelding en steun in de wachttijd.</p>
-        </details>
-
-        <details>
-          <summary>Voor wie is dit bedoeld?</summary>
-          <p>Voor mensen die hulp zoeken bij gebruik/verslaving en vastlopen in de eerste stap, én voor mensen die op een wachtlijst staan. Ook naasten kunnen contact opnemen.</p>
-        </details>
-
-        <details>
-          <summary>Hoe snel krijg ik reactie?</summary>
-          <p>Binnen 2 werkdagen.</p>
-        </details>
-
-        <details>
-          <summary>Wat als er acute crisis of gevaar is?</summary>
-          <p>Dan is dit niet geschikt. Bel 112 of de huisartsenpost/crisisdienst. De Tussenstap is geen crisisdienst.</p>
-        </details>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <div class="badge">CONTACT</div>
-      <h2 style="margin-top:10px;">Kennismaken</h2>
-      <p class="sub">Mail of bel/WhatsApp. Je krijgt reactie binnen 2 werkdagen.</p>
-
-      <div class="two" style="margin-top:14px;">
-        <div class="card">
-          <h3>Direct contact</h3>
-          <p class="sub" style="margin-top:10px;">
-            <b>E-mail:</b> <a href="mailto:info@detussenstap.net">info@detussenstap.net</a><br />
-            <b>Telefoon/WhatsApp:</b> <a href="tel:+31645845985">06-45845985</a>
-          </p>
+    <div class="
