@@ -13,7 +13,7 @@
   <meta property="og:title" content="Hulp bij aanmelden voor verslavingszorg" />
   <meta property="og:description" content="Loop je vast bij de eerste stap richting hulp? Wij staan naast je en helpen overzicht en rust te brengen." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/hero-windmill.jpg" />
+  <meta property="og:image" content="assets/bridge.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -54,6 +54,22 @@
       color:var(--fg); text-decoration:none;
       white-space:nowrap;
     }
+    .navlink{
+      color:var(--muted);
+      font-weight:800;
+      font-size:14px;
+      text-decoration:none;
+      padding:10px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+      white-space:nowrap;
+    }
+    .navlink:hover{
+      color:var(--fg);
+      border-color:var(--line);
+      text-decoration:none;
+    }
+
     .btn{
       padding:10px 16px; border-radius:999px;
       border:1px solid var(--line);
@@ -103,8 +119,6 @@
       border:1px solid #f3c2c2;border-radius:18px;
       padding:16px;color:#7a1f1f;
     }
-
-    /* Afbeeldingblok (1 beeld, functioneel, netjes) */
     .media{
       display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:center;
     }
@@ -115,6 +129,11 @@
       background:rgba(255,255,255,.35);
     }
     .figure img{width:100%;height:auto;display:block}
+
+    /* Mobiel: header supercompact */
+    @media(max-width:768px){
+      .navlink{display:none;}
+    }
   </style>
 </head>
 
@@ -122,13 +141,13 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html">De Tussenstap</a>
+    <a class="navlink" href="wie-wij-zijn.html">Wie wij zijn</a>
     <a class="btn primary" href="index.html#contact">Kennismaking</a>
   </div>
 </header>
 
 <main class="wrap">
 
-  <!-- Oriëntatie -->
   <section>
     <span class="badge">AANMELDEN</span>
     <h1 style="margin-top:10px;">Hulp bij aanmelden voor verslavingszorg</h1>
@@ -143,7 +162,6 @@
     <span class="pill">Vrijblijvend • Geen oordeel • Geen verplichting</span>
   </section>
 
-  <!-- Beeld (na de vouw, als ademruimte) -->
   <section aria-label="Ademruimte">
     <div class="card media">
       <div>
@@ -160,7 +178,6 @@
     </div>
   </section>
 
-  <!-- Herkenning -->
   <section>
     <div class="two">
       <div class="card">
@@ -180,7 +197,6 @@
     </div>
   </section>
 
-  <!-- Wat wij doen -->
   <section>
     <span class="badge">WAT WIJ DOEN</span>
     <h2 style="margin-top:10px;">Samen de eerste stap overzichtelijk maken</h2>
@@ -192,7 +208,6 @@
     </p>
   </section>
 
-  <!-- Hoe samenwerken -->
   <section>
     <span class="badge">SAMENWERKEN</span>
     <div class="two" style="margin-top:14px;">
@@ -213,7 +228,6 @@
     </div>
   </section>
 
-  <!-- Afbakening -->
   <section>
     <div class="danger">
       <b>Belangrijk:</b> De Tussenstap is geen crisisdienst.
@@ -221,7 +235,37 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section id="contact">
     <span class="badge">KENNISMAKING</span>
     <h2 style="margin-top:10px;">Je hoeft dit niet alleen te doen</h2>
+    <p class="sub">
+      Wil je samen kijken wat nu een logische eerste stap is?
+      Neem gerust contact op.
+    </p>
+
+    <div class="stack">
+      <a class="btn primary" href="mailto:info@detussenstap.net?subject=Kennismaking">Mail</a>
+      <a class="btn" href="tel:+31645845985">Bel of WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  (function fixAssetPaths(){
+    const imgs = document.querySelectorAll("img[data-asset]");
+    imgs.forEach(img => {
+      const fname = img.getAttribute("data-asset");
+      const good = "assets/" + fname;
+      const src = img.getAttribute("src") || "";
+      if (!src || src.startsWith("/assets/") || src.includes("githubusercontent.com")) {
+        img.setAttribute("src", good);
+      }
+      img.addEventListener("error", () => {
+        img.setAttribute("src", good + "?v=" + Date.now());
+      });
+    });
+  })();
+</script>
+</body>
+</html>
