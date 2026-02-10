@@ -9,13 +9,15 @@
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#fbf3df" />
 
-  <!-- Favicons (root) -->
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
+  <!-- Favicons (repo root) -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="De Tussenstap – Hulp bij verslaving" />
@@ -49,6 +51,7 @@
     a{color:var(--accent2);text-decoration:none}
     a:hover{text-decoration:underline}
     .wrap{max-width:var(--max);margin:0 auto;padding:18px}
+
     .skip{
       position:absolute; left:-999px; top:10px;
       background:#fff; border:1px solid var(--line); padding:10px 12px; border-radius:12px;
@@ -221,34 +224,52 @@
       text-align:center;
     }
 
-    /* RESPONSIVE POLISH */
-    @media(max-width:900px){
+    /* RESPONSIVE POLISH (mobiel portrait) */
+    @media (max-width:900px){
       .hero-grid{grid-template-columns:1fr}
-      nav{display:none;}                 /* mobiel compact */
-      .brand small{display:none;}        /* tagline weg op portrait */
-      h1{font-size:38px}
 
-      /* CTA’s rustig onder elkaar */
+      /* LOGO bovenaan (above the fold) */
+      .hero-grid > figure{ order:-1; }
+      .hero-grid > div{ order:0; }
+
+      /* Header compact */
+      nav{display:none;}
+      .brand small{display:none;}
+      h1{font-size:36px}
+
+      /* CTA focus: alleen primaire CTA op mobiel */
       .stack{flex-direction:column; align-items:stretch}
       .stack .btn{width:100%; justify-content:center}
+      .stack .btn:not(.primary){display:none;}
 
-      /* Chips iets compacter */
-      .chip{font-size:12px; padding:7px 10px}
+      /* Chips weg op mobiel (scheelt ruimte above the fold) */
+      .chips{display:none;}
 
-      /* LOGO: groot (geen cap) zodat je geen 'lucht-frame' gevoel krijgt */
-      .hero-figure img{width:92vw; max-width:520px;}
+      /* Logo groot maar netjes */
+      .hero-figure img{
+        width:min(380px, 84vw);
+        max-width:380px;
+      }
     }
 
-    /* Landscape: compacter */
+    /* Landscape (mobiel): compacter en naast elkaar waar mogelijk */
     @media (max-height: 520px) and (orientation: landscape){
       header .nav{padding:8px 0}
-      h1{font-size:34px}
       .hero{padding:12px 0 10px}
+      h1{font-size:34px}
       .hero-lead{font-size:15.5px; margin-top:10px}
-      .stack{gap:8px}
       .btn{padding:9px 12px}
-      .chip{font-size:12px; padding:7px 10px}
-      .hero-figure img{width:min(520px, 46vw)}
+
+      /* In landscape mag de grid weer 2 kolommen (als er ruimte is) */
+      .hero-grid{grid-template-columns:1.05fr .95fr}
+      nav{display:none;}
+      .brand small{display:none;}
+      .chips{display:none;}
+
+      /* CTA focus blijft */
+      .stack .btn:not(.primary){display:none;}
+
+      .hero-figure img{width:min(420px, 42vw)}
     }
   </style>
 </head>
