@@ -9,6 +9,14 @@
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#fbf3df" />
 
+  <!-- Favicons (root) -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
   <!-- Open Graph -->
   <meta property="og:title" content="De Tussenstap – Hulp bij verslaving" />
   <meta property="og:description" content="Je hoeft het niet alleen te doen. Overzicht, zorgnavigatie en wachttijdbegeleiding in Noord-Holland." />
@@ -41,7 +49,14 @@
     a{color:var(--accent2);text-decoration:none}
     a:hover{text-decoration:underline}
     .wrap{max-width:var(--max);margin:0 auto;padding:18px}
+    .skip{
+      position:absolute; left:-999px; top:10px;
+      background:#fff; border:1px solid var(--line); padding:10px 12px; border-radius:12px;
+      color:var(--fg); font-weight:900;
+    }
+    .skip:focus{left:18px; z-index:999}
 
+    /* HEADER */
     header{
       position:sticky; top:0; z-index:50;
       background:rgba(251,243,223,.92);
@@ -80,6 +95,7 @@
     .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
     .btn.primary:hover{background:#5a3324}
 
+    /* TYPO */
     h1,h2,h3{font-family:'Libre Baskerville',serif;font-weight:700;margin:0}
     h1{font-size:44px;line-height:1.05;letter-spacing:-.9px}
     h2{font-size:30px;letter-spacing:-.4px}
@@ -106,7 +122,7 @@
       color:var(--muted);
     }
 
-    /* Logo hero: NAakt (geen frame/achtergrond/padding) */
+    /* Hero logo: no frame, no background */
     .hero-figure{
       margin:0;
       padding:0;
@@ -119,12 +135,12 @@
       justify-content:center;
     }
     .hero-figure img{
-      width:min(560px, 92vw);
+      width:min(520px, 88vw);
       height:auto;
       display:block;
     }
 
-    /* Cards / grids */
+    /* Cards / layouts */
     .card{
       background:var(--card);
       border:1px solid var(--line);
@@ -205,20 +221,35 @@
       text-align:center;
     }
 
-    /* Mobile / adaptive */
+    /* RESPONSIVE POLISH */
     @media(max-width:900px){
       .hero-grid{grid-template-columns:1fr}
-      nav{display:none;} /* mobiel compact */
+      nav{display:none;}                 /* mobiel compact */
+      .brand small{display:none;}        /* tagline weg op portrait */
       h1{font-size:38px}
+
+      /* CTA’s rustig onder elkaar */
+      .stack{flex-direction:column; align-items:stretch}
+      .stack .btn{width:100%; justify-content:center}
+
+      /* Chips iets compacter */
+      .chip{font-size:12px; padding:7px 10px}
+
+      /* Logo iets kleiner op portrait, maar wel above the fold */
+      .hero-figure img{width:min(360px, 78vw)}
     }
 
-    /* Accessibility */
-    .skip{
-      position:absolute; left:-999px; top:10px;
-      background:#fff; border:1px solid var(--line); padding:10px 12px; border-radius:12px;
-      color:var(--fg); font-weight:900;
+    /* Landscape: compacter */
+    @media (max-height: 520px) and (orientation: landscape){
+      header .nav{padding:8px 0}
+      h1{font-size:34px}
+      .hero{padding:12px 0 10px}
+      .hero-lead{font-size:15.5px; margin-top:10px}
+      .stack{gap:8px}
+      .btn{padding:9px 12px}
+      .chip{font-size:12px; padding:7px 10px}
+      .hero-figure img{width:min(380px, 46vw)}
     }
-    .skip:focus{left:18px; z-index:999}
   </style>
 </head>
 
