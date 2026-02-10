@@ -235,8 +235,8 @@
       /* Chips iets compacter */
       .chip{font-size:12px; padding:7px 10px}
 
-      /* Logo iets kleiner op portrait, maar wel above the fold */
-      .hero-figure img{width:min(360px, 78vw)}
+      /* LOGO: groot (geen cap) zodat je geen 'lucht-frame' gevoel krijgt */
+      .hero-figure img{width:92vw; max-width:520px;}
     }
 
     /* Landscape: compacter */
@@ -248,16 +248,12 @@
       .stack{gap:8px}
       .btn{padding:9px 12px}
       .chip{font-size:12px; padding:7px 10px}
-      .hero-figure img{width:min(380px, 46vw)}
+      .hero-figure img{width:min(520px, 46vw)}
     }
   </style>
 </head>
 
 <body>
-  <div style="position:fixed;bottom:10px;right:10px;background:#ff0;padding:8px 10px;font-weight:900;z-index:99999;border:2px solid #000;">
-LIVE TEST 999
-</div>
-
   <a class="skip" href="#main">Ga naar inhoud</a>
 
   <header>
@@ -496,4 +492,3 @@ LIVE TEST 999
   </script>
 </body>
 </html>
-
