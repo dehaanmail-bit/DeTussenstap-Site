@@ -51,6 +51,7 @@
     a{color:var(--accent2);text-decoration:none}
     a:hover{text-decoration:underline}
     .wrap{max-width:var(--max);margin:0 auto;padding:18px}
+    section{padding:26px 0}
 
     .skip{
       position:absolute; left:-999px; top:10px;
@@ -104,11 +105,11 @@
     h2{font-size:30px;letter-spacing:-.4px}
     h3{font-size:20px;letter-spacing:-.2px}
     .sub{margin:8px 0 0; color:var(--muted); max-width:100ch}
-    section{padding:26px 0}
 
     /* HERO */
     .hero{padding:18px 0 14px}
     .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:center}
+
     .hero-kicker{
       display:inline-flex;align-items:center;gap:8px;
       padding:7px 12px;border-radius:999px;border:1px solid var(--line);
@@ -116,6 +117,7 @@
       color:var(--muted);font-weight:900;font-size:12px;
     }
     .hero-lead{margin:12px 0 0;color:var(--muted);max-width:92ch;font-size:16.5px}
+
     .stack{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
     .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
     .chip{
@@ -125,22 +127,15 @@
       color:var(--muted);
     }
 
-    /* Hero logo: no frame, no background */
+    /* LOGO (geen frame/geen achtergrond) */
     .hero-figure{
-      margin:0;
-      padding:0;
-      border:none;
-      background:transparent;
-      box-shadow:none;
-      border-radius:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      margin:0; padding:0; border:none; background:transparent; box-shadow:none; border-radius:0;
+      display:flex; align-items:center; justify-content:center;
     }
     .hero-figure img{
+      display:block;
       width:min(520px, 88vw);
       height:auto;
-      display:block;
     }
 
     /* Cards / layouts */
@@ -224,52 +219,68 @@
       text-align:center;
     }
 
-    /* RESPONSIVE POLISH (mobiel portrait) */
+    /* ==========================
+       MOBIEL PORTRAIT: above-the-fold fix
+       ========================== */
     @media (max-width:900px){
-      .hero-grid{grid-template-columns:1fr}
-
-      /* LOGO bovenaan (above the fold) */
-      .hero-grid > figure{ order:-1; }
-      .hero-grid > div{ order:0; }
-
-      /* Header compact */
+      /* Header: compact */
       nav{display:none;}
       .brand small{display:none;}
-      h1{font-size:36px}
 
-      /* CTA focus: alleen primaire CTA op mobiel */
+      /* Hero: logo eerst, daarna tekst */
+      .hero-grid{grid-template-columns:1fr}
+      .hero-grid > figure{order:-1;}
+      .hero-grid > div{order:0;}
+
+      /* Logo: écht zichtbaar, maar niet idioot groot */
+      .hero-figure img{
+        width: min(320px, 72vw);
+      }
+
+      /* Korte hero boven de vouw */
+      h1{font-size:34px}
+      .hero-lead{
+        font-size:16px;
+        margin-top:10px;
+      }
+
+      /* CTA focus: alleen primaire CTA zichtbaar */
       .stack{flex-direction:column; align-items:stretch}
       .stack .btn{width:100%; justify-content:center}
       .stack .btn:not(.primary){display:none;}
 
-      /* Chips weg op mobiel (scheelt ruimte above the fold) */
+      /* Chips weg op portrait */
       .chips{display:none;}
 
-      /* Logo groot maar netjes */
-      .hero-figure img{
-        width:min(380px, 84vw);
-        max-width:380px;
-      }
+      /* Minder verticale ruimte */
+      section{padding:20px 0}
+      .hero{padding:14px 0 10px}
     }
 
-    /* Landscape (mobiel): compacter en naast elkaar waar mogelijk */
-    @media (max-height: 520px) and (orientation: landscape){
-      header .nav{padding:8px 0}
-      .hero{padding:12px 0 10px}
-      h1{font-size:34px}
-      .hero-lead{font-size:15.5px; margin-top:10px}
-      .btn{padding:9px 12px}
-
-      /* In landscape mag de grid weer 2 kolommen (als er ruimte is) */
-      .hero-grid{grid-template-columns:1.05fr .95fr}
+    /* ==========================
+       MOBIEL LANDSCAPE: compact + logo zichtbaar
+       ========================== */
+    @media (max-height:520px) and (orientation: landscape){
       nav{display:none;}
       .brand small{display:none;}
-      .chips{display:none;}
+      header .nav{padding:8px 0}
+
+      .hero{padding:10px 0 8px}
+      section{padding:18px 0}
+
+      /* In landscape kan het vaak naast elkaar */
+      .hero-grid{grid-template-columns:1.05fr .95fr}
+
+      h1{font-size:30px}
+      .hero-lead{font-size:15px; margin-top:8px}
+
+      /* Logo: zichtbaar maar niet dominant */
+      .hero-figure img{width:min(360px, 38vw)}
 
       /* CTA focus blijft */
       .stack .btn:not(.primary){display:none;}
-
-      .hero-figure img{width:min(420px, 42vw)}
+      .chips{display:none;}
+      .btn{padding:9px 12px}
     }
   </style>
 </head>
@@ -288,17 +299,14 @@
         <a href="aanmelden.html">Aanmelden</a>
         <a href="wachttijd.html">Wachttijd</a>
         <a href="wie-wij-zijn.html">Wie wij zijn</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="#contact">Contact</a>
       </nav>
 
-      <a class="btn primary" href="index.html#contact">Kennismaking</a>
+      <a class="btn primary" href="#contact">Kennismaking</a>
     </div>
   </header>
 
   <main id="main" class="wrap">
-    <div style="position:fixed;bottom:12px;left:12px;z-index:999999;background:#111;color:#fff;padding:8px 10px;border-radius:10px;font-weight:900;font-size:12px;">
-BUILD-ID: HOMEPAGE-A1
-    </div>
     <!-- HERO -->
     <section class="hero" id="top">
       <div class="hero-grid">
@@ -313,7 +321,7 @@ BUILD-ID: HOMEPAGE-A1
           </p>
 
           <div class="stack">
-            <a class="btn primary" href="index.html#contact">Plan een kennismaking</a>
+            <a class="btn primary" href="#contact">Plan een kennismaking</a>
             <a class="btn" href="aanmelden.html">Ik wil hulp / aanmelden</a>
             <a class="btn" href="wachttijd.html">Ik sta op een wachtlijst</a>
           </div>
@@ -506,7 +514,6 @@ BUILD-ID: HOMEPAGE-A1
     </section>
 
     <footer>
-      <div style="font-size:12px;opacity:.65;margin-bottom:8px;">BUILD: 2026-02-11-A</div>
       © <span id="y"></span> De Tussenstap • Noord-Holland •
       <a href="mailto:info@detussenstap.net">info@detussenstap.net</a>
     </footer>
@@ -517,5 +524,3 @@ BUILD-ID: HOMEPAGE-A1
   </script>
 </body>
 </html>
-
-
