@@ -125,7 +125,7 @@
       color:var(--muted);
     }
 
-    /* Hero logo */
+    /* Hero logo: no frame, no background */
     .hero-figure{
       margin:0;
       padding:0;
@@ -224,57 +224,66 @@
       text-align:center;
     }
 
-    /* ===== MOBIEL PORTRAIT: ABOVE-THE-FOLD FIX =====
-       Doel: logo + kicker + h1 + lead + primaire CTA in beeld.
-       Dus: logo niet mini, maar ook niet dominant.
-    */
+    /* ===== MOBIEL PORTRAIT: ABOVE THE FOLD ===== */
     @media (max-width:900px){
-      .hero{padding:10px 0 10px}
+      .wrap{padding:16px}
+      .hero{padding:8px 0 10px}
 
-      .hero-grid{grid-template-columns:1fr;gap:10px}
+      .hero-grid{
+        grid-template-columns:1fr;
+        gap:10px;
+      }
 
-      /* Logo bovenaan, netjes gecentreerd */
+      /* Logo bovenaan en gecentreerd */
       .hero-grid > figure{ order:-1; }
+      .hero-figure{justify-content:center}
 
       /* Header compact */
       nav{display:none;}
       .brand small{display:none;}
 
-      /* Typo compacter zodat alles in beeld past */
+      /* Typo compacter */
       h1{font-size:34px; line-height:1.03}
-
-      .hero-lead{font-size:15.3px; margin-top:10px}
-
-      /* Kicker iets compacter */
+      .hero-lead{font-size:15.2px; margin-top:8px}
       .hero-kicker{font-size:12px; padding:6px 10px}
 
-      /* Alleen primaire CTA zichtbaar (ruimte winst) */
-      .stack{flex-direction:column; align-items:stretch; margin-top:12px}
+      /* CTA focus: alleen primary zichtbaar */
+      .stack{flex-direction:column; align-items:stretch; margin-top:10px}
       .stack .btn{width:100%; justify-content:center}
       .stack .btn:not(.primary){display:none;}
 
-      /* Chips weg (ruimte winst above the fold) */
+      /* Chips uit (ruimte winst) */
       .chips{display:none;}
 
-      /* Logo: “goed zichtbaar” maar niet zo groot dat het de fold sloopt */
+      /* Logo: groot genoeg, maar niet dominant */
       .hero-figure img{
-        width:min(280px, 70vw);
-        max-width:280px;
+        width:clamp(240px, 62vw, 300px);
+        max-width:300px;
       }
     }
 
-    /* ===== MOBIEL LANDSCAPE: compact ===== */
+    /* ===== MOBIEL LANDSCAPE: CTA niet afsnijden ===== */
     @media (max-height: 520px) and (orientation: landscape){
       header .nav{padding:8px 0}
-      .hero{padding:10px 0 10px}
-      h1{font-size:32px}
-      .hero-lead{font-size:15px; margin-top:8px}
+      .hero{padding:8px 0 8px}
+
       nav{display:none;}
       .brand small{display:none;}
       .chips{display:none;}
+
+      .hero-grid{
+        grid-template-columns:1.05fr .95fr;
+        gap:12px;
+        align-items:center;
+      }
+
+      h1{font-size:30px; line-height:1.02}
+      .hero-lead{font-size:14.6px; margin-top:6px}
+      .stack{margin-top:8px}
+      .btn{padding:8px 12px}
       .stack .btn:not(.primary){display:none;}
-      .hero-grid{grid-template-columns:1.05fr .95fr;gap:14px}
-      .hero-figure img{width:min(360px, 40vw)}
+
+      .hero-figure img{width:min(300px, 34vw)}
     }
   </style>
 </head>
@@ -310,8 +319,8 @@
           <h1 style="margin-top:12px;">Je hoeft het niet alleen te doen.</h1>
 
           <p class="hero-lead">
-            Zoek je hulp bij je gebruik of verslaving?
-            Wij helpen je met overzicht, <b>zorgnavigatie</b> en begeleiding tijdens <b>wachttijd</b> — zodat er weer rust en beweging komt.
+            Zoek je hulp bij je gebruik of verslaving? Wij helpen je met overzicht,
+            <b>zorgnavigatie</b> en begeleiding tijdens <b>wachttijd</b> — zodat er weer rust en beweging komt.
           </p>
 
           <div class="stack">
@@ -481,7 +490,7 @@
     <!-- CONTACT -->
     <section id="contact">
       <div class="badge">Contact</div>
-      <h2 style="margin-top:10px;">Eerste gesprek plannen</h2>
+      <h2 style="margin-top:10px;">Eerste gesprek</h2>
       <p class="sub">Mail of bel/WhatsApp. Je krijgt reactie binnen 2 werkdagen.</p>
 
       <div class="two" style="margin-top:14px;">
