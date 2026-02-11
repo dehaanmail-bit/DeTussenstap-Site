@@ -3,17 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hulp bij aanmelden voor verslavingszorg | De Tussenstap</title>
 
-  <meta name="description" content="Hulp nodig bij aanmelden voor verslavingszorg? De Tussenstap helpt je overzicht te krijgen en de eerste stap haalbaar te maken. Noord-Holland. Reactie binnen 2 werkdagen." />
+  <title>Aanmelden – De Tussenstap | Hulp bij verslaving in Noord-Holland</title>
+  <meta name="description" content="Aanmelden bij De Tussenstap. Hulp bij gebruik of verslaving in Noord-Holland: overzicht, zorgnavigatie en steun tijdens wachttijd. Reactie binnen 2 werkdagen." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#fbf3df" />
-  <link rel="canonical" href="https://dehaanmail-bit.github.io/DeTussenstap-Site/aanmelding-verslavingszorg.html" />
 
-  <meta property="og:title" content="Hulp bij aanmelden voor verslavingszorg" />
-  <meta property="og:description" content="Loop je vast bij de eerste stap richting hulp? Wij staan naast je en helpen overzicht en rust te brengen." />
+  <!-- Favicons (repo root) -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aanmelden – De Tussenstap" />
+  <meta property="og:description" content="Hulp bij gebruik of verslaving in Noord-Holland. Rust, overzicht en een volgende stap. Reactie binnen 2 werkdagen." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/bridge.png" />
+  <meta property="og:image" content="assets/logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,7 +40,7 @@
       --accent2:#b86b2a;
       --max:1180px;
       --r:22px;
-      --shadow:0 14px 30px rgba(74,46,31,.06);
+      --shadow:0 14px 30px rgba(74,46,31,.08);
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
@@ -40,232 +50,398 @@
     }
     a{color:var(--accent2);text-decoration:none}
     a:hover{text-decoration:underline}
-    .wrap{max-width:var(--max);margin:0 auto;padding:24px}
+    .wrap{max-width:var(--max);margin:0 auto;padding:18px}
 
+    .skip{
+      position:absolute; left:-999px; top:10px;
+      background:#fff; border:1px solid var(--line); padding:10px 12px; border-radius:12px;
+      color:var(--fg); font-weight:900;
+    }
+    .skip:focus{left:18px; z-index:999}
+
+    /* HEADER */
     header{
-      position:sticky; top:0; z-index:30;
-      background:rgba(251,243,223,.96);
+      position:sticky; top:0; z-index:50;
+      background:rgba(251,243,223,.92);
+      backdrop-filter:blur(8px);
       border-bottom:1px solid var(--line);
     }
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:10px 0;
+    }
     .brand{
+      display:flex;flex-direction:column;gap:2px;
       font-family:'Libre Baskerville',serif;
-      font-weight:700; font-size:18px;
-      color:var(--fg); text-decoration:none;
-      white-space:nowrap;
+      font-weight:700; letter-spacing:-.3px; font-size:18px; white-space:nowrap;
+      color:inherit;
     }
-    .navlink{
-      color:var(--muted);
+    .brand small{
+      font-family:'Source Sans 3',sans-serif;
       font-weight:800;
-      font-size:14px;
-      text-decoration:none;
-      padding:10px 10px;
-      border-radius:999px;
-      border:1px solid transparent;
-      white-space:nowrap;
+      font-size:12px;
+      color:var(--muted);
     }
-    .navlink:hover{
-      color:var(--fg);
-      border-color:var(--line);
-      text-decoration:none;
-    }
+    nav{display:flex;gap:12px;flex-wrap:wrap;font-size:14px}
+    nav a{color:var(--muted)}
+    nav a:hover{color:var(--fg);text-decoration:none}
 
     .btn{
-      padding:10px 16px; border-radius:999px;
+      padding:10px 14px; border-radius:999px;
       border:1px solid var(--line);
       background:transparent;
-      font-weight:800; color:var(--fg);
-      display:inline-flex;align-items:center;justify-content:center;
+      font-weight:900; color:var(--fg);
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
       white-space:nowrap;
     }
+    .btn:hover{border-color:#d9c3a0;text-decoration:none}
     .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
     .btn.primary:hover{background:#5a3324}
 
+    /* TYPO */
     h1,h2,h3{font-family:'Libre Baskerville',serif;font-weight:700;margin:0}
-    h1{font-size:44px;line-height:1.1}
-    h2{font-size:28px}
-    h3{font-size:18px}
+    h1{font-size:44px;line-height:1.05;letter-spacing:-.9px}
+    h2{font-size:30px;letter-spacing:-.4px}
+    h3{font-size:20px;letter-spacing:-.2px}
+    .sub{margin:8px 0 0; color:var(--muted); max-width:100ch}
+    section{padding:26px 0}
 
-    section{padding:36px 0}
-    .sub{margin-top:10px;color:var(--muted);max-width:70ch}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,246,229,.72);
+      color:var(--muted);
+      font-weight:900;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+    }
+
     .card{
       background:var(--card);
       border:1px solid var(--line);
       border-radius:var(--r);
-      padding:22px;
+      padding:20px;
       box-shadow:var(--shadow);
     }
-    .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    @media(max-width:900px){
-      .two{grid-template-columns:1fr}
-      h1{font-size:36px}
-    }
-    .stack{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .pill{
-      display:inline-block;margin-top:12px;
-      font-size:12px;padding:6px 10px;
-      border-radius:999px;border:1px solid var(--line);
-      background:rgba(255,255,255,.35);color:var(--muted);
-    }
-    .badge{
-      display:inline-flex;align-items:center;
-      padding:8px 12px;border-radius:12px;
+
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media(max-width:900px){.two{grid-template-columns:1fr}}
+
+    .sep{height:1px;background:var(--line);margin:14px 0}
+    ul{padding-left:18px;margin:10px 0 0}
+    li{margin:6px 0;color:var(--muted)}
+
+    .callout{
+      border-left:4px solid var(--accent2);
+      padding:14px;
+      background:rgba(255,246,229,.62);
       border:1px solid var(--line);
-      background:rgba(255,246,229,.72);
-      color:var(--muted);font-weight:900;font-size:12px;
+      border-radius:16px;
+      color:var(--muted);
     }
     .danger{
-      margin-top:16px;background:#fff0f0;
-      border:1px solid #f3c2c2;border-radius:18px;
-      padding:16px;color:#7a1f1f;
+      margin-top:14px;
+      background:#fff0f0;
+      border:1px solid #f3c2c2;
+      border-radius:18px;
+      padding:14px;
+      color:#7a1f1f;
     }
-    .media{
-      display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:center;
-    }
-    @media(max-width:900px){.media{grid-template-columns:1fr}}
-    .figure{
-      border-radius:18px; overflow:hidden;
+    .pill{
+      display:inline-block;
+      margin-top:12px;
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.35);
+      color:var(--muted);
     }
-    .figure img{width:100%;height:auto;display:block}
 
-    /* Mobiel: header supercompact */
-    @media(max-width:768px){
-      .navlink{display:none;}
+    /* PAGE HERO */
+    .page-hero{padding:14px 0 10px}
+    .page-hero-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:18px;
+      align-items:center;
+    }
+    .kicker{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 12px;border-radius:999px;border:1px solid var(--line);
+      background:rgba(255,255,255,.35);
+      color:var(--muted);font-weight:900;font-size:12px;
+    }
+    .lead{margin:10px 0 0;color:var(--muted);max-width:92ch;font-size:16.5px}
+    .stack{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .stack .btn{align-self:flex-start}
+
+    .logo-figure{
+      margin:0;
+      padding:0;
+      border:none;
+      background:transparent;
+      box-shadow:none;
+      border-radius:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .logo-figure img{
+      width:min(380px, 70vw);
+      height:auto;
+      display:block;
+    }
+
+    /* “Zo werkt het” stappen */
+    .steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+    @media(max-width:1000px){.steps{grid-template-columns:1fr}}
+    .step{
+      background:rgba(255,255,255,.35);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+    }
+    .step b{display:inline-block;margin-bottom:6px}
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:22px 0;
+      font-size:13px;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    /* ===== MOBIEL PORTRAIT ===== */
+    @media (max-width:900px){
+      .wrap{padding:16px}
+      nav{display:none;}
+      .brand small{display:none;}
+
+      .page-hero{padding:8px 0 10px}
+      .page-hero-grid{grid-template-columns:1fr; gap:10px}
+      .page-hero-grid > figure{order:-1}
+
+      h1{font-size:34px; line-height:1.03}
+      .lead{font-size:15.2px; margin-top:8px}
+      .kicker{font-size:12px; padding:6px 10px}
+
+      .stack{flex-direction:column; align-items:stretch; margin-top:10px}
+      .stack .btn{width:100%; justify-content:center}
+
+      /* Logo: zichtbaar, maar laat ruimte voor tekst */
+      .logo-figure img{width:clamp(220px, 58vw, 280px); max-width:280px}
+    }
+
+    /* ===== MOBIEL LANDSCAPE ===== */
+    @media (max-height: 520px) and (orientation: landscape){
+      header .nav{padding:8px 0}
+      nav{display:none;}
+      .brand small{display:none;}
+
+      .page-hero{padding:8px 0 8px}
+      .page-hero-grid{gap:12px}
+
+      h1{font-size:30px; line-height:1.02}
+      .lead{font-size:14.6px; margin-top:6px}
+      .btn{padding:8px 12px}
+
+      .logo-figure img{width:min(300px, 34vw)}
     }
   </style>
 </head>
 
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="index.html">De Tussenstap</a>
-    <a class="navlink" href="wie-wij-zijn.html">Wie wij zijn</a>
-    <a class="btn primary" href="index.html#contact">Kennismaking</a>
-  </div>
-</header>
+  <a class="skip" href="#main">Ga naar inhoud</a>
 
-<main class="wrap">
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="index.html" style="text-decoration:none;">
+        De Tussenstap
+        <small>je hoeft het niet alleen te doen</small>
+      </a>
 
-  <section>
-    <span class="badge">AANMELDEN</span>
-    <h1 style="margin-top:10px;">Hulp bij aanmelden voor verslavingszorg</h1>
-    <p class="sub">
-      Je zit hier waarschijnlijk omdat je wél weet dat je hulp nodig hebt,
-      maar vastloopt bij waar je moet beginnen. Dat is heel normaal.
-    </p>
+      <nav aria-label="Navigatie">
+        <a href="aanmelden.html" aria-current="page">Aanmelden</a>
+        <a href="wachttijd.html">Wachttijd</a>
+        <a href="wie-wij-zijn.html">Wie wij zijn</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
 
-    <div class="stack">
-      <a class="btn primary" href="#contact">Plan een kennismaking</a>
+      <a class="btn primary" href="#contact">Plan een eerste gesprek</a>
     </div>
-    <span class="pill">Vrijblijvend • Geen oordeel • Geen verplichting</span>
-  </section>
+  </header>
 
-  <section aria-label="Ademruimte">
-    <div class="card media">
-      <div>
-        <h2>De eerste stap hoeft niet groot te zijn</h2>
-        <p class="sub">
-          Vaak is het genoeg om samen overzicht te maken: wat speelt er,
-          wat past, en wat is de eerstvolgende haalbare actie.
-        </p>
+  <main id="main" class="wrap">
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="page-hero-grid">
+        <div>
+          <span class="kicker">Aanmelden / eerste stap</span>
+          <h1 style="margin-top:12px;">Hulp zoeken is al een stap op zich.</h1>
+
+          <p class="lead">
+            Je hoeft nog niet te weten waar je naartoe moet. We beginnen gewoon bij waar jij nu staat.
+            Samen maken we overzicht en bepalen we een logische volgende stap — zonder gedoe en zonder oordeel.
+          </p>
+
+          <div class="stack">
+            <a class="btn primary" href="#contact">Plan een eerste gesprek</a>
+            <a class="btn" href="tel:+31645845985">Bel / WhatsApp</a>
+          </div>
+
+          <p class="sub" style="margin-top:10px;">
+            <b>Reactie binnen 2 werkdagen.</b> Werkgebied: Noord-Holland (online of op locatie waar passend).
+          </p>
+        </div>
+
+        <figure class="logo-figure" aria-label="Logo De Tussenstap">
+          <img src="assets/logo.png" alt="Logo De Tussenstap" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- WAT JE KUNT VERWACHTEN -->
+    <section aria-labelledby="verwachten">
+      <div class="badge">Wat je kunt verwachten</div>
+      <h2 id="verwachten" style="margin-top:10px;">Rust → overzicht → volgende stap</h2>
+      <p class="sub">
+        Aanmelden hoeft niet zwaar te zijn. Dit is wat er meestal gebeurt nadat je contact opneemt.
+      </p>
+
+      <div class="steps" style="margin-top:14px;">
+        <div class="step">
+          <b>1) We plannen een eerste gesprek</b><br />
+          Kort, rustig en zonder druk. Telefonisch of online. Jij bepaalt.
+        </div>
+        <div class="step">
+          <b>2) We krijgen helder waar je nu staat</b><br />
+          Wat speelt er? Waar loop je vast? Wat is al geprobeerd? Geen “perfect verhaal” nodig.
+        </div>
+        <div class="step">
+          <b>3) We kiezen een route die logisch is</b><br />
+          Zorgnavigatie (keuze/aanmelding), wachttijdbegeleiding, of eerst iets anders dat nodig is.
+        </div>
       </div>
 
-      <figure class="figure">
-        <img data-asset="bridge.png" src="assets/bridge.png" alt="Illustratie van een brug als symbool voor overbrugging." />
-      </figure>
-    </div>
-  </section>
-
-  <section>
-    <div class="two">
-      <div class="card">
-        <h3>Misschien herken je dit</h3>
-        <p class="sub">
-          Je schuift het voor je uit. Of je ziet door de opties het overzicht niet meer.
-          Of je loopt vast op formulieren, verwijzingen of wachttijden.
-        </p>
+      <div class="callout" style="margin-top:14px;">
+        <b>Belangrijk:</b> Jij houdt de regie. Wij maken het overzichtelijk en helpen je de volgende stap zetten.
       </div>
-      <div class="card">
-        <h3>En ondertussen…</h3>
-        <p class="sub">
-          Moet het leven door. Werk, gezin, spanning.  
-          De stap naar hulp voelt groter dan hij zou moeten zijn.
-        </p>
+    </section>
+
+    <!-- VOOR WIE -->
+    <section aria-labelledby="voorwie">
+      <div class="badge">Voor wie</div>
+      <h2 id="voorwie" style="margin-top:10px;">Wanneer dit past</h2>
+
+      <div class="two" style="margin-top:14px;">
+        <div class="card">
+          <h3>Dit herken je misschien</h3>
+          <ul>
+            <li>Je merkt dat je grip verliest op gebruik (of je omgeving zegt het)</li>
+            <li>Je twijfelt of je “erg genoeg” bent voor hulp</li>
+            <li>Je wilt wel, maar je loopt vast in keuzes en aanmeldingen</li>
+            <li>Je staat op een wachtlijst en het wordt zwaarder</li>
+            <li>Je naaste(n) maken zich zorgen en jij weet niet waar te beginnen</li>
+          </ul>
+          <span class="pill">Hulp bij verslaving / gebruik – Noord-Holland</span>
+        </div>
+
+        <div class="card">
+          <h3>Waar we je bij helpen</h3>
+          <ul>
+            <li>Overzicht: wat speelt er en wat is nu het meest logisch?</li>
+            <li>Zorgnavigatie: opties op een rij en helpen bij aanmelden</li>
+            <li>Wachttijd: structuur, rust en volhouden richting start</li>
+            <li>Praktische voorbereiding op intake of opname</li>
+          </ul>
+          <a class="btn" href="wachttijd.html" style="margin-top:12px;">Lees over wachttijd</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <span class="badge">WAT WIJ DOEN</span>
-    <h2 style="margin-top:10px;">Samen de eerste stap overzichtelijk maken</h2>
-    <p class="sub">
-      Wij behandelen niet en stellen geen diagnoses.
-      Wat we wél doen is samen ordenen: wat speelt er, welke zorg past,
-      en hoe maak je de aanmelding haalbaar.
-      Dit noemen we ook wel <b>zorgnavigatie</b>.
-    </p>
-  </section>
+    <!-- AFBAKENING -->
+    <section aria-labelledby="afbakening">
+      <div class="badge">Helderheid</div>
+      <h2 id="afbakening" style="margin-top:10px;">Wat dit niet is</h2>
 
-  <section>
-    <span class="badge">SAMENWERKEN</span>
-    <div class="two" style="margin-top:14px;">
-      <div class="card">
-        <h3>Hoe ziet dat eruit?</h3>
-        <p class="sub">
-          We beginnen met een gesprek. Daarna helpen we met keuzes,
-          aanmelding en opvolging. Jij houdt regie; wij bieden structuur.
-        </p>
+      <div class="two" style="margin-top:14px;">
+        <div class="card">
+          <h3>Wij doen niet</h3>
+          <ul>
+            <li>Therapie, diagnostiek of medische behandeling</li>
+            <li>Medicatieadvies</li>
+            <li>Crisiszorg of spoedopvang</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Belangrijk om te weten</h3>
+          <ul>
+            <li>Bij direct gevaar: bel 112 of de huisartsenpost</li>
+            <li>Medische regie blijft bij huisarts/POH-GGZ</li>
+            <li>Wij zijn een brug vóór behandeling, geen vervanging</li>
+          </ul>
+          <div class="danger">
+            <b>Acute crisis?</b> Bel 112 of de huisartsenpost. De Tussenstap is geen crisisdienst.
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3>Praktisch</h3>
-        <p class="sub">
-          Online of op locatie in Noord-Holland.  
-          Afgestemd op wat jij aankunt.
-        </p>
+
+      <div class="callout" style="margin-top:14px;">
+        <b>Over ons (kort):</b> Maarten de Haan & Lucas Bok — beiden ervaringsdeskundig.
+        Op de pagina <a href="wie-wij-zijn.html"><b>Wie wij zijn</b></a> vertellen we meer.
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <div class="danger">
-      <b>Belangrijk:</b> De Tussenstap is geen crisisdienst.
-      Bij direct gevaar: bel 112 of neem contact op met de huisartsenpost/crisisdienst.
-    </div>
-  </section>
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contacttitel">
+      <div class="badge">Contact</div>
+      <h2 id="contacttitel" style="margin-top:10px;">Plan een eerste gesprek</h2>
+      <p class="sub">
+        Je mag mailen of bellen/WhatsAppen. Geen ingewikkelde intake. We beginnen bij waar jij nu staat.
+      </p>
 
-  <section id="contact">
-    <span class="badge">KENNISMAKING</span>
-    <h2 style="margin-top:10px;">Je hoeft dit niet alleen te doen</h2>
-    <p class="sub">
-      Wil je samen kijken wat nu een logische eerste stap is?
-      Neem gerust contact op.
-    </p>
+      <div class="two" style="margin-top:14px;">
+        <div class="card">
+          <h3>Direct contact</h3>
+          <p class="sub" style="margin-top:10px;">
+            <b>E-mail:</b> <a href="mailto:info@detussenstap.net">info@detussenstap.net</a><br />
+            <b>Telefoon/WhatsApp:</b> <a href="tel:+31645845985">06-45845985</a>
+          </p>
+          <div class="stack">
+            <a class="btn primary" href="mailto:info@detussenstap.net?subject=Eerste%20gesprek%20De%20Tussenstap">Mail voor eerste gesprek</a>
+            <a class="btn" href="tel:+31645845985">Bel / WhatsApp</a>
+          </div>
+          <p class="sub" style="margin-top:10px;">
+            <b>Reactie binnen 2 werkdagen.</b>
+          </p>
+        </div>
 
-    <div class="stack">
-      <a class="btn primary" href="mailto:info@detussenstap.net?subject=Kennismaking">Mail</a>
-      <a class="btn" href="tel:+31645845985">Bel of WhatsApp</a>
-    </div>
-  </section>
+        <div class="card">
+          <h3>Wat zet je in een bericht?</h3>
+          <p class="sub" style="margin-top:10px;">
+            Houd het simpel. Bijvoorbeeld:
+          </p>
+          <ul>
+            <li>Waar loop je nu op vast?</li>
+            <li>Ben je al ergens aangemeld?</li>
+            <li>Wil je bellen of online afspreken?</li>
+          </ul>
+          <span class="pill">Je hoeft het niet “goed” te doen.</span>
+        </div>
+      </div>
+    </section>
 
-</main>
+    <footer>
+      © <span id="y"></span> De Tussenstap • Noord-Holland •
+      <a href="mailto:info@detussenstap.net">info@detussenstap.net</a>
+    </footer>
+  </main>
 
-<script>
-  (function fixAssetPaths(){
-    const imgs = document.querySelectorAll("img[data-asset]");
-    imgs.forEach(img => {
-      const fname = img.getAttribute("data-asset");
-      const good = "assets/" + fname;
-      const src = img.getAttribute("src") || "";
-      if (!src || src.startsWith("/assets/") || src.includes("githubusercontent.com")) {
-        img.setAttribute("src", good);
-      }
-      img.addEventListener("error", () => {
-        img.setAttribute("src", good + "?v=" + Date.now());
-      });
-    });
-  })();
-</script>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
