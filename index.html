@@ -225,35 +225,59 @@
       text-align:center;
     }
 
-    /* RESPONSIVE POLISH (mobiel portrait) */
-    @media (max-width:900px){
-      .hero-grid{grid-template-columns:1fr}
-
-      /* LOGO bovenaan above-the-fold */
-      .hero-grid > figure{ order:-1; }
-      .hero-grid > div{ order:0; }
-
-      /* Header compact */
-      nav{display:none;}
-      .brand small{display:none;}
-      h1{font-size:34px}
-
-      /* CTA focus: 1 primaire CTA boven de fold */
-      .stack{flex-direction:column; align-items:stretch}
-      .stack .btn{width:100%; justify-content:center}
-      .stack .btn:not(.primary){display:none;}
-
-      /* Chips weg op mobiel (ruimte) */
-      .chips{display:none;}
-
-      /* Logo groot maar netjes */
-      .hero-figure img{width:min(420px, 88vw);}
-    }
+  
 
     /* Landscape (mobiel) */
     @media (max-height: 520px) and (orientation: landscape){
       header .nav{padding:8px 0}
-      .hero{padding:12px 0 10px}
+      .hero{padding:/* RESPONSIVE POLISH (mobiel portrait) */
+@media (max-width:900px){
+
+  .hero-grid{grid-template-columns:1fr}
+
+  /* LOGO bovenaan */
+  .hero-grid > figure{ order:-1; }
+  .hero-grid > div{ order:0; }
+
+  /* Header compacter */
+  nav{display:none;}
+  .brand small{display:none;}
+
+  /* Hero compacter zodat headline + CTA in beeld passen */
+  .hero{padding:8px 0 4px}
+  h1{font-size:32px; line-height:1.05}
+  .hero-lead{font-size:15.5px; margin-top:10px}
+  .hero-kicker{margin-bottom:8px}
+
+  /* Alleen primaire CTA boven de fold */
+  .stack{
+    flex-direction:column;
+    align-items:stretch;
+    margin-top:12px;
+  }
+
+  .stack .btn{
+    width:100%;
+    justify-content:center;
+  }
+
+  .stack .btn:not(.primary){
+    display:none;
+  }
+
+  /* Chips verbergen op mobiel */
+  .chips{display:none;}
+
+  /* LOGO niet te dominant */
+  .hero-figure{
+    margin:6px 0 10px;
+  }
+
+  .hero-figure img{
+    width:min(320px, 78vw);
+    max-height:32vh;
+  }
+}12px 0 10px}
       h1{font-size:32px}
       .hero-lead{font-size:15.5px; margin-top:10px}
       .btn{padding:9px 12px}
@@ -504,3 +528,4 @@
   </script>
 </body>
 </html>
+
