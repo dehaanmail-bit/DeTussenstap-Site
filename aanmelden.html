@@ -136,6 +136,47 @@ footer{
   }
   h1{font-size:28px}
 }
+  <!-- MOBILE HERO FIX -->
+<style>
+@media (max-width:900px){
+
+  /* Minder top padding */
+  .hero{
+    padding:10px 0 6px;
+  }
+
+  /* Logo iets compacter maar niet klein */
+  .hero-figure{
+    margin-bottom:10px;
+  }
+
+  .hero-figure img{
+    width:min(340px, 78vw);
+    max-width:340px;
+  }
+
+  /* H1 compacter */
+  h1{
+    font-size:34px;
+    line-height:1.1;
+  }
+
+  /* Intro compacter */
+  .hero-lead{
+    margin-top:10px;
+    font-size:16px;
+  }
+
+  /* CTA direct zichtbaar */
+  .stack{
+    margin-top:14px;
+  }
+
+  .stack .btn{
+    width:100%;
+  }
+}
+</style>
 </style>
 </head>
 
