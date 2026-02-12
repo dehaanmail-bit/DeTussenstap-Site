@@ -3,418 +3,352 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Aanmelden – De Tussenstap</title>
-  <meta name="description" content="Aanmelden richting passende verslavingszorg. De Tussenstap helpt je met overzicht, zorgnavigatie en begeleiding in de voorfase." />
+  <meta name="description" content="Aanmelden richting passende verslavingszorg. De Tussenstap helpt met overzicht, zorgnavigatie en begeleiding in de fase vóór behandeling en tijdens wachttijd." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#fbf3df" />
+
+  <!-- Favicons (repo root) -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aanmelden – De Tussenstap" />
+  <meta property="og:description" content="Aanmelden richting passende verslavingszorg, met overzicht en begeleiding in de voorfase." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root{
-      --bg: #f6efdf;
-      --panel: #f3ead6;
-      --card: #f1e6cf;
-      --ink: #4b3327;
-      --muted: #6a5547;
-      --line: rgba(75,51,39,.18);
-      --btn: #5a3a2c;
-      --btnText: #fff;
-      --btnGhostBg: rgba(90,58,44,.06);
-      --shadow: 0 10px 30px rgba(60,40,30,.10);
-      --radius: 18px;
-      --radiusLg: 26px;
-      --max: 1120px;
+      --bg:#fbf3df;
+      --fg:#4a2e1f;
+      --muted:#7a5a44;
+      --card:#fff6e5;
+      --line:#e6d5b8;
+      --accent:#6b3f2b;
+      --accent2:#b86b2a;
+      --max:1180px;
+      --r:22px;
+      --shadow:0 14px 30px rgba(74,46,31,.08);
 
-      /* Headerhoogte (voor hero-berekening) */
-      --headerH: 78px;
-      --headerPadY: 16px;
+      /* “Above the fold” tuning */
+      --headerH: 74px;
     }
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
     body{
-      margin:0;
-      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
-      background: var(--bg);
-      color: var(--ink);
+      font-family:'Source Sans 3',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg); color:var(--fg); line-height:1.65;
     }
-    a{ color:inherit; text-decoration:none; }
-    img{ max-width:100%; height:auto; display:block; }
+    a{color:var(--accent2);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max);margin:0 auto;padding:18px}
 
-    /* ===== Header (zelfde vibe als homepage) ===== */
-    .site-header{
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(246,239,223,.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
+    .skip{
+      position:absolute; left:-999px; top:10px;
+      background:#fff; border:1px solid var(--line); padding:10px 12px; border-radius:12px;
+      color:var(--fg); font-weight:900;
     }
-    .header-inner{
+    .skip:focus{left:18px; z-index:999}
+
+    /* HEADER (zelfde als homepage) */
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(251,243,223,.92);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
       height: var(--headerH);
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 18px;
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
-      gap: 12px;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:10px 0;
     }
     .brand{
-      font-weight: 700;
-      font-size: clamp(22px, 2.2vw, 34px);
-      letter-spacing: .2px;
-      line-height: 1;
-      display:flex;
-      align-items:center;
-      gap: 10px;
-      white-space: nowrap;
+      display:flex;flex-direction:column;gap:2px;
+      font-family:'Libre Baskerville',serif;
+      font-weight:700; letter-spacing:-.3px; font-size:18px; white-space:nowrap;
+      color:inherit;
     }
-    .brand:focus-visible{ outline: 3px solid rgba(90,58,44,.25); outline-offset: 6px; border-radius: 10px; }
-
-    .header-actions{
-      display:flex;
-      align-items:center;
-      gap: 10px;
+    .brand small{
+      font-family:'Source Sans 3',sans-serif;
+      font-weight:800;
+      font-size:12px;
+      color:var(--muted);
     }
+    nav{display:flex;gap:12px;flex-wrap:wrap;font-size:14px}
+    nav a{color:var(--muted)}
+    nav a:hover{color:var(--fg);text-decoration:none}
 
     .btn{
-      appearance:none;
-      border: none;
-      cursor:pointer;
-      background: var(--btn);
-      color: var(--btnText);
-      border-radius: 999px;
-      padding: 14px 18px;
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 1;
-      box-shadow: 0 8px 18px rgba(90,58,44,.18);
-      white-space: nowrap;
+      padding:10px 14px; border-radius:999px;
+      border:1px solid var(--line);
+      background:transparent;
+      font-weight:900; color:var(--fg);
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      white-space:nowrap;
     }
-    .btn:active{ transform: translateY(1px); }
-    .btn:focus-visible{ outline: 3px solid rgba(90,58,44,.25); outline-offset: 4px; }
+    .btn:hover{border-color:#d9c3a0;text-decoration:none}
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+    .btn.primary:hover{background:#5a3324}
 
-    .menu-btn{
-      width: 46px;
-      height: 46px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.25);
-      cursor:pointer;
-      display:grid;
-      place-items:center;
-    }
-    .menu-btn:focus-visible{ outline: 3px solid rgba(90,58,44,.25); outline-offset: 4px; }
-    .burger{
-      width: 18px; height: 12px; position: relative;
-    }
-    .burger span{
-      position:absolute; left:0; right:0;
-      height:2px; background: var(--ink); border-radius:2px;
-      opacity:.9;
-    }
-    .burger span:nth-child(1){ top:0; }
-    .burger span:nth-child(2){ top:5px; }
-    .burger span:nth-child(3){ bottom:0; }
+    /* TYPO */
+    h1,h2,h3{font-family:'Libre Baskerville',serif;font-weight:700;margin:0}
+    h1{font-size:44px;line-height:1.05;letter-spacing:-.9px}
+    h2{font-size:30px;letter-spacing:-.4px}
+    h3{font-size:20px;letter-spacing:-.2px}
+    .sub{margin:8px 0 0; color:var(--muted); max-width:100ch}
+    section{padding:26px 0}
 
-    /* Menu overlay */
-    .menu-overlay{
-      position: fixed;
-      inset: 0;
-      background: rgba(20,10,6,.35);
-      display:none;
-      z-index: 60;
-    }
-    .menu-overlay.open{ display:block; }
-    .menu-panel{
-      position: absolute;
-      top: calc(var(--headerH) + 10px);
-      right: 14px;
-      left: 14px;
-      max-width: 520px;
-      margin-left: auto;
-      background: rgba(246,239,223,.98);
-      border: 1px solid var(--line);
-      border-radius: var(--radiusLg);
-      box-shadow: var(--shadow);
-      padding: 14px;
-    }
-    .menu-grid{
-      display:grid;
-      gap: 10px;
-    }
-    .menu-link{
-      padding: 14px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(75,51,39,.12);
-      background: rgba(255,255,255,.18);
-      font-weight: 700;
-    }
-    .menu-link:hover{ background: rgba(90,58,44,.06); }
-
-    /* ===== Layout wrappers ===== */
-    .wrap{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 18px 60px;
-    }
-
-    /* ===== Hero: above-the-fold fix ===== */
+    /* HERO (aanmeld) */
     .hero{
-      /* Zorgt dat er ALTIJD genoeg ruimte is om CTA te tonen */
+      padding: 14px 0 14px;
+      /* Zorgt dat hero zich “als fold” gedraagt op mobiel */
       min-height: calc(100svh - var(--headerH));
       display:flex;
-      align-items: center;
-      padding: 22px 0 26px;
+      align-items:center;
     }
     .hero-grid{
       width:100%;
       display:grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      align-items: center;
-    }
-
-    .hero-logo{
-      display:flex;
-      justify-content:center;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 22px;
       align-items:center;
     }
-    .hero-logo img{
-      /* Belangrijk: niet te klein (afgekeurd) maar ook niet zo groot dat CTA verdwijnt */
-      width: min(360px, 78vw);
-      height:auto;
+    .hero-kicker{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 12px;border-radius:999px;border:1px solid var(--line);
+      background:rgba(255,255,255,.35);
+      color:var(--muted);font-weight:900;font-size:12px;
     }
-
-    .hero-copy{
-      display:flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-    }
-
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap: 8px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.15);
-      border: 1px solid rgba(75,51,39,.16);
-      color: var(--muted);
-      font-weight: 700;
-      letter-spacing: .2px;
-    }
-
-    h1{
-      margin: 0;
-      font-size: clamp(40px, 6.2vw, 74px);
-      line-height: .92;
-      letter-spacing: -0.6px;
-    }
-    .lead{
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-size: clamp(16px, 2vw, 19px);
-      line-height: 1.55;
-      color: var(--muted);
-      max-width: 58ch;
-    }
-
-    .hero-ctas{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items:center;
-      margin-top: 4px;
-    }
-    .btn-lg{
-      padding: 16px 22px;
-      font-size: 17px;
-      min-width: min(520px, 92vw);
-      text-align:center;
-    }
-    .btn-ghost{
-      border: 1px solid rgba(75,51,39,.18);
-      background: var(--btnGhostBg);
-      color: var(--ink);
-      box-shadow: none;
-    }
-
-    /* Portrait: maak hero compacter zodat CTA in beeld blijft */
-    @media (max-width: 520px){
-      :root{ --headerH: 76px; }
-      .hero{ padding: 16px 0 22px; }
-      .hero-logo img{ width: min(340px, 84vw); }
-      .hero-copy{ gap: 10px; }
-      .btn-lg{ min-width: min(520px, 92vw); }
-    }
-
-    /* Landscape (mobiel): 2 kolommen + compacte vertical spacing zodat CTA zichtbaar blijft */
-    @media (orientation: landscape) and (max-height: 520px){
-      :root{ --headerH: 70px; }
-      .hero{ padding: 10px 0 14px; }
-      .hero-grid{
-        grid-template-columns: 0.95fr 1.05fr;
-        gap: 16px;
-      }
-      .hero-logo{ justify-content:flex-start; }
-      .hero-logo img{ width: min(280px, 36vw); }
-      h1{ font-size: clamp(34px, 4.8vw, 54px); }
-      .lead{ font-size: 15px; line-height: 1.45; }
-      .pill{ padding: 8px 12px; }
-      .btn-lg{ min-width: 320px; padding: 14px 18px; }
-    }
-
-    /* ===== Content sections (niet slopen) ===== */
-    .section{
-      margin-top: 34px;
-    }
-    .section-title{
-      margin: 0 0 12px 0;
-      font-size: clamp(28px, 3.2vw, 40px);
-      line-height: 1.05;
-      letter-spacing: -0.3px;
-    }
-    .section-sub{
-      margin: 0 0 18px 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--muted);
-      line-height: 1.6;
+    .hero-lead{
+      margin:12px 0 0;
+      color:var(--muted);
       max-width: 70ch;
+      font-size:16.5px;
     }
-
-    .cards{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-    @media (min-width: 860px){
-      .cards{ grid-template-columns: 1fr 1fr; }
-    }
-
-    .card{
-      background: rgba(255,255,255,.14);
-      border: 1px solid rgba(75,51,39,.14);
-      border-radius: var(--radiusLg);
-      padding: 18px;
-      box-shadow: 0 10px 22px rgba(60,40,30,.06);
-    }
-    .card h3{
-      margin: 0 0 10px 0;
-      font-size: 28px;
-      line-height: 1.05;
-    }
-    .card p, .card li{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 16px;
-    }
-    .card ul{ margin: 10px 0 0 18px; }
-    .card .img{
+    .stack{
+      display:flex;gap:10px;flex-wrap:wrap;
       margin-top: 14px;
-      border-radius: 16px;
-      overflow:hidden;
-      border: 1px solid rgba(75,51,39,.12);
+      align-items:center;
     }
 
-    .cta-band{
-      margin-top: 28px;
-      padding: 18px;
-      border-radius: var(--radiusLg);
-      border: 1px solid rgba(75,51,39,.14);
-      background: rgba(90,58,44,.06);
-      display:flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: flex-start;
+    /* Logo in hero, zonder frame */
+    .hero-figure{
+      margin:0; padding:0;
+      border:none; background:transparent; box-shadow:none; border-radius:0;
+      display:flex; align-items:center; justify-content:center;
     }
-    .cta-band strong{
-      font-size: 18px;
+    .hero-figure img{
+      width:min(430px, 40vw);
+      height:auto;
+      display:block;
     }
+
+    /* Cards / layouts */
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--r);
+      padding:20px;
+      box-shadow:var(--shadow);
+    }
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media(max-width:900px){.two{grid-template-columns:1fr}}
+
+    .sep{height:1px;background:var(--line);margin:14px 0}
+    ul{padding-left:18px;margin:10px 0 0}
+    li{margin:6px 0;color:var(--muted)}
+
+    .danger{
+      margin-top:14px;
+      background:#fff0f0;
+      border:1px solid #f3c2c2;
+      border-radius:18px;
+      padding:14px;
+      color:#7a1f1f;
+    }
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,246,229,.72);
+      color:var(--muted);
+      font-weight:900;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+    }
+
+    .figure{
+      border-radius:18px; overflow:hidden;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.35);
+      margin-top: 12px;
+    }
+    .figure img{width:100%;height:auto;display:block}
 
     footer{
-      margin-top: 44px;
-      padding: 24px 0 32px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      border-top:1px solid var(--line);
+      padding:22px 0;
+      font-size:13px;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    /* ======= ABOVE THE FOLD FIXES (precies waar jij om vraagt) ======= */
+
+    /* Mobiel portrait: CTA in beeld + niet “alles verdwijnt”, maar compacter */
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+
+      /* Logo bovenaan, maar niet zó groot dat CTA verdwijnt */
+      .hero-grid > figure{ order:-1; }
+      .hero-grid > div{ order:0; }
+
+      /* Header compacter */
+      nav{display:none;}
+      .brand small{display:none;}
+
+      /* H1 compacter zodat CTA zichtbaar blijft */
+      h1{font-size:34px; line-height:1.02;}
+
+      /* Lead: niet weg, maar “fold-proof” (clamp) */
+      .hero-lead{
+        display:-webkit-box;
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:3;
+        overflow:hidden;
+      }
+
+      /* CTA: focus op primaire knop, secundaire mag onder de vouw */
+      .stack{flex-direction:column; align-items:stretch}
+      .stack .btn{width:100%; justify-content:center}
+      .stack .btn:not(.primary){display:none;}
+
+      /* Logo sizing */
+      .hero-figure img{
+        width:min(360px, 86vw);
+        max-width:360px;
+      }
+
+      /* Hero padding iets strakker */
+      .hero{padding: 10px 0 14px;}
+    }
+
+    /* Mobiel landscape: CTA in beeld (belangrijkste) */
+    @media (max-height: 520px) and (orientation: landscape){
+      :root{ --headerH: 68px; }
+      header .nav{padding:8px 0}
+
+      .hero{padding: 8px 0 12px;}
+      .hero-grid{grid-template-columns: 1.05fr .95fr; gap: 14px;}
+
+      nav{display:none;}
+      .brand small{display:none;}
+
+      h1{font-size:30px; line-height:1.0;}
+
+      /* Lead nóg compacter, maar niet weg */
+      .hero-lead{
+        margin-top: 8px;
+        font-size: 15px;
+        line-height: 1.42;
+        display:-webkit-box;
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:2;
+        overflow:hidden;
+      }
+
+      /* Alleen primaire CTA zichtbaar */
+      .stack{margin-top: 10px;}
+      .stack .btn:not(.primary){display:none;}
+      .btn{padding:9px 12px}
+
+      .hero-figure img{width:min(300px, 36vw)}
     }
   </style>
 </head>
 
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="header-inner">
-      <!-- weer klikbaar naar home -->
-      <a class="brand" href="index.html" aria-label="Naar de homepage van De Tussenstap">
+  <a class="skip" href="#main">Ga naar inhoud</a>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="index.html" style="text-decoration:none;">
         De Tussenstap
+        <small>je hoeft het niet alleen te doen</small>
       </a>
 
-      <div class="header-actions">
-        <a class="btn" href="#cta">Plan een eerste gesprek</a>
-        <button class="menu-btn" type="button" aria-label="Menu openen" aria-expanded="false" id="menuBtn">
-          <div class="burger" aria-hidden="true">
-            <span></span><span></span><span></span>
-          </div>
-        </button>
-      </div>
+      <nav aria-label="Navigatie">
+        <a href="aanmelden.html">Aanmelden</a>
+        <a href="wachttijd.html">Wachttijd</a>
+        <a href="wie-wij-zijn.html">Wie wij zijn</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <a class="btn primary" href="#contact">Plan een eerste gesprek</a>
     </div>
   </header>
 
-  <!-- MENU OVERLAY -->
-  <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
-    <div class="menu-panel" role="dialog" aria-modal="true" aria-label="Navigatie">
-      <div class="menu-grid">
-        <a class="menu-link" href="aanmelden.html">Aanmelden</a>
-        <a class="menu-link" href="wachttijd.html">Wachttijd</a>
-        <a class="menu-link" href="wie-wij-zijn.html">Wie wij zijn</a>
-        <a class="menu-link" href="contact.html">Contact</a>
-      </div>
-    </div>
-  </div>
-
-  <main class="wrap">
-    <!-- HERO (above-the-fold) -->
-    <section class="hero">
+  <main id="main" class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="top">
       <div class="hero-grid">
-        <div class="hero-logo">
-          <img src="assets/logo.png" alt="Logo De Tussenstap" />
-        </div>
+        <div>
+          <span class="hero-kicker">Aanmelden richting passende (verslavings)zorg</span>
 
-        <div class="hero-copy">
-          <div class="pill">Aanmelden / eerste stap</div>
+          <h1 style="margin-top:12px;">Hulp zoeken is al een stap op zich.</h1>
 
-          <h1>Hulp zoeken is al een stap op zich.</h1>
-
-          <p class="lead">
+          <p class="hero-lead">
             Deze pagina gaat niet over “aanmelden bij De Tussenstap” als doel op zich —
-            maar over <strong>aanmelden richting passende verslavingszorg</strong>, met ons als gids in de voorfase.
+            maar over <b>aanmelden richting passende verslavingszorg</b>, met ons als gids in de voorfase.
           </p>
 
-          <!-- CTA moet in beeld op portrait én landscape -->
-          <div class="hero-ctas" id="cta">
-            <a class="btn btn-lg" href="contact.html">Plan een eerste gesprek</a>
-            <a class="btn btn-lg btn-ghost" href="tel:+31600000000">Bel / WhatsApp</a>
+          <div class="stack">
+            <a class="btn primary" href="#contact">Plan een eerste gesprek</a>
+            <a class="btn" href="tel:+31645845985">Bel / WhatsApp</a>
           </div>
         </div>
+
+        <figure class="hero-figure" aria-label="Logo De Tussenstap">
+          <img src="assets/logo.png" alt="Logo De Tussenstap" />
+        </figure>
       </div>
     </section>
 
-    <!-- REST VAN DE PAGINA (inhoud behouden, niet slopen) -->
-    <section class="section" aria-label="Wat je hier krijgt">
-      <h2 class="section-title">Wat je hier krijgt</h2>
-      <p class="section-sub">
-        Als je vastloopt op: “waar moet ik zijn?”, “wat past?”, “hoe regel ik dit?” —
-        dan maken wij overzicht en helpen we je de logisch volgende stap te zetten.
+    <!-- Intro / geruststelling -->
+    <section aria-label="Laagdrempelig">
+      <div class="card">
+        <h2>Lievere laagdrempelig?</h2>
+        <p class="sub" style="margin-top:10px;">
+          Een kort eerste gesprek kan al rust en richting geven. Je hoeft nog niet te weten “wat het precies is”.
+        </p>
+      </div>
+    </section>
+
+    <!-- Wat we doen -->
+    <section id="watwedoen">
+      <div class="badge">Wat we doen</div>
+      <h2 style="margin-top:10px;">De eerste stap overzichtelijk maken</h2>
+      <p class="sub">
+        Als je vastloopt op: “waar moet ik zijn?”, “wat past?”, “hoe regel ik dit?” — dan maken we het concreet en behapbaar.
       </p>
 
-      <div class="cards">
-        <article class="card">
+      <div class="two" style="margin-top:14px;">
+        <div class="card">
           <h3>Zorgnavigatie (keuzes & aanmelding)</h3>
-          <p>
-            We brengen je situatie terug tot de kern en zetten de opties helder op een rij.
-          </p>
           <ul>
             <li>Hulpvraag verhelderen (wat speelt er nu echt?)</li>
             <li>Opties op een rij: ambulant/klinisch, regio/landelijk</li>
@@ -422,70 +356,109 @@
             <li>Overzicht, opvolging en next steps</li>
           </ul>
 
-          <!-- door jou genoemd -->
-          <div class="img">
-            <img src="assets/zorgnavigatie.jpg" alt="Zorgnavigatie" />
-          </div>
-        </article>
+          <div class="sep"></div>
 
-        <article class="card">
+          <h3 style="margin-top:0;">Visueel overzicht helpt</h3>
+          <p class="sub" style="margin-top:10px;">
+            Daarom werken we met een simpel stappenplan en een “routekaart”: jij hoeft niet alles al te weten —
+            wij brengen het samen in kaart.
+          </p>
+
+          <figure class="figure">
+            <img src="assets/zorgnavigatie.jpg" alt="Zorgnavigatie illustratie" />
+          </figure>
+        </div>
+
+        <div class="card">
           <h3>Voorbereiding (zodat je intake wél lukt)</h3>
-          <p>
-            Als je wel wilt, maar het escaleert telkens of je “net te laat” bent:
-            dan brengen we structuur aan, zodat je intake niet misloopt.
+          <p class="sub" style="margin-top:10px;">
+            Als je wel wilt, maar het escaleert telkens (of je haakt af), dan bouwen we aan stabiliteit en voorbereiding —
+            zodat je intake en start van behandeling kansrijker wordt.
           </p>
           <ul>
-            <li>Praktische voorbereiding (wat moet je regelen?)</li>
-            <li>Stabilisatie in de aanloop (rust & plan)</li>
-            <li>Heldere afspraken (zodat je het volhoudt)</li>
-            <li>Begeleiding tijdens de wachttijd</li>
+            <li>Praktische voorbereiding op intake / gesprekken</li>
+            <li>Structuur en stabiliteit in de tussentijd</li>
+            <li>Plan voor lastige momenten (craving, stress, terugvalrisico)</li>
+            <li>Betrekken van naasten (als dat helpend is)</li>
           </ul>
-        </article>
-      </div>
 
-      <div class="cta-band">
-        <strong>Twijfel je of dit bij jou past?</strong>
-        <span class="section-sub" style="margin:0;">
-          Plan een kort eerste gesprek. Je hoeft het niet alleen te doen.
-        </span>
-        <a class="btn" href="contact.html">Plan een eerste gesprek</a>
+          <div class="sep"></div>
+
+          <h3 style="margin-top:0;">Wachttijdbegeleiding</h3>
+          <p class="sub" style="margin-top:10px;">
+            Wachttijd is niet “niks”. Juist daar gaat het vaak mis. Wij blijven naast je staan, houden overzicht en zorgen dat er beweging blijft.
+          </p>
+          <ul>
+            <li>Regelmatige check-ins en korte begeleiding</li>
+            <li>Opvolging richting instellingen/klinieken</li>
+            <li>Ondersteuning bij praktische zaken</li>
+            <li>Rust, richting en volhouden tot de start</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Praktisch -->
+    <section id="praktisch">
+      <div class="badge">Praktisch</div>
+      <h2 style="margin-top:10px;">Hoe je start</h2>
+
+      <div class="card" style="margin-top:14px;">
+        <ol style="padding-left:18px;margin:0;color:var(--muted);">
+          <li style="margin:10px 0;"><b>Plan een eerste gesprek.</b> Kort, laagdrempelig en zonder oordeel.</li>
+          <li style="margin:10px 0;"><b>We maken overzicht.</b> We brengen je situatie en opties in kaart en bepalen samen de logische volgende stap.</li>
+          <li style="margin:10px 0;"><b>We regelen de route.</b> Waar nodig helpen we met contact, aanmelding, opvolging en voorbereiding op intake.</li>
+          <li style="margin:10px 0;"><b>We blijven erbij.</b> In de tussentijd (wachttijd) blijven we ondersteunen, zodat je niet alleen staat.</li>
+        </ol>
+
+        <div class="danger">
+          <b>Belangrijk:</b> De Tussenstap is géén spoeddienst. Bij direct gevaar: bel 112.
+          Bij acute crisis/psychiatrie: neem contact op met de huisartsenpost of de regionale crisisdienst.
+        </div>
+
+        <p class="sub" style="margin-top:12px;">
+          <b>Belangrijk:</b> We begeleiden richting passende (verslavings)zorg, maar vervangen geen medische behandeling.
+          We werken aanvullend in de voorfase en tijdens wachttijd.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="badge">Contact</div>
+      <h2 style="margin-top:10px;">Plan een eerste gesprek</h2>
+      <p class="sub">Mail of bel/WhatsApp. Je krijgt reactie binnen 2 werkdagen.</p>
+
+      <div class="two" style="margin-top:14px;">
+        <div class="card">
+          <h3>Direct contact</h3>
+          <p class="sub" style="margin-top:10px;">
+            <b>E-mail:</b> <a href="mailto:info@detussenstap.net">info@detussenstap.net</a><br />
+            <b>Telefoon/WhatsApp:</b> <a href="tel:+31645845985">06-45845985</a>
+          </p>
+          <div class="stack">
+            <a class="btn primary" href="mailto:info@detussenstap.net?subject=Eerste%20gesprek%20De%20Tussenstap">Mail</a>
+            <a class="btn" href="tel:+31645845985">Bel</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Werkgebied</h3>
+          <p class="sub" style="margin-top:10px;">
+            Heel Noord-Holland. Online of op locatie waar passend.
+          </p>
+        </div>
       </div>
     </section>
 
     <footer>
-      © 2026 De Tussenstap • Noord-Holland • info@detussenstap.net
+      © <span id="y"></span> De Tussenstap • Noord-Holland •
+      <a href="mailto:info@detussenstap.net">info@detussenstap.net</a>
     </footer>
   </main>
 
   <script>
-    (function(){
-      const btn = document.getElementById('menuBtn');
-      const overlay = document.getElementById('menuOverlay');
-
-      function openMenu(){
-        overlay.classList.add('open');
-        overlay.setAttribute('aria-hidden','false');
-        btn.setAttribute('aria-expanded','true');
-      }
-      function closeMenu(){
-        overlay.classList.remove('open');
-        overlay.setAttribute('aria-hidden','true');
-        btn.setAttribute('aria-expanded','false');
-      }
-
-      btn.addEventListener('click', function(){
-        const isOpen = overlay.classList.contains('open');
-        if(isOpen) closeMenu(); else openMenu();
-      });
-
-      overlay.addEventListener('click', function(e){
-        if(e.target === overlay) closeMenu();
-      });
-
-      document.addEventListener('keydown', function(e){
-        if(e.key === 'Escape') closeMenu();
-      });
-    })();
+    document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
