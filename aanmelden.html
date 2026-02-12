@@ -9,7 +9,7 @@
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#fbf3df" />
 
-  <!-- Favicons (repo root) -->
+  <!-- Favicons -->
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
@@ -42,7 +42,6 @@
       --r:22px;
       --shadow:0 14px 30px rgba(74,46,31,.08);
 
-      /* “Above the fold” tuning */
       --headerH: 74px;
     }
 
@@ -63,7 +62,6 @@
     }
     .skip:focus{left:18px; z-index:999}
 
-    /* HEADER (zelfde als homepage) */
     header{
       position:sticky; top:0; z-index:50;
       background:rgba(251,243,223,.92);
@@ -103,7 +101,6 @@
     .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
     .btn.primary:hover{background:#5a3324}
 
-    /* TYPO */
     h1,h2,h3{font-family:'Libre Baskerville',serif;font-weight:700;margin:0}
     h1{font-size:44px;line-height:1.05;letter-spacing:-.9px}
     h2{font-size:30px;letter-spacing:-.4px}
@@ -111,10 +108,9 @@
     .sub{margin:8px 0 0; color:var(--muted); max-width:100ch}
     section{padding:26px 0}
 
-    /* HERO (aanmeld) */
+    /* HERO */
     .hero{
       padding: 14px 0 14px;
-      /* Zorgt dat hero zich “als fold” gedraagt op mobiel */
       min-height: calc(100svh - var(--headerH));
       display:flex;
       align-items:center;
@@ -144,7 +140,6 @@
       align-items:center;
     }
 
-    /* Logo in hero, zonder frame */
     .hero-figure{
       margin:0; padding:0;
       border:none; background:transparent; box-shadow:none; border-radius:0;
@@ -156,7 +151,6 @@
       display:block;
     }
 
-    /* Cards / layouts */
     .card{
       background:var(--card);
       border:1px solid var(--line);
@@ -207,47 +201,46 @@
       text-align:center;
     }
 
-    /* ======= ABOVE THE FOLD FIXES (precies waar jij om vraagt) ======= */
-
-    /* Mobiel portrait: CTA in beeld + niet “alles verdwijnt”, maar compacter */
+    /* ======= MOBILE BASE (portrait én landscape) ======= */
     @media (max-width: 900px){
       .hero-grid{grid-template-columns:1fr}
-
-      /* Logo bovenaan, maar niet zó groot dat CTA verdwijnt */
       .hero-grid > figure{ order:-1; }
       .hero-grid > div{ order:0; }
 
-      /* Header compacter */
       nav{display:none;}
       .brand small{display:none;}
 
-      /* H1 compacter zodat CTA zichtbaar blijft */
-      h1{font-size:34px; line-height:1.02;}
+      .stack{flex-direction:column; align-items:stretch}
+      .stack .btn{width:100%; justify-content:center}
+      .stack .btn:not(.primary){display:none;} /* only primary CTA above the fold */
+    }
 
-      /* Lead: niet weg, maar “fold-proof” (clamp) */
+    /* ======= PORTRAIT ONLY FIX (S25+): CTA moet in beeld blijven ======= */
+    @media (max-width: 900px) and (orientation: portrait){
+      .hero{padding: 8px 0 12px;}
+      .hero-grid{gap: 14px;}
+
+      h1{font-size:30px; line-height:1.02; margin-top:10px;}
+
       .hero-lead{
+        margin-top:10px;
+        font-size:16px;
+        line-height:1.5;
         display:-webkit-box;
         -webkit-box-orient:vertical;
-        -webkit-line-clamp:3;
+        -webkit-line-clamp:2;   /* 2 regels zodat CTA boven de vouw komt */
         overflow:hidden;
       }
 
-      /* CTA: focus op primaire knop, secundaire mag onder de vouw */
-      .stack{flex-direction:column; align-items:stretch}
-      .stack .btn{width:100%; justify-content:center}
-      .stack .btn:not(.primary){display:none;}
+      .stack{margin-top:12px;}
 
-      /* Logo sizing */
       .hero-figure img{
-        width:min(360px, 86vw);
-        max-width:360px;
+        width:min(280px, 72vw); /* logo kleiner zodat CTA zichtbaar is */
+        max-width:280px;
       }
-
-      /* Hero padding iets strakker */
-      .hero{padding: 10px 0 14px;}
     }
 
-    /* Mobiel landscape: CTA in beeld (belangrijkste) */
+    /* ======= LANDSCAPE (NIET AANKOMEN: dit laten we zoals het werkte) ======= */
     @media (max-height: 520px) and (orientation: landscape){
       :root{ --headerH: 68px; }
       header .nav{padding:8px 0}
@@ -260,7 +253,6 @@
 
       h1{font-size:30px; line-height:1.0;}
 
-      /* Lead nóg compacter, maar niet weg */
       .hero-lead{
         margin-top: 8px;
         font-size: 15px;
@@ -271,7 +263,6 @@
         overflow:hidden;
       }
 
-      /* Alleen primaire CTA zichtbaar */
       .stack{margin-top: 10px;}
       .stack .btn:not(.primary){display:none;}
       .btn{padding:9px 12px}
@@ -328,7 +319,6 @@
       </div>
     </section>
 
-    <!-- Intro / geruststelling -->
     <section aria-label="Laagdrempelig">
       <div class="card">
         <h2>Lievere laagdrempelig?</h2>
@@ -338,7 +328,6 @@
       </div>
     </section>
 
-    <!-- Wat we doen -->
     <section id="watwedoen">
       <div class="badge">Wat we doen</div>
       <h2 style="margin-top:10px;">De eerste stap overzichtelijk maken</h2>
@@ -398,7 +387,6 @@
       </div>
     </section>
 
-    <!-- Praktisch -->
     <section id="praktisch">
       <div class="badge">Praktisch</div>
       <h2 style="margin-top:10px;">Hoe je start</h2>
@@ -423,7 +411,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
       <div class="badge">Contact</div>
       <h2 style="margin-top:10px;">Plan een eerste gesprek</h2>
