@@ -1,259 +1,278 @@
 <!doctype html>
 <html lang="nl">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Aanmelden – De Tussenstap</title>
-<meta name="description" content="Hulp zoeken bij gebruik of verslaving? We helpen je overzicht krijgen en bepalen samen een logische volgende stap. Noord-Holland." />
-<meta name="theme-color" content="#fbf3df" />
+  <title>Aanmelden – De Tussenstap</title>
+  <meta name="description" content="Hulp bij aanmelden voor verslavingszorg in Noord-Holland. Overzicht, zorgnavigatie en een eerste stap zonder gedoe." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#fbf3df" />
 
-<link rel="icon" href="favicon.ico" sizes="any" />
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <!-- Favicons (repo root) -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
 
-<style>
-:root{
-  --bg:#fbf3df;
-  --fg:#4a2e1f;
-  --muted:#7a5a44;
-  --card:#fff6e5;
-  --line:#e6d5b8;
-  --accent:#6b3f2b;
-  --max:1180px;
-  --r:22px;
-  --shadow:0 14px 30px rgba(74,46,31,.08);
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  font-family:'Source Sans 3',sans-serif;
-  background:var(--bg);
-  color:var(--fg);
-  line-height:1.65;
-}
-.wrap{max-width:var(--max);margin:0 auto;padding:18px}
+  <style>
+    :root{
+      --bg:#fbf3df;
+      --fg:#4a2e1f;
+      --muted:#7a5a44;
+      --card:#fff6e5;
+      --line:#e6d5b8;
+      --accent:#6b3f2b;
+      --accent2:#b86b2a;
+      --max:1180px;
+      --r:22px;
+      --shadow:0 14px 30px rgba(74,46,31,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:'Source Sans 3',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg); color:var(--fg); line-height:1.65;
+    }
+    a{color:var(--accent2);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max);margin:0 auto;padding:18px}
 
-header{
-  position:sticky;top:0;z-index:50;
-  background:rgba(251,243,223,.95);
-  border-bottom:1px solid var(--line);
-}
-.nav{
-  display:flex;align-items:center;justify-content:space-between;
-}
-.brand{
-  font-family:'Libre Baskerville',serif;
-  font-weight:700;
-  font-size:18px;
-  text-decoration:none;
-  color:inherit;
-}
-.btn{
-  padding:10px 16px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  background:transparent;
-  font-weight:800;
-  text-decoration:none;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-}
-.btn.primary{
-  background:var(--accent);
-  border-color:var(--accent);
-  color:#fff;
-}
+    /* HEADER */
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(251,243,223,.92);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:10px 0;
+    }
+    .brand{
+      display:flex;flex-direction:column;gap:2px;
+      font-family:'Libre Baskerville',serif;
+      font-weight:700; letter-spacing:-.3px; font-size:18px; white-space:nowrap;
+      color:inherit;
+    }
+    .brand small{
+      font-family:'Source Sans 3',sans-serif;
+      font-weight:800;
+      font-size:12px;
+      color:var(--muted);
+    }
+    nav{display:flex;gap:12px;flex-wrap:wrap;font-size:14px}
+    nav a{color:var(--muted)}
+    nav a:hover{color:var(--fg);text-decoration:none}
 
-h1,h2,h3{
-  font-family:'Libre Baskerville',serif;
-  margin:0;
-}
-h1{font-size:38px;line-height:1.05}
-h2{font-size:26px;margin-bottom:10px}
-.sub{color:var(--muted)}
+    .btn{
+      padding:10px 14px; border-radius:999px;
+      border:1px solid var(--line);
+      background:transparent;
+      font-weight:900; color:var(--fg);
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      white-space:nowrap;
+    }
+    .btn:hover{border-color:#d9c3a0;text-decoration:none}
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+    .btn.primary:hover{background:#5a3324}
 
-.hero{padding:24px 0 18px}
-.hero-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:18px;
-}
+    /* TYPO */
+    h1,h2,h3{font-family:'Libre Baskerville',serif;font-weight:700;margin:0}
+    h1{font-size:44px;line-height:1.05;letter-spacing:-.9px}
+    h2{font-size:30px;letter-spacing:-.4px}
+    h3{font-size:20px;letter-spacing:-.2px}
+    .sub{margin:8px 0 0; color:var(--muted); max-width:100ch}
+    section{padding:26px 0}
 
-.hero-figure{
-  display:flex;
-  justify-content:center;
-}
-.hero-figure img{
-  width:min(380px, 84vw);
-  height:auto;
-}
+    /* HERO */
+    .hero{padding:18px 0 14px}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:center}
+    .hero-kicker{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 12px;border-radius:999px;border:1px solid var(--line);
+      background:rgba(255,255,255,.35);
+      color:var(--muted);font-weight:900;font-size:12px;
+    }
+    .hero-lead{margin:12px 0 0;color:var(--muted);max-width:92ch;font-size:16.5px}
+    .stack{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .chip{
+      font-size:13px; padding:8px 12px; border-radius:999px;
+      background:rgba(255,246,229,.72);
+      border:1px solid var(--line);
+      color:var(--muted);
+    }
 
-.stack{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  margin-top:16px;
-}
-.stack .btn{width:100%}
+    .hero-figure{
+      margin:0;
+      padding:0;
+      border:none;
+      background:transparent;
+      box-shadow:none;
+      border-radius:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .hero-figure img{
+      width:min(520px, 88vw);
+      height:auto;
+      display:block;
+    }
 
-.card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--r);
-  padding:20px;
-  box-shadow:var(--shadow);
-  margin-bottom:18px;
-}
+    /* Cards / layouts */
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--r);
+      padding:20px;
+      box-shadow:var(--shadow);
+    }
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media(max-width:900px){.two{grid-template-columns:1fr}}
 
-footer{
-  border-top:1px solid var(--line);
-  padding:20px 0;
-  text-align:center;
-  font-size:13px;
-  color:var(--muted);
-}
+    .sep{height:1px;background:var(--line);margin:14px 0}
+    ul{padding-left:18px;margin:10px 0 0}
+    li{margin:6px 0;color:var(--muted)}
 
-/* Portrait mobiel */
-@media(max-width:900px){
-  h1{font-size:32px}
-  .hero-figure img{width:min(340px, 82vw)}
-}
+    footer{
+      border-top:1px solid var(--line);
+      padding:22px 0;
+      font-size:13px;
+      color:var(--muted);
+      text-align:center;
+    }
 
-/* Landscape mobiel FIX – geen 2 kolommen meer */
-@media (max-height:520px) and (orientation:landscape){
-  .hero-grid{
-    grid-template-columns:1fr;
-  }
-  .hero-figure img{
-    width:min(300px, 50vw);
-  }
-  h1{font-size:28px}
-}
-  <!-- MOBILE HERO FIX -->
-<style>
-@media (max-width:900px){
+    /* ========== MOBIEL PORTRAIT: ABOVE THE FOLD FIX (aanmelden) ========== */
+    @media (max-width:900px){
+      .hero-grid{grid-template-columns:1fr}
 
-  /* Minder top padding */
-  .hero{
-    padding:10px 0 6px;
-  }
+      /* logo bovenaan */
+      .hero-grid > figure{ order:-1; }
+      .hero-grid > div{ order:0; }
 
-  /* Logo iets compacter maar niet klein */
-  .hero-figure{
-    margin-bottom:10px;
-  }
+      /* header compact */
+      nav{display:none;}
+      .brand small{display:none;}
 
-  .hero-figure img{
-    width:min(340px, 78vw);
-    max-width:340px;
-  }
+      /* hero compacter */
+      .wrap{padding:16px}
+      .hero{padding:10px 0 8px}
 
-  /* H1 compacter */
-  h1{
-    font-size:34px;
-    line-height:1.1;
-  }
+      /* logo: groot genoeg, maar niet “duwt alles weg” */
+      .hero-figure{ margin:8px 0 10px; }
+      .hero-figure img{
+        width:min(420px, 82vw);
+        max-width:420px;
+      }
 
-  /* Intro compacter */
-  .hero-lead{
-    margin-top:10px;
-    font-size:16px;
-  }
+      /* typografie net strakker zodat CTA in beeld komt */
+      h1{font-size:34px;line-height:1.08}
+      .hero-lead{
+        margin-top:10px;
+        font-size:16px;
+      }
 
-  /* CTA direct zichtbaar */
-  .stack{
-    margin-top:14px;
-  }
+      /* CTA’s: primaire + bel/whatsapp mogen, rest later */
+      .stack{flex-direction:column; align-items:stretch; margin-top:12px}
+      .stack .btn{width:100%; justify-content:center}
 
-  .stack .btn{
-    width:100%;
-  }
-}
-</style>
-</style>
+      /* chips uit (ruimte) */
+      .chips{display:none;}
+    }
+
+    /* ========== MOBIEL LANDSCAPE: naast elkaar, maar zonder mega-witruimte ========== */
+    @media (max-height: 520px) and (orientation: landscape){
+      header .nav{padding:8px 0}
+      nav{display:none;}
+      .brand small{display:none;}
+
+      .wrap{padding:14px}
+      .hero{padding:8px 0 8px}
+      .hero-grid{grid-template-columns:1.05fr .95fr; gap:16px}
+      h1{font-size:32px}
+      .hero-lead{font-size:15.5px; margin-top:8px}
+      .stack{margin-top:10px}
+      .btn{padding:9px 12px}
+      .chips{display:none;}
+
+      /* logo niet te groot in landscape */
+      .hero-figure img{width:min(360px, 38vw)}
+    }
+  </style>
 </head>
 
 <body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="index.html" style="text-decoration:none;">
+        De Tussenstap
+        <small>je hoeft het niet alleen te doen</small>
+      </a>
 
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="index.html">De Tussenstap</a>
-    <a class="btn primary" href="#contact">Plan een eerste gesprek</a>
-  </div>
-</header>
+      <nav aria-label="Navigatie">
+        <a href="aanmelden.html">Aanmelden</a>
+        <a href="wachttijd.html">Wachttijd</a>
+        <a href="wie-wij-zijn.html">Wie wij zijn</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
 
-<main class="wrap">
+      <a class="btn primary" href="index.html#contact">Plan een eerste gesprek</a>
+    </div>
+  </header>
 
-<section class="hero">
-  <div class="hero-grid">
+  <main class="wrap">
+    <section class="hero" id="top">
+      <div class="hero-grid">
+        <div>
+          <span class="hero-kicker">Aanmelden / eerste stap</span>
 
-    <figure class="hero-figure">
-      <img src="assets/logo.png" alt="Logo De Tussenstap">
-    </figure>
+          <h1 style="margin-top:12px;">Hulp zoeken is al een stap op zich.</h1>
 
-    <div>
-      <h1>Hulp zoeken is al een stap op zich.</h1>
+          <p class="hero-lead">
+            Je hoeft nog niet te weten waar je naartoe moet. We beginnen gewoon bij waar jij nu staat.
+            Samen maken we overzicht en bepalen we een logische volgende stap — zonder gedoe en zonder oordeel.
+          </p>
 
-      <p class="sub" style="margin-top:10px;">
-        Je hoeft nog niet te weten waar je naartoe moet. We beginnen gewoon bij waar jij nu staat.
-        Samen maken we overzicht en bepalen we een logische volgende stap — zonder gedoe en zonder oordeel.
-      </p>
+          <div class="stack">
+            <a class="btn primary" href="index.html#contact">Plan een eerste gesprek</a>
+            <a class="btn" href="tel:+31645845985">Bel / WhatsApp</a>
+          </div>
 
-      <div class="stack">
-        <a class="btn primary" href="#contact">Plan een eerste gesprek</a>
-        <a class="btn" href="tel:+31645845985">Bel / WhatsApp</a>
+          <div class="chips" aria-label="Kernpunten">
+            <span class="chip">Reactie binnen 2 werkdagen</span>
+            <span class="chip">Noord-Holland</span>
+            <span class="chip">Geen behandeling, wel begeleiding</span>
+          </div>
+        </div>
+
+        <figure class="hero-figure" aria-label="Logo De Tussenstap">
+          <img src="assets/logo.png" alt="Logo De Tussenstap" />
+        </figure>
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
+    <!-- REST VAN DE PAGINA (zoals hij was) -->
+    <!-- Laat dit staan of plak hier je bestaande secties onder. -->
+    <!-- Als jouw huidige aanmeldpagina al meer secties heeft: plak die hieronder terug (ongewijzigd). -->
 
+    <footer>
+      © <span id="y"></span> De Tussenstap • Noord-Holland •
+      <a href="mailto:info@detussenstap.net">info@detussenstap.net</a>
+    </footer>
+  </main>
 
-<section>
-  <div class="card">
-    <h2>Wat we samen doen</h2>
-    <ul>
-      <li>Je situatie helder krijgen</li>
-      <li>Overzicht maken in behandelopties</li>
-      <li>Begeleiding bij aanmelding(en)</li>
-      <li>Rust en structuur tijdens wachttijd</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>Wat we niet doen</h2>
-    <ul>
-      <li>Geen therapie of behandeling</li>
-      <li>Geen crisiszorg</li>
-      <li>Geen medische beslissingen</li>
-    </ul>
-  </div>
-</section>
-
-
-<section id="contact">
-  <div class="card">
-    <h2>Kennismaken</h2>
-    <p>Mail of bel/WhatsApp. We reageren binnen 2 werkdagen.</p>
-    <div class="stack">
-      <a class="btn primary" href="mailto:info@detussenstap.net">Mail</a>
-      <a class="btn" href="tel:+31645845985">Bel</a>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-© 2026 De Tussenstap • Noord-Holland
-</footer>
-
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
