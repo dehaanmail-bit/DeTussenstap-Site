@@ -2,339 +2,540 @@
 <html lang="nl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Aanmelden – De Tussenstap</title>
-  <meta name="description" content="Aanmelden richting passende verslavingszorg. De Tussenstap helpt met overzicht, zorgnavigatie en de eerste stappen – zonder oordeel." />
-  <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#fbf3df" />
-
-  <!-- Favicons (repo root) -->
-  <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.png" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <link rel="manifest" href="site.webmanifest" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="Aanmelden / eerste stap – Zorgnavigatie en begeleiding richting passende verslavingszorg in Noord-Holland." />
 
   <style>
     :root{
-      --bg:#fbf3df;
-      --fg:#4a2e1f;
-      --muted:#7a5a44;
-      --card:#fff6e5;
-      --line:#e6d5b8;
-      --accent:#6b3f2b;
-      --accent2:#b86b2a;
-      --max:1180px;
-      --r:22px;
-      --shadow:0 14px 30px rgba(74,46,31,.08);
+      --bg: #f4ecd9;
+      --surface: #f7f0df;
+      --card: #f3ead6;
+      --stroke: rgba(70,45,35,.14);
+      --text: #3b2a23;
+      --muted: rgba(59,42,35,.78);
+      --brown: #5a3a2c;
+      --brown-2: #4b3026;
+      --pill: rgba(90,58,44,.08);
+      --shadow: 0 10px 30px rgba(0,0,0,.06);
+      --radius: 22px;
+      --radius-sm: 16px;
+      --max: 1100px;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
     body{
-      font-family:'Source Sans 3',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--bg); color:var(--fg); line-height:1.65;
-    }
-    a{color:var(--accent2);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:var(--max);margin:0 auto;padding:18px}
-
-    .skip{
-      position:absolute; left:-999px; top:10px;
-      background:#fff; border:1px solid var(--line); padding:10px 12px; border-radius:12px;
-      color:var(--fg); font-weight:900;
-    }
-    .skip:focus{left:18px; z-index:999}
-
-    header{
-      position:sticky; top:0; z-index:50;
-      background:rgba(251,243,223,.92);
-      backdrop-filter:blur(8px);
-      border-bottom:1px solid var(--line);
-    }
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;gap:12px;
-      padding:10px 0;
-    }
-    .brand{
-      display:flex;flex-direction:column;gap:2px;
-      font-family:'Libre Baskerville',serif;
-      font-weight:700; letter-spacing:-.3px; font-size:18px; white-space:nowrap;
-      color:inherit;
-    }
-    .brand small{
-      font-family:'Source Sans 3',sans-serif;
-      font-weight:800;
-      font-size:12px;
-      color:var(--muted);
-    }
-    nav{display:flex;gap:12px;flex-wrap:wrap;font-size:14px}
-    nav a{color:var(--muted)}
-    nav a:hover{color:var(--fg);text-decoration:none}
-
-    .btn{
-      padding:10px 14px; border-radius:999px;
-      border:1px solid var(--line);
-      background:transparent;
-      font-weight:900; color:var(--fg);
-      display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      white-space:nowrap;
-    }
-    .btn:hover{border-color:#d9c3a0;text-decoration:none}
-    .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
-    .btn.primary:hover{background:#5a3324}
-
-    h1,h2,h3{font-family:'Libre Baskerville',serif;font-weight:700;margin:0}
-    h1{font-size:44px;line-height:1.05;letter-spacing:-.9px}
-    h2{font-size:30px;letter-spacing:-.4px}
-    h3{font-size:20px;letter-spacing:-.2px}
-    .sub{margin:8px 0 0; color:var(--muted); max-width:100ch}
-    section{padding:26px 0}
-
-    /* HERO */
-    .hero{padding:18px 0 14px}
-    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:center}
-
-    .hero-kicker{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:7px 12px;border-radius:999px;border:1px solid var(--line);
-      background:rgba(255,255,255,.35);
-      color:var(--muted);font-weight:900;font-size:12px;
-    }
-
-    .hero-lead{margin:12px 0 0;color:var(--muted);max-width:92ch;font-size:16.5px}
-    .stack{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-    .stack .btn.primary{padding:12px 18px}
-
-    .hero-figure{
       margin:0;
-      padding:0;
-      border:none;
-      background:transparent;
-      box-shadow:none;
-      border-radius:0;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      color:var(--text);
+      background:var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a{ color:inherit; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:0 18px; }
+
+    /* Header */
+    .site-header{
+      position: sticky;
+      top:0;
+      z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(244,236,217,.92);
+      border-bottom: 1px solid var(--stroke);
+    }
+    .header-inner{
       display:flex;
       align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 0;
+    }
+    .brand{
+      font-weight: 700;
+      letter-spacing:.2px;
+      font-size: 28px;
+      line-height:1;
+    }
+    .header-cta{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
       justify-content:center;
+      gap:10px;
+      text-decoration:none;
+      border-radius: 999px;
+      padding: 14px 18px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      cursor:pointer;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn.primary{
+      background: var(--brown);
+      color: #fff;
+      border-color: rgba(0,0,0,.0);
+      box-shadow: 0 10px 24px rgba(90,58,44,.22);
+    }
+    .btn.primary:active{ transform: translateY(1px); }
+    .btn.ghost{
+      background: transparent;
+      border-color: rgba(90,58,44,.20);
+      color: var(--brown-2);
+    }
+
+    /* Hero */
+    .hero{
+      padding: 26px 0 18px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      align-items:center;
+    }
+    .hero-figure{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding: 4px 0;
     }
     .hero-figure img{
-      width:min(520px, 88vw);
+      width: min(430px, 70vw);
+      height:auto;
+      filter: drop-shadow(0 18px 28px rgba(0,0,0,.08));
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(90,58,44,.22);
+      background: var(--pill);
+      color: rgba(59,42,35,.88);
+      font-weight: 700;
+      letter-spacing:.2px;
+    }
+
+    h1{
+      margin: 12px 0 0;
+      font-size: 54px;
+      line-height: 1.0;
+      letter-spacing: -.4px;
+    }
+    .lead{
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.65;
+      max-width: 62ch;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    }
+    .lead strong{ color: var(--text); }
+
+    .cta-stack{
+      margin-top: 16px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      max-width: 520px;
+    }
+    .cta-note{
+      margin: 6px 0 0;
+      color: rgba(59,42,35,.68);
+      font-size: 14px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    }
+
+    /* Sections */
+    .section{
+      padding: 18px 0;
+    }
+    .section-title{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin: 6px 0 14px;
+    }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(90,58,44,.20);
+      background: rgba(255,255,255,.25);
+      font-weight: 800;
+      letter-spacing:.25px;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    }
+    .h2{
+      margin:0;
+      font-size: 38px;
+      letter-spacing: -.35px;
+      line-height: 1.08;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .card{
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-inner{
+      padding: 18px;
+    }
+    .card h3{
+      margin: 0 0 10px;
+      font-size: 30px;
+      letter-spacing: -.25px;
+      line-height: 1.05;
+    }
+    .card p{
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.65;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    }
+    .list{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: rgba(59,42,35,.82);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      line-height: 1.55;
+    }
+    .list li{ margin: 7px 0; }
+
+    .media{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      align-items:center;
+    }
+    .media img{
+      width:100%;
       height:auto;
       display:block;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(0,0,0,.06);
+      box-shadow: 0 12px 22px rgba(0,0,0,.06);
+      background: rgba(255,255,255,.35);
     }
 
-    .card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--r);
-      padding:20px;
-      box-shadow:var(--shadow);
+    /* Practical blocks */
+    .note{
+      background: rgba(255,255,255,.28);
+      border: 1px solid rgba(90,58,44,.18);
+      border-radius: var(--radius);
+      padding: 16px;
+      color: rgba(59,42,35,.82);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      line-height: 1.6;
+    }
+    .note strong{ color: var(--text); }
+
+    .important{
+      background: rgba(214, 112, 88, .10);
+      border: 1px solid rgba(214, 112, 88, .25);
+      border-radius: var(--radius);
+      padding: 16px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      line-height: 1.6;
+      color: rgba(59,42,35,.86);
+    }
+    .important strong{ color: var(--text); }
+
+    /* Bottom CTA */
+    .bottom-cta{
+      padding: 14px 0 30px;
+    }
+    .bottom-box{
+      background: rgba(255,255,255,.26);
+      border: 1px solid rgba(90,58,44,.20);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .bottom-box h2{
+      margin: 0 0 10px;
+      font-size: 34px;
+      line-height: 1.08;
+      letter-spacing: -.25px;
+    }
+    .bottom-box p{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.65;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    }
+    .bottom-actions{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      max-width: 520px;
     }
 
-    .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    @media(max-width:900px){.two{grid-template-columns:1fr}}
-
-    .figure{
-      border-radius:18px; overflow:hidden;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.35);
-    }
-    .figure img{width:100%;height:auto;display:block}
-
-    .sep{height:1px;background:var(--line);margin:14px 0}
-    ul{padding-left:18px;margin:10px 0 0}
-    li{margin:6px 0;color:var(--muted)}
-
-    .callout{
-      border-left:4px solid var(--accent2);
-      padding:14px;
-      background:rgba(255,246,229,.62);
-      border:1px solid var(--line);
-      border-radius:16px;
-      color:var(--muted);
-    }
-
+    /* Footer */
     footer{
-      border-top:1px solid var(--line);
-      padding:22px 0;
-      font-size:13px;
-      color:var(--muted);
-      text-align:center;
+      border-top: 1px solid var(--stroke);
+      padding: 18px 0 26px;
+      color: rgba(59,42,35,.72);
+      font-size: 14px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
     }
 
-    /* MOBIEL PORTRAIT */
-    @media (max-width:900px){
-      .hero-grid{grid-template-columns:1fr}
-      .hero-grid > figure{ order:-1; }
-      .hero-grid > div{ order:0; }
-
-      nav{display:none;}
-      .brand small{display:none;}
-      h1{font-size:36px}
-
-      .stack{flex-direction:column; align-items:stretch}
-      .stack .btn{width:100%; justify-content:center}
-      .stack .btn.primary{padding:14px 18px}
-    }
-
-    /* MOBIEL LANDSCAPE: CTA boven de vouw */
-    @media (max-height: 520px) and (orientation: landscape){
-      header .nav{padding:6px 0}
-      nav{display:none;}
-      .brand small{display:none;}
-
-      .wrap{padding:12px}
-      .hero{padding:6px 0 6px}
-
+    /* Desktop / tablet */
+    @media (min-width: 920px){
       .hero-grid{
-        grid-template-columns:0.95fr 1.05fr;
-        gap:14px;
-        align-items:center;
+        grid-template-columns: 1.05fr 1fr;
+        gap: 22px;
       }
+      .hero-figure{ justify-content:flex-start; }
+      .hero-figure img{ width: min(520px, 38vw); }
+      .grid{ grid-template-columns: 1fr 1fr; }
+      .media{ grid-template-columns: 1.1fr .9fr; }
+      .bottom-actions{ flex-direction:row; }
+      .cta-stack{ flex-direction:row; align-items:center; }
+      .cta-stack .btn{ flex: 0 0 auto; }
+    }
 
-      .hero-figure img{
-        width:min(360px, 36vw);
-        max-width:360px;
-      }
+    /* ===== Landscape above-the-fold fix (alleen landscape met lage hoogte) ===== */
+    @media (max-height: 520px) and (orientation: landscape){
+      .hero{ padding: 10px 0 10px; }
+      .hero-grid{ grid-template-columns: 1fr 1fr; gap: 14px; }
+      .hero-figure{ justify-content:center; padding: 0; }
+      .hero-figure img{ width: min(340px, 32vw); }
+      h1{ font-size: 34px; margin-top: 8px; }
+      .lead{ font-size: 14.5px; line-height: 1.5; margin-top: 8px; max-width: 60ch; }
+      .cta-stack{ margin-top: 10px; gap: 8px; }
+      .btn{ padding: 11px 14px; }
+      .btn.primary{ box-shadow: 0 8px 18px rgba(90,58,44,.20); }
+      .cta-note{ display:none; }
+    }
 
-      h1{font-size:30px; line-height:1.02}
-      .hero-lead{
-        font-size:14.8px;
-        margin-top:8px;
-      }
-
-      .stack{
-        margin-top:10px;
-        gap:8px;
-      }
-      .btn{
-        padding:8px 12px;
-      }
-      .stack .btn.primary{
-        padding:10px 14px;
-      }
-      .stack .btn{
-        min-width:unset;
-      }
+    /* Kleinere telefoons portrait */
+    @media (max-width: 380px){
+      h1{ font-size: 46px; }
+      .hero-figure img{ width: min(390px, 78vw); }
+      .brand{ font-size: 24px; }
+      .btn{ padding: 12px 14px; }
     }
   </style>
 </head>
 
 <body>
-  <a class="skip" href="#main">Ga naar inhoud</a>
-
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="index.html" style="text-decoration:none;">
-        De Tussenstap
-        <small>je hoeft het niet alleen te doen</small>
-      </a>
-
-      <nav aria-label="Navigatie">
-        <a href="aanmelden.html">Aanmelden</a>
-        <a href="wachttijd.html">Wachttijd</a>
-        <a href="wie-wij-zijn.html">Wie wij zijn</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
-
-      <a class="btn primary" href="index.html#contact">Plan een eerste gesprek</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">De Tussenstap</div>
+      <div class="header-cta">
+        <a class="btn primary" href="#plan">Plan een eerste gesprek</a>
+      </div>
     </div>
   </header>
 
-  <main id="main" class="wrap">
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-figure" aria-hidden="true">
+          <img src="assets/logo.png" alt="Logo De Tussenstap" onerror="this.style.display='none'">
+        </div>
 
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <div class="hero-grid">
-
-        <figure class="hero-figure" aria-label="Logo De Tussenstap">
-          <img src="assets/logo.png" alt="Logo De Tussenstap" />
-        </figure>
-
-        <div>
-          <span class="hero-kicker">Aanmelden / eerste stap</span>
-
-          <h1 style="margin-top:12px;">Hulp zoeken is al een stap op zich.</h1>
-
-          <p class="hero-lead">
-            Deze pagina gaat niet over “aanmelden bij De Tussenstap” als doel op zich — maar over
-            <b>aanmelden richting passende verslavingszorg</b>, met ons als gids in de voorfase.
+        <div class="hero-copy">
+          <div class="pill">Aanmelden / eerste stap</div>
+          <h1>Hulp zoeken is al een stap op zich.</h1>
+          <p class="lead">
+            Deze pagina gaat niet over <strong>“aanmelden bij De Tussenstap”</strong> als doel op zich —
+            maar over <strong>aanmelden richting passende verslavingszorg</strong>, met ons als gids in de voorfase.
           </p>
 
-          <div class="stack">
-            <a class="btn primary" href="index.html#contact">Plan een eerste gesprek</a>
-            <a class="btn" href="tel:+31645845985">Bel / WhatsApp</a>
+          <div class="cta-stack" id="plan">
+            <a class="btn primary" href="#contact">Plan een eerste gesprek</a>
+            <a class="btn ghost" href="#bel">Bel / WhatsApp</a>
+          </div>
+          <div class="cta-note">Lievere laagdrempelig? Een kort gesprek kan al rust en richting geven.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-title">
+          <span class="kicker">Wat we doen</span>
+          <h2 class="h2">De eerste stap overzichtelijk maken</h2>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="card-inner">
+              <h3>Zorgnavigatie (keuzes &amp; aanmelding)</h3>
+              <p>
+                Als je vastloopt op: <strong>“waar moet ik zijn?”</strong>, <strong>“wat past?”</strong>, <strong>“hoe regel ik dit?”</strong> —
+                dan maken we het concreet en behapbaar.
+              </p>
+              <ul class="list">
+                <li>Hulpvraag verhelderen (wat speelt er nu echt?)</li>
+                <li>Opties op een rij: ambulant/klinisch, regio/landelijk</li>
+                <li>Begeleiding bij contact en aanmelding(en)</li>
+                <li>Overzicht, opvolging en next steps</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-inner media">
+              <div>
+                <h3>Visueel overzicht helpt</h3>
+                <p>
+                  Daarom werken we met een simpel stappenplan en een “routekaart”:
+                  jij hoeft niet alles al te weten — wij brengen het samen in kaart.
+                </p>
+              </div>
+              <img src="assets/zorgnavigatie.jpg" alt="Zorgnavigatie illustratie" />
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="grid">
+          <article class="card">
+            <div class="card-inner">
+              <h3>Voorbereiding (zodat je intake wél lukt)</h3>
+              <p>
+                Als je wel wilt, maar het escaleert telkens (of je haakt af), dan bouwen we aan
+                stabiliteit en voorbereiding — zodat je intake en start van behandeling kansrijker wordt.
+              </p>
+              <ul class="list">
+                <li>Praktische voorbereiding op intake / gesprekken</li>
+                <li>Structuur en stabiliteit in de tussentijd</li>
+                <li>Plan voor lastige momenten (craving, stress, terugvalrisico)</li>
+                <li>Betrekken van naasten (als dat helpend is)</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-inner">
+              <h3>Wachttijdbegeleiding</h3>
+              <p>
+                Wachttijd is niet “niks”. Juist daar gaat het vaak mis. Wij blijven naast je staan,
+                houden overzicht en zorgen dat er beweging blijft.
+              </p>
+              <ul class="list">
+                <li>Regelmatige check-ins en korte begeleiding</li>
+                <li>Opvolging richting instellingen/klinieken</li>
+                <li>Ondersteuning bij praktische zaken</li>
+                <li>Rust, richting en volhouden tot de start</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="section-title">
+          <span class="kicker">Praktisch</span>
+          <h2 class="h2">Hoe je start</h2>
+        </div>
+
+        <div class="grid">
+          <div class="note">
+            <strong>1) Plan een eerste gesprek.</strong><br/>
+            Kort, laagdrempelig en zonder oordeel. Je hoeft nog niet te weten “wat het precies is”.
+          </div>
+          <div class="note">
+            <strong>2) We maken overzicht.</strong><br/>
+            We brengen je situatie en opties in kaart en bepalen samen de logische volgende stap.
+          </div>
+          <div class="note">
+            <strong>3) We regelen de route.</strong><br/>
+            Waar nodig helpen we met contact, aanmelding, opvolging en voorbereiding op intake.
+          </div>
+          <div class="note">
+            <strong>4) We blijven erbij.</strong><br/>
+            In de tussentijd (wachttijd) blijven we ondersteunen, zodat je niet alleen staat.
           </div>
         </div>
 
+        <div style="height:14px;"></div>
+
+        <div class="important">
+          <strong>Belangrijk:</strong> De Tussenstap is géén spoeddienst.
+          Bij direct gevaar: bel 112. Bij acute crisis/psychiatrie: neem contact op met de huisartsenpost
+          of de regionale crisisdienst.
+        </div>
+
+        <div style="height:12px;"></div>
+
+        <div class="important">
+          <strong>Belangrijk:</strong> We begeleiden richting passende (verslavings)zorg, maar vervangen
+          geen medische behandeling. We werken juist aanvullend in de voorfase en tijdens wachttijd.
+        </div>
       </div>
     </section>
 
-    <!-- ROUTES / BLOKKEN -->
-    <section id="routes">
-      <div class="two">
-        <div class="card">
-          <figure class="figure">
-            <img src="assets/zorgnavigatie.jpg" alt="Zorgnavigatie: samen een route uitstippelen." />
-          </figure>
-          <div class="sep"></div>
-          <h3>Zorgnavigatie (keuzes & aanmelding)</h3>
-          <p class="sub" style="margin-top:10px;">
-            Als je vastloopt op: “waar moet ik zijn?”, “wat past?”, “hoe regel ik dit?”
+    <section class="bottom-cta" id="bel">
+      <div class="wrap">
+        <div class="bottom-box">
+          <h2>Je hoeft dit niet alleen te doen</h2>
+          <p>
+            Als je vastloopt of twijfelt: neem contact op. Een eerste gesprek kan al veel helder maken.
           </p>
-          <ul>
-            <li>Hulpvraag verhelderen (wat speelt er nu echt?)</li>
-            <li>Opties op een rij: ambulant/klinisch, regio/landelijk</li>
-            <li>Begeleiding bij contact en aanmelding(en)</li>
-            <li>Overzicht, opvolging en next steps</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Voorbereiding (zodat je intake wél lukt)</h3>
-          <p class="sub" style="margin-top:10px;">
-            Als je wel wilt, maar het escaleert telkens of je bang bent dat je afhaakt vóór de start.
-          </p>
-          <ul>
-            <li>Structuur en haalbare stappen</li>
-            <li>Praktische voorbereiding op intake/start</li>
-            <li>Ondersteuning bij spanning, twijfel en uitstel</li>
-            <li>Heldere grenzen: géén therapie of crisiszorg</li>
-          </ul>
+          <div class="bottom-actions">
+            <a class="btn primary" href="#plan">Plan een eerste gesprek</a>
+            <!-- Pas dit telefoonnummer en WhatsApp-link aan naar jullie echte nummer -->
+            <a class="btn ghost" href="tel:+31600000000">Bel</a>
+            <a class="btn ghost" href="https://wa.me/31600000000" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+          <div class="cta-note">Tip: zet je vraag in 1 zin. Dan kunnen we meteen richting geven.</div>
         </div>
       </div>
     </section>
-
-    <!-- KORTE UITLEG -->
-    <section id="uitleg">
-      <div class="card">
-        <h3>Wat je van ons mag verwachten</h3>
-        <p class="sub" style="margin-top:10px;">
-          We werken praktisch, nuchter en menselijk. Geen ingewikkelde taal, geen oordeel.
-          Jij houdt de regie; wij helpen je vooruit met overzicht en acties.
-        </p>
-        <div class="sep"></div>
-        <div class="callout">
-          <b>Belangrijk:</b> De Tussenstap is geen crisisdienst. Bij direct gevaar: bel 112 of de huisartsenpost.
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="y"></span> De Tussenstap • Noord-Holland •
-      <a href="mailto:info@detussenstap.net">info@detussenstap.net</a>
-    </footer>
   </main>
 
+  <footer>
+    <div class="wrap">
+      © 2026 De Tussenstap • Noord-Holland • <a href="mailto:info@detussenstap.net">info@detussenstap.net</a>
+    </div>
+  </footer>
+
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    // Als je een header-CTA hebt die naar #plan springt, voorkomt dit "plakken" onder de sticky header.
+    (function(){
+      const header = document.querySelector('.site-header');
+      const links = document.querySelectorAll('a[href^="#"]');
+      links.forEach(a=>{
+        a.addEventListener('click', (e)=>{
+          const id = a.getAttribute('href');
+          if(!id || id === '#') return;
+          const el = document.querySelector(id);
+          if(!el) return;
+          e.preventDefault();
+          const y = el.getBoundingClientRect().top + window.scrollY - (header?.offsetHeight || 0) - 10;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        });
+      });
+    })();
   </script>
 </body>
 </html>
