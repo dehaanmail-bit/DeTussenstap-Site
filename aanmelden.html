@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Aanmelden – De Tussenstap</title>
-  <meta name="description" content="Hulp zoeken is al een stap op zich. De Tussenstap helpt je met overzicht, zorgnavigatie en een logische volgende stap richting behandeling. Reactie binnen 2 werkdagen." />
+  <meta name="description" content="Aanmelden richting passende verslavingszorg. De Tussenstap helpt je met overzicht, zorgnavigatie en voorbereiding – vanaf je eerste hulpvraag." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#fbf3df" />
 
@@ -14,14 +14,10 @@
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Aanmelden – De Tussenstap" />
-  <meta property="og:description" content="Je hoeft nog niet te weten waar je naartoe moet. Samen maken we overzicht en bepalen we een logische volgende stap." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -95,8 +91,6 @@
     .btn:hover{border-color:#d9c3a0;text-decoration:none}
     .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
     .btn.primary:hover{background:#5a3324}
-    .btn.soft{background:rgba(255,255,255,.35)}
-    .btn.soft:hover{border-color:#d9c3a0}
 
     /* TYPO */
     h1,h2,h3{font-family:'Libre Baskerville',serif;font-weight:700;margin:0}
@@ -106,10 +100,22 @@
     .sub{margin:8px 0 0; color:var(--muted); max-width:100ch}
     section{padding:26px 0}
 
-    /* HERO (aanmelden) */
-    .hero{padding:18px 0 14px}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,246,229,.72);
+      color:var(--muted);
+      font-weight:900;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+    }
+
+    /* HERO */
+    .hero{padding:18px 0 10px}
     .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:center}
-    .kicker{
+    .hero-kicker{
       display:inline-flex;align-items:center;gap:8px;
       padding:7px 12px;border-radius:999px;border:1px solid var(--line);
       background:rgba(255,255,255,.35);
@@ -117,17 +123,18 @@
     }
     .hero-lead{margin:12px 0 0;color:var(--muted);max-width:92ch;font-size:16.5px}
     .stack{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-    .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .chip{
-      font-size:13px; padding:8px 12px; border-radius:999px;
-      background:rgba(255,246,229,.72);
-      border:1px solid var(--line);
-      color:var(--muted);
-    }
+    .stack .btn{min-width:220px}
 
     .hero-figure{
-      margin:0; padding:0; border:none; background:transparent; box-shadow:none; border-radius:0;
-      display:flex; align-items:center; justify-content:center;
+      margin:0;
+      padding:0;
+      border:none;
+      background:transparent;
+      box-shadow:none;
+      border-radius:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
     .hero-figure img{
       width:min(520px, 88vw);
@@ -146,21 +153,18 @@
     .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     @media(max-width:900px){.two{grid-template-columns:1fr}}
 
+    .media{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:center}
+    @media(max-width:900px){.media{grid-template-columns:1fr}}
+    .figure{
+      border-radius:18px; overflow:hidden;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.35);
+    }
+    .figure img{width:100%;height:auto;display:block}
+
     .sep{height:1px;background:var(--line);margin:14px 0}
     ul{padding-left:18px;margin:10px 0 0}
     li{margin:6px 0;color:var(--muted)}
-
-    .badge{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:8px 12px;border-radius:12px;
-      border:1px solid var(--line);
-      background:rgba(255,246,229,.72);
-      color:var(--muted);
-      font-weight:900;
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:.6px;
-    }
 
     .callout{
       border-left:4px solid var(--accent2);
@@ -170,7 +174,6 @@
       border-radius:16px;
       color:var(--muted);
     }
-
     .danger{
       margin-top:14px;
       background:#fff0f0;
@@ -188,49 +191,51 @@
       text-align:center;
     }
 
-    /* MOBIEL: hero moet “logo + titel + intro + CTA” zichtbaar houden */
+    /* MOBIEL PORTRAIT */
     @media (max-width:900px){
       .hero-grid{grid-template-columns:1fr}
+
+      /* Logo bovenaan */
+      .hero-grid > figure{ order:-1; }
+      .hero-grid > div{ order:0; }
+
       nav{display:none;}
       .brand small{display:none;}
-      h1{font-size:36px}
-
-      /* Logo bovenaan, maar begrensd zodat tekst + CTA mee in beeld kan */
-      .hero-grid > figure{order:-1;}
-      .hero-grid > div{order:0;}
-
-      .hero-figure img{
-        width:min(420px, 84vw);
-        max-width:420px;
-        /* Dit is de truc: voorkom dat het logo de hele viewport opeet */
-        max-height:30vh;
-        object-fit:contain;
-      }
+      h1{font-size:38px}
 
       .stack{flex-direction:column; align-items:stretch}
-      .stack .btn{width:100%; justify-content:center}
-
-      /* Chips weg op mobiel (scheelt ruimte) */
-      .chips{display:none;}
+      .stack .btn{width:100%; justify-content:center; min-width:unset}
     }
 
-    /* LANDSCAPE (mobiel): compact, naast elkaar, CTA zichtbaar */
+    /* MOBIEL LANDSCAPE: above-the-fold fix */
     @media (max-height: 520px) and (orientation: landscape){
       header .nav{padding:8px 0}
-      .hero{padding:10px 0 10px}
-      h1{font-size:34px}
-      .hero-lead{font-size:15.5px; margin-top:10px}
-      .btn{padding:9px 12px}
-
-      .hero-grid{grid-template-columns:1.05fr .95fr; gap:18px}
       nav{display:none;}
       .brand small{display:none;}
-      .chips{display:none;}
 
+      .wrap{padding:14px}
+      .hero{padding:10px 0 8px}
+
+      /* 2 kolommen, compact */
+      .hero-grid{
+        grid-template-columns:0.95fr 1.05fr;
+        gap:16px;
+        align-items:center;
+      }
+
+      /* Logo groot, maar binnen beeld */
       .hero-figure img{
         width:min(420px, 42vw);
-        max-height:55vh;
+        max-width:420px;
       }
+
+      h1{font-size:34px}
+      .hero-lead{font-size:15.5px; margin-top:10px}
+
+      /* CTA zichtbaar zonder scroll */
+      .stack{margin-top:12px}
+      .btn{padding:9px 12px}
+      .stack .btn{min-width:unset}
     }
   </style>
 </head>
@@ -246,13 +251,13 @@
       </a>
 
       <nav aria-label="Navigatie">
-        <a href="aanmelden.html" aria-current="page">Aanmelden</a>
+        <a href="aanmelden.html">Aanmelden</a>
         <a href="wachttijd.html">Wachttijd</a>
         <a href="wie-wij-zijn.html">Wie wij zijn</a>
         <a href="index.html#contact">Contact</a>
       </nav>
 
-      <a class="btn primary" href="#contact">Plan een eerste gesprek</a>
+      <a class="btn primary" href="index.html#contact">Plan een eerste gesprek</a>
     </div>
   </header>
 
@@ -260,146 +265,104 @@
     <!-- HERO -->
     <section class="hero" id="top">
       <div class="hero-grid">
+        <figure class="hero-figure" aria-label="Logo De Tussenstap">
+          <img src="assets/logo.png" alt="Logo De Tussenstap" />
+        </figure>
+
         <div>
-          <span class="kicker">Aanmelden / eerste stap</span>
+          <span class="hero-kicker">Aanmelden / eerste stap</span>
 
           <h1 style="margin-top:12px;">Hulp zoeken is al een stap op zich.</h1>
 
           <p class="hero-lead">
-            Je hoeft nog niet te weten waar je naartoe moet.
-            We beginnen bij waar jij nu staat. Samen maken we overzicht en bepalen we een logische volgende stap —
-            <b>zonder gedoe en zonder oordeel</b>.
+            Deze pagina gaat niet over “aanmelden bij De Tussenstap” als doel op zich —
+            maar over <b>aanmelden richting passende verslavingszorg</b>, met ons als gids in de voorfase.
           </p>
 
           <div class="stack">
-            <a class="btn primary" href="#contact">Plan een eerste gesprek</a>
-            <a class="btn soft" href="tel:+31645845985">Bel / WhatsApp</a>
-          </div>
-
-          <div class="chips" aria-label="Kernpunten">
-            <span class="chip">Reactie binnen 2 werkdagen</span>
-            <span class="chip">Noord-Holland</span>
-            <span class="chip">Geen behandeling, wel begeleiding</span>
+            <a class="btn primary" href="index.html#contact">Plan een eerste gesprek</a>
+            <a class="btn" href="tel:+31645845985">Bel / WhatsApp</a>
           </div>
         </div>
-
-        <figure class="hero-figure" aria-label="Logo De Tussenstap">
-          <img src="assets/logo.png" alt="Logo De Tussenstap" />
-        </figure>
       </div>
     </section>
 
     <!-- WAT JE KRIJGT -->
-    <section id="wat-je-krijgt">
+    <section id="wat">
       <div class="badge">Wat je krijgt</div>
-      <h2 style="margin-top:10px;">Overzicht, regie en een haalbare volgende stap</h2>
+      <h2 style="margin-top:10px;">Overzicht. Een plan. En iemand naast je.</h2>
       <p class="sub">
-        Deze pagina gaat niet over “aanmelden bij De Tussenstap” als doel op zich —
-        maar over <b>aanmelden richting passende verslavingszorg</b>, met ons als gids in de voorfase.
+        Als je vastloopt op “waar moet ik zijn?”, “wat past?”, “hoe regel ik dit?” —
+        dan maken we het klein en uitvoerbaar. Praktisch, zonder oordeel.
       </p>
 
-      <div class="two" style="margin-top:14px;">
-        <div class="card">
+      <div class="card media" style="margin-top:14px;">
+        <div>
           <h3>Zorgnavigatie (keuzes & aanmelding)</h3>
-          <p class="sub" style="margin-top:10px;">
-            Als je vastloopt op: “waar moet ik zijn?”, “wat past?”, “hoe regel ik dit?”
-          </p>
           <ul>
             <li>Hulpvraag verhelderen (wat speelt er nu echt?)</li>
             <li>Opties op een rij: ambulant/klinisch, regio/landelijk</li>
             <li>Begeleiding bij contact en aanmelding(en)</li>
             <li>Overzicht, opvolging en next steps</li>
           </ul>
-        </div>
 
-        <div class="card">
+          <div class="sep"></div>
+
           <h3>Voorbereiding (zodat je intake wél lukt)</h3>
-          <p class="sub" style="margin-top:10px;">
-            Als je wel wilt, maar het escaleert telkens of je valt terug in uitstel.
-          </p>
           <ul>
-            <li>Structuur aanbrengen in de eerste weken</li>
-            <li>Praktische voorbereiding op intake/start</li>
-            <li>Steun bij stress, schaamte en twijfel</li>
-            <li>Voorkomen dat je “afhaakt” vóór behandeling</li>
+            <li>Structuur en afspraken (zodat je niet afhaakt)</li>
+            <li>Praktische voorbereiding op intake en start</li>
+            <li>Rust en helderheid in wat je gaat vertellen/vragen</li>
           </ul>
-        </div>
-      </div>
 
-      <div class="danger">
-        <b>Belangrijk:</b> De Tussenstap is geen crisisdienst. Bij direct gevaar: bel 112 of de huisartsenpost.
+          <div class="danger">
+            <b>Belangrijk:</b> De Tussenstap is geen crisisdienst. Bij direct gevaar: bel 112 of de huisartsenpost.
+          </div>
+        </div>
+
+        <figure class="figure">
+          <img src="assets/zorgnavigatie.jpg" alt="Zorgnavigatie: samen de route bepalen." />
+        </figure>
       </div>
     </section>
 
     <!-- HOE HET GAAT -->
-    <section id="hoe-het-gaat">
+    <section id="hoe">
       <div class="badge">Hoe het gaat</div>
-      <h2 style="margin-top:10px;">Zo ziet het eerste traject er meestal uit</h2>
-      <p class="sub">Kort, helder, zonder verborgen stappen.</p>
-
-      <div class="card" style="margin-top:14px;">
-        <h3>1) Eerste gesprek (kennismaken + richting)</h3>
-        <p class="sub" style="margin-top:10px;">
-          We luisteren, stellen scherpe vragen en maken samen overzicht.
-          Je loopt weg met een <b>concrete</b> volgende stap.
-        </p>
-        <div class="sep"></div>
-
-        <h3>2) Route bepalen (opties + plan)</h3>
-        <p class="sub" style="margin-top:10px;">
-          We brengen behandelopties in kaart (wat past bij jouw situatie) en zetten het plan uit:
-          wie bellen, wat aanleveren, wat is de volgorde.
-        </p>
-        <div class="sep"></div>
-
-        <h3>3) Aanmelden & opvolgen (doorpakken)</h3>
-        <p class="sub" style="margin-top:10px;">
-          We helpen je door de praktische hobbels heen: contactmomenten, documenten, keuzes, wachttijd-overbrugging.
-        </p>
-
-        <div class="callout" style="margin-top:14px;">
-          <b>Grenzen:</b> we doen geen diagnostiek, therapie of medische behandeling. Wél begeleiding vóór behandeling.
-        </div>
-      </div>
-    </section>
-
-    <!-- PRAKTISCH -->
-    <section id="praktisch">
-      <div class="badge">Praktisch</div>
-      <h2 style="margin-top:10px;">Veelgestelde praktische vragen</h2>
-      <p class="sub">Kort en to-the-point.</p>
+      <h2 style="margin-top:10px;">Zo ziet een eerste stap eruit</h2>
 
       <div class="two" style="margin-top:14px;">
         <div class="card">
-          <h3>Voor wie?</h3>
+          <h3>1) Eerste gesprek</h3>
           <p class="sub" style="margin-top:10px;">
-            Voor iedereen in Noord-Holland die hulp zoekt bij gebruik/verslaving en vastloopt in keuzes,
-            aanmelding of de eerste periode richting behandeling. Ook naasten kunnen contact opnemen.
+            We brengen jouw situatie terug naar overzicht. Wat is urgent, wat kan wachten, wat is de logische volgende stap?
           </p>
-          <div class="sep"></div>
-          <h3>Hoe snel reactie?</h3>
-          <p class="sub" style="margin-top:10px;">Binnen 2 werkdagen.</p>
         </div>
-
         <div class="card">
-          <h3>Online of op locatie?</h3>
+          <h3>2) Route & aanmelding</h3>
           <p class="sub" style="margin-top:10px;">
-            Allebei. Online waar het kan, en op locatie waar passend (Noord-Holland).
+            We zetten opties naast elkaar en helpen met contact en aanmelding — zodat het ook echt gebeurt.
           </p>
-          <div class="sep"></div>
-          <h3>Wat als ik al op een wachtlijst sta?</h3>
+        </div>
+        <div class="card">
+          <h3>3) Volhouden tot intake</h3>
           <p class="sub" style="margin-top:10px;">
-            Dan ben je waarschijnlijk beter af op de pagina <a href="wachttijd.html">Wachttijd</a>.
-            Maar je mag altijd contact opnemen — soms is een korte check al helpend.
+            We houden het haalbaar: structuur, afspraken en voorbereiding zodat je niet uitvalt.
+          </p>
+        </div>
+        <div class="card">
+          <h3>4) Overdracht</h3>
+          <p class="sub" style="margin-top:10px;">
+            Zodra jouw behandeling start, zijn wij “de brug” geweest — niet de behandelaar.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
+    <!-- CTA -->
+    <section id="cta">
       <div class="badge">Contact</div>
-      <h2 style="margin-top:10px;">Plan een eerste gesprek</h2>
+      <h2 style="margin-top:10px;">Zullen we even afstemmen?</h2>
       <p class="sub">Mail of bel/WhatsApp. Je krijgt reactie binnen 2 werkdagen.</p>
 
       <div class="two" style="margin-top:14px;">
@@ -411,7 +374,7 @@
           </p>
           <div class="stack">
             <a class="btn primary" href="mailto:info@detussenstap.net?subject=Eerste%20gesprek%20De%20Tussenstap">Mail</a>
-            <a class="btn" href="tel:+31645845985">Bel</a>
+            <a class="btn" href="tel:+31645845985">Bel / WhatsApp</a>
           </div>
         </div>
 
@@ -420,8 +383,8 @@
           <p class="sub" style="margin-top:10px;">
             Heel Noord-Holland. Online of op locatie waar passend.
           </p>
-          <div class="callout" style="margin-top:14px;">
-            <b>Tip:</b> Als je alvast kort appt wat er speelt (1–2 zinnen), kunnen we sneller richting geven.
+          <div class="callout" style="margin-top:12px;">
+            <b>Let op:</b> wij bieden geen therapie/diagnostiek/crisiszorg — wél begeleiding vóór behandeling.
           </div>
         </div>
       </div>
